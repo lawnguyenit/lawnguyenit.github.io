@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research projects of Lam-Nguyen Nguyen in trustworthy machine learning, weak supervision, and IoT telemetry.">
+  <title>Research — Lam-Nguyen Nguyen</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">LN</span><span>Lam-Nguyen Nguyen</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Research</p>
+        <h1>From field systems to benchmark validity</h1>
+        <p class="lead">My work asks how real-world telemetry should be collected, organized, labeled, and evaluated before model scores can be treated as meaningful evidence.</p>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="card">
+          <h2>Research statement</h2>
+          <p>I am interested in trustworthy and data-centric machine learning for real-world IoT systems. My current research examines weakly labeled telemetry, where labels are constructed from rules, operational context, and incomplete observations rather than independent ground truth. I focus on the conditions under which a benchmark remains interpretable: traceable data construction, temporal separation, leakage control, matched comparisons, and transport across deployments. The long-term direction is to develop reliable evaluation and data systems for machine learning under imperfect sensing, missing context, and distribution shift.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="project" id="thesis">
+          <div class="project-step">Stage 01</div>
+          <div>
+            <div class="card-topline"><h2>Building an IoT telemetry system for durian orchards</h2><span class="badge green">Undergraduate thesis · 8.9/10</span></div>
+            <div class="project-meta"><span>2026</span><span>Advisor: Tran Hoai Hanh</span><span>VLUTE</span></div>
+            <p>The thesis developed an end-to-end system for collecting environmental and soil telemetry in a real cultivation environment. The system used ESP32-S3, SHT30, an ES-SOIL-7-IN-1 sensor, a SIM A7682S cellular module, and Firebase Realtime Database.</p>
+            <p>The project moved beyond displaying sensor values. Each record was designed as traceable telemetry containing measurements, timestamps, read status, transmission status, retry information, and operational metadata. A downstream pipeline transformed raw Firebase data into structured benchmark views with weak labels, temporal features, and time-aware evaluation.</p>
+            <ul>
+              <li>Designed and deployed the sensing, transmission, storage, and web-monitoring pipeline.</li>
+              <li>Organized raw data through Layer0 and canonicalized sensor snapshots through Layer1.</li>
+              <li>Constructed weak operational labels and multiple benchmark representations.</li>
+              <li>Used temporal splitting and purge gaps to reduce optimistic evaluation.</li>
+              <li>Restricted interpretation to telemetry behavior rather than unsupported agronomic diagnosis.</li>
+            </ul>
+            <div class="tag-list"><span class="tag">Embedded IoT</span><span class="tag">Telemetry metadata</span><span class="tag">Firebase RTDB</span><span class="tag">Weak labels</span><span class="tag">Temporal features</span></div>
+          </div>
+        </article>
+
+        <article class="project" id="aicon">
+          <div class="project-step">Stage 02</div>
+          <div>
+            <div class="card-topline"><h2>Benchmarking tabular models on weakly supervised agricultural IoT data</h2><span class="badge neutral">Co-authored manuscript</span></div>
+            <div class="project-meta"><span>2026</span><span>Third author</span><span>Agricultural IoT analytics</span></div>
+            <p>This work benchmarked XGBoost, FT-Transformer, TabM, and TabPFN on agricultural IoT data labeled through percentile-based weak supervision. It compared random and temporal split protocols and examined how model rankings changed under future-oriented evaluation.</p>
+            <p>My contribution focused on data cleaning, dataset organization, weak-label construction, experimental preparation, model evaluation, and analysis of the results. The work provided the immediate foundation for my later questions about whether strong performance reflects transferable knowledge or recovery of the labeling mechanism.</p>
+            <div class="tag-list"><span class="tag">XGBoost</span><span class="tag">FT-Transformer</span><span class="tag">TabPFN</span><span class="tag">Macro-F1</span><span class="tag">Temporal generalization</span></div>
+          </div>
+        </article>
+
+        <article class="project" id="validity">
+          <div class="project-step">Stage 03</div>
+          <div>
+            <div class="card-topline"><h2>Validity-aware benchmarking for weakly labeled IoT telemetry</h2><span class="badge">Ongoing research</span></div>
+            <div class="project-meta"><span>First-author project</span><span>Manuscript in preparation</span><span>2026</span></div>
+            <p>This project treats weak-label benchmarking itself as the object of study. Weak labels are neither automatically correct nor automatically useless; their value depends on what information a model can recover, how the label is constructed over time, and whether learned relationships survive a change in deployment.</p>
+            <ul>
+              <li><strong>Representation control:</strong> compare feature views using matched anchors so that score changes are not confused with sample changes.</li>
+              <li><strong>Temporal validity:</strong> separate point evidence from 3-hour and 8-hour history while controlling eligibility and leakage.</li>
+              <li><strong>Rule recoverability:</strong> test whether models reproduce the labeling mechanism instead of learning independent structure.</li>
+              <li><strong>Deployment transport:</strong> freeze thresholds, preprocessing, and models before evaluation on a changed field position.</li>
+              <li><strong>Provenance:</strong> preserve the source of thresholds, assignments, evidence, and evaluation projections.</li>
+            </ul>
+            <p>The intended contribution is not a new model architecture. It is an evaluation framework for identifying when benchmark scores become misleading under weak labels, temporal dependence, and deployment shift.</p>
+            <div class="tag-list"><span class="tag">Benchmark validity</span><span class="tag">Same-Y controls</span><span class="tag">Matched anchors</span><span class="tag">Temporal leakage</span><span class="tag">Deployment shift</span></div>
+          </div>
+        </article>
+
+        <article class="project" id="math-writing">
+          <div class="project-step">Supporting work</div>
+          <div>
+            <div class="card-topline"><h2>Selected mathematical writing</h2><span class="badge neutral">Technical note</span></div>
+            <div class="project-meta"><span>Matrix problems with parameters</span><span>Student mathematics olympiad</span></div>
+            <p><em>From Determinants to Rank</em> develops a structured approach to parameterized matrix problems in undergraduate algebra competitions. The note connects determinant manipulation, block structure, recurrence, cyclic matrices, characteristic equations, and rank arguments.</p>
+            <p>This work represents a separate but complementary skill: organizing mathematical techniques into a reproducible line of reasoning rather than presenting isolated solutions.</p>
+            <div class="tag-list"><span class="tag">Linear algebra</span><span class="tag">Mathematical exposition</span><span class="tag">Olympiad algebra</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>© <span data-year></span> Lam-Nguyen Nguyen</div>
+      <div class="footer-links"><a href="mailto:YOUR_EMAIL">Email</a><a href="https://github.com/YOUR_USERNAME">GitHub</a><a href="cv.html">CV</a></div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
