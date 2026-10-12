@@ -307,7 +307,7 @@ p:last-child {
 /* Fact / Metric Cards */
 .facts-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin: 22px 0 32px;
 }
@@ -661,7 +661,7 @@ a.pub-badge:hover {
   }
 
   .facts-row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .cv-top-bar {
@@ -696,6 +696,12 @@ a.pub-badge:hover {
 
   .site-nav.open {
     display: flex;
+  }
+}
+
+@media (max-width: 520px) {
+  .facts-row {
+    grid-template-columns: 1fr;
   }
 }
 
