@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic CV of Lam-Nguyen Nguyen.">
+  <meta name="description" content="Academic Curriculum Vitae of Lam-Nguyen Nguyen (Nguyễn Lâm Nguyên).">
   <title>CV — Lam-Nguyen Nguyen</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="brand" href="index.html"><span class="brand-mark">LN</span><span>Lam-Nguyen Nguyen</span></a>
+
+  <header class="site-header no-print">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">Lam-Nguyen Nguyen</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
+        <a href="index.html">About</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
         <a href="cv.html" aria-current="page">CV</a>
@@ -23,125 +24,196 @@
   </header>
 
   <main id="content">
-    <section class="page-hero no-print">
-      <div class="container">
-        <p class="eyebrow">Curriculum vitae</p>
-        <h1>Academic CV</h1>
-        <p class="lead">This page is designed to print cleanly or be saved as a PDF directly from the browser.</p>
-        <div class="hero-actions">
-          <a class="button" href="assets/pdf/Lam-Nguyen-Nguyen-CV.pdf" download="Lam-Nguyen-Nguyen-CV.pdf">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download CV (PDF)
+    <div class="container">
+      <div class="cv-top-bar no-print">
+        <p class="lead">Curriculum Vitae · Updated October 2026</p>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="assets/pdf/Lam-Nguyen-Nguyen-CV.pdf" download="Lam-Nguyen-Nguyen-CV.pdf">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
           </a>
-          <button class="button secondary" type="button" data-print>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-            Print / Save as PDF
+          <button class="btn btn-secondary" type="button" data-print>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print
           </button>
         </div>
       </div>
-    </section>
 
-    <section class="section compact">
-      <div class="container cv-layout">
-        <aside class="cv-sidebar">
-          <div class="card">
-            <h2>Lam-Nguyen Nguyen</h2>
-            <p class="muted">Nguyễn Lâm Nguyên</p>
-            <p>Information Technology undergraduate<br>Cybersecurity track</p>
-            <p><strong>Location</strong><br>Vinh Long, Vietnam</p>
-            <p><strong>Email</strong><br><a href="mailto:lamnguyen.it04@gmail.com">lamnguyen.it04@gmail.com</a></p>
-            <p><strong>GitHub</strong><br><a href="https://github.com/lawnguyenit">github.com/lawnguyenit</a></p>
+      <article class="cv-paper">
+        <header class="cv-header">
+          <h1>Lam-Nguyen Nguyen</h1>
+          <div class="cv-header-subtitle">Nguyễn Lâm Nguyên</div>
+          <div class="cv-header-affiliation">Undergraduate Researcher · Vinh Long University of Technology Education (VLUTE), Vietnam</div>
+          <div class="cv-header-contact">
+            <span>Email: <a href="mailto:lamnguyen.it04@gmail.com">lamnguyen.it04@gmail.com</a></span>
+            <span>·</span>
+            <span>GitHub: <a href="https://github.com/lawnguyenit" target="_blank" rel="noreferrer">github.com/lawnguyenit</a></span>
+            <span>·</span>
+            <span>Location: Vinh Long, Vietnam</span>
           </div>
-        </aside>
+        </header>
 
-        <div>
-          <section class="cv-section">
-            <h2>Research interests</h2>
-            <p>Trustworthy machine learning; weak supervision; benchmark validity; IoT telemetry; temporal evaluation; distribution shift; reliable data systems.</p>
-          </section>
+        <hr class="cv-divider">
 
-          <section class="cv-section">
-            <h2>Education</h2>
-            <div class="cv-item">
-              <header><strong>Vinh Long University of Technology Education</strong><time>2022–2026</time></header>
-              <p>Bachelor candidate in Information Technology, Cybersecurity track.</p>
-              <p>Expected graduation: November 2026 · GPA: 3.21/4.00</p>
-              <p class="muted">Member of the first student cohort following the Cybersecurity track.</p>
+        <section>
+          <h2 class="cv-sec-title">Education</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Vinh Long University of Technology Education</strong>
+              <span class="cv-entry-date">2022 – 2026</span>
             </div>
-          </section>
+            <div class="cv-entry-sub">B.S. Candidate in Information Technology, Cybersecurity Track</div>
+            <div class="cv-entry-desc">
+              Expected Graduation: November 2026 · GPA: <strong>3.21 / 4.00</strong><br>
+              Member of the first student cohort following the university's Cybersecurity track.
+            </div>
+          </div>
+        </section>
 
-          <section class="cv-section">
-            <h2>Research experience</h2>
-            <div class="cv-item">
-              <header><strong>First-author research on temporal IoT target validity</strong><time>2026–present</time></header>
-              <p>Developing observation contracts and effective evidence formulations for temporal rule-derived agricultural IoT targets, with controls for label construction, temporal history, matched anchors, and deployment transport.</p>
-            </div>
-            <div class="cv-item">
-              <header><strong>Undergraduate researcher, agricultural IoT analytics</strong><time>2026</time></header>
-              <p>Contributed to data cleaning, dataset organization, weak-label construction, model benchmarking, temporal evaluation, and result analysis for a co-authored conference manuscript submitted to EAI AICON 2026.</p>
-            </div>
-            <div class="cv-item">
-              <header><strong>Undergraduate thesis researcher</strong><time>2025–2026</time></header>
-              <p>Designed and deployed an ESP32-S3 telemetry system and built a traceable processing pipeline from raw field data to weakly labeled machine-learning benchmarks. Thesis score: 8.9/10.</p>
-            </div>
-          </section>
+        <section>
+          <h2 class="cv-sec-title">Research Interests</h2>
+          <div class="cv-entry-desc">
+            Trustworthy Machine Learning, Weak Supervision, Benchmark Validity, IoT Telemetry, Temporal Evaluation Protocols, Distribution Shift, Reliable Data Systems.
+          </div>
+        </section>
 
-          <section class="cv-section">
-            <h2>Publications and manuscripts</h2>
-            <div class="cv-item">
-              <header><strong>Benchmarking Foundation Models and Gradient Boosting for Agricultural IoT Context Analytics: A Weakly Supervised Temporal Evaluation</strong><time>2026</time></header>
-              <p>Hoai-Hanh Tran, Thanh-Nghi Doan, <strong>Lam-Nguyen Nguyen</strong>.</p>
-              <p class="muted">Manuscript submitted to EAI AICON 2026.</p>
+        <section>
+          <h2 class="cv-sec-title">Publications & Manuscripts</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Benchmarking Foundation Models and Gradient Boosting for Agricultural IoT Context Analytics: A Weakly Supervised Temporal Evaluation</strong>
+              <span class="cv-entry-date">2026</span>
             </div>
-            <div class="cv-item">
-              <header><strong>Observation Contracts and Effective Evidence in Temporal Rule-Derived Agricultural IoT Targets</strong><time>2026</time></header>
-              <p><strong>Lam-Nguyen Nguyen</strong>, Hoai-Hanh Tran, Thanh-Nghi Doan.</p>
-              <p class="muted">Working manuscript (under internal review prior to submission).</p>
+            <div class="cv-entry-sub">Hoai-Hanh Tran, Thanh-Nghi Doan, <strong>Lam-Nguyen Nguyen</strong></div>
+            <div class="cv-entry-desc">
+              <em>Manuscript submitted to EAI AICON 2026</em>.
             </div>
-          </section>
+          </div>
 
-          <section class="cv-section">
-            <h2>Honors and awards</h2>
-            <div class="cv-item">
-              <header><strong>Consolation Prize, Algebra Division B</strong><time>2025</time></header>
-              <p>National Student Mathematics Olympiad.</p>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Observation Contracts and Effective Evidence in Temporal Rule-Derived Agricultural IoT Targets</strong>
+              <span class="cv-entry-date">2026</span>
             </div>
-            <div class="cv-item">
-              <header><strong>University representative, National Student Mathematics Olympiad</strong><time>4 editions</time></header>
-              <p>Participated in the Algebra Division B across four editions.</p>
+            <div class="cv-entry-sub"><strong>Lam-Nguyen Nguyen</strong>, Hoai-Hanh Tran, Thanh-Nghi Doan</div>
+            <div class="cv-entry-desc">
+              <em>First-author working manuscript (under internal review prior to submission)</em>.
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section class="cv-section">
-            <h2>Selected technical skills</h2>
-            <p><strong>Programming and data:</strong> Python, tabular machine learning, data cleaning, experiment pipelines, temporal evaluation.</p>
-            <p><strong>Models and methods:</strong> XGBoost, logistic regression, FT-Transformer, TabPFN, weak supervision, class-imbalanced evaluation.</p>
-            <p><strong>IoT and systems:</strong> ESP32-S3, SHT30, RS485/Modbus sensors, SIM A7682S, Firebase Realtime Database, telemetry metadata.</p>
-            <p><strong>Research tools:</strong> Git/GitHub, LaTeX, reproducible artifact organization, technical writing.</p>
-          </section>
+        <section>
+          <h2 class="cv-sec-title">Research Experience</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>First-Author Research on Temporal IoT Target Validity</strong>
+              <span class="cv-entry-date">2026 – Present</span>
+            </div>
+            <div class="cv-entry-desc">
+              Developing observation contracts and effective evidence formulations for temporal rule-derived agricultural IoT targets, with controls for label construction, temporal history, matched anchors, and deployment transport.
+            </div>
+          </div>
 
-          <section class="cv-section">
-            <h2>Selected academic writing</h2>
-            <p><strong>Undergraduate thesis:</strong> <em>Building an IoT-based System for Monitoring Environmental and Nutritional Conditions in Durian Orchards</em>, 2026.</p>
-            <p><strong>Mathematical note:</strong> <em>From Determinants to Rank: An Approach to Parameterized Matrix Problems in Undergraduate Algebra Olympiads</em>.</p>
-          </section>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Undergraduate Researcher, Agricultural IoT Analytics</strong>
+              <span class="cv-entry-date">2026</span>
+            </div>
+            <div class="cv-entry-desc">
+              Contributed to data cleaning, dataset organization, weak-label construction, model benchmarking, temporal evaluation, and result analysis for a co-authored conference manuscript submitted to EAI AICON 2026.
+            </div>
+          </div>
 
-          <section class="cv-section">
-            <h2>Languages</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Undergraduate Thesis Researcher</strong>
+              <span class="cv-entry-date">2025 – 2026</span>
+            </div>
+            <div class="cv-entry-sub">Advisor: Dr. Tran Hoai Hanh · Thesis Score: 8.9 / 10</div>
+            <div class="cv-entry-desc">
+              Designed and deployed an ESP32-S3 telemetry system and built a traceable processing pipeline from raw field data to weakly labeled machine-learning benchmarks.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="cv-sec-title">Honors & Awards</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Consolation Prize, Algebra Division B</strong>
+              <span class="cv-entry-date">2025</span>
+            </div>
+            <div class="cv-entry-desc">
+              National Student Mathematics Olympiad.
+            </div>
+          </div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>University Representative, National Student Mathematics Olympiad</strong>
+              <span class="cv-entry-date">4 Editions</span>
+            </div>
+            <div class="cv-entry-desc">
+              Selected to represent VLUTE in Algebra Division B across four editions.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="cv-sec-title">Technical Skills</h2>
+          <div class="cv-entry-desc">
+            <p><strong>Programming & Data:</strong> Python, C/C++, Tabular Machine Learning, Temporal Evaluation Protocols, Data Cleaning.</p>
+            <p><strong>Models & Methods:</strong> XGBoost, Logistic Regression, FT-Transformer, TabPFN, Weak Supervision, Imbalanced Data.</p>
+            <p><strong>IoT & Embedded Systems:</strong> ESP32-S3, RS485/Modbus Sensors, SHT30, SIM A7682S (4G LTE), Firebase Realtime Database.</p>
+            <p><strong>Research Tools:</strong> Git/GitHub, LaTeX, Linux, Technical Writing, Reproducible Experiment Pipelines.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="cv-sec-title">Academic Writing</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Undergraduate Thesis</strong>
+              <span class="cv-entry-date">2026</span>
+            </div>
+            <div class="cv-entry-desc">
+              <em>Building an IoT-based System for Monitoring Environmental and Nutritional Conditions in Durian Orchards</em>.
+            </div>
+          </div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-row">
+              <strong>Mathematical Exposition Note</strong>
+              <span class="cv-entry-date">2025</span>
+            </div>
+            <div class="cv-entry-desc">
+              <em>From Determinants to Rank: An Approach to Parameterized Matrix Problems in Undergraduate Algebra Olympiads</em>.
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="cv-sec-title">Languages</h2>
+          <div class="cv-entry-desc">
             <p><strong>Vietnamese:</strong> Native.</p>
-            <p><strong>English:</strong> Institutional B1 equivalent certificate (Vinh Long University of Technology Education).</p>
-          </section>
-        </div>
-      </div>
-    </section>
+            <p><strong>English:</strong> Institutional B1 Equivalent Certificate (Vinh Long University of Technology Education).</p>
+          </div>
+        </section>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer no-print">
-    <div class="container footer-grid">
+    <div class="container footer-content">
       <div>© <span data-year></span> Lam-Nguyen Nguyen</div>
-      <div class="footer-links"><a href="mailto:lamnguyen.it04@gmail.com">Email</a><a href="https://github.com/lawnguyenit">GitHub</a><a href="index.html">Home</a></div>
+      <div class="footer-links">
+        <a href="mailto:lamnguyen.it04@gmail.com">Email</a>
+        <a href="https://github.com/lawnguyenit" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="index.html">About</a>
+      </div>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
