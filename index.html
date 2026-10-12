@@ -46,7 +46,7 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
               GitHub
             </a>
-            <a href="cv.html">
+            <a href="assets/pdf/Lam-Nguyen-Nguyen-CV.pdf" target="_blank" rel="noreferrer">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
               CV (PDF)
             </a>
@@ -60,26 +60,15 @@
         <img class="profile-photo" src="assets/img/profile.png" alt="Portrait of Lam-Nguyen Nguyen">
       </section>
 
-      <!-- About Section -->
+      <!-- Short About Section -->
       <section>
         <h2 class="section-title">About</h2>
         <p>
           I am an Information Technology undergraduate student (Cybersecurity track) at <strong>Vinh Long University of Technology Education (VLUTE)</strong>, expecting to graduate in late 2026.
         </p>
         <p>
-          My research trajectory bridges physical IoT systems and trustworthy empirical machine learning:
+          My work investigates trustworthy machine learning for IoT and edge systems. Specifically, I study empirical benchmark validity, weak supervision, and the conditions under which model performance reflects genuine physical generalization rather than temporal leakage or the recovery of label-generating rules.
         </p>
-        <ul>
-          <li style="margin-left: 20px; margin-bottom: 6px;">
-            <strong>Edge Telemetry & Traceability:</strong> Designed and deployed an outdoor cellular telemetry system for durian orchards, producing traceable sensor snapshots with operational metadata (undergraduate thesis, advisor: Tran Hoai Hanh, M.Sc., score <strong>8.9 / 10</strong>, project: <a href="https://github.com/lawnguyenit/AgriFusion-IoT" target="_blank" rel="noreferrer">AgriFusion-IoT</a>).
-          </li>
-          <li style="margin-left: 20px; margin-bottom: 6px;">
-            <strong>Tabular ML & Weak Supervision:</strong> Co-authored an empirical benchmarking study on foundation models (TabPFN, FT-Transformer) versus gradient boosting on weak rule-derived agricultural IoT targets (submitted to <strong>EAI AICON 2026; under review</strong>).
-          </li>
-          <li style="margin-left: 20px; margin-bottom: 6px;">
-            <strong>Benchmark Validity:</strong> Currently leading a first-author study on observation contracts and effective evidence formulations to evaluate target leakage, temporal history, and distribution shift in IoT telemetry.
-          </li>
-        </ul>
 
         <div class="facts-row">
           <div class="fact-box">
@@ -96,39 +85,65 @@
           </div>
           <div class="fact-box">
             <strong>Algebra B</strong>
-            <span>National Prize 2025</span>
+            <span>Honorable Mention 2025</span>
           </div>
         </div>
       </section>
 
-      <!-- News Section -->
+      <!-- Selected Research Trajectory -->
       <section>
-        <h2 class="section-title">News & Milestones</h2>
-        <table class="news-table">
-          <tbody>
-            <tr>
-              <td class="news-date">2026</td>
-              <td>First-author manuscript on observation contracts in temporal IoT targets is in preparation.</td>
-            </tr>
-            <tr>
-              <td class="news-date">2026</td>
-              <td>Co-authored paper on tabular models for agricultural IoT context analytics submitted to <strong>EAI AICON 2026; under review</strong>.</td>
-            </tr>
-            <tr>
-              <td class="news-date">2026</td>
-              <td>Defended undergraduate thesis on IoT environmental & nutritional monitoring with a score of <strong>8.9 / 10</strong>.</td>
-            </tr>
-            <tr>
-              <td class="news-date">2025</td>
-              <td>Awarded <strong>Honorable Mention (Algebra Division B)</strong> at the National Student Mathematics Olympiad.</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2 class="section-title">Selected Research</h2>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            1. IoT Telemetry &amp; Traceability Pipeline (AgriFusion-IoT)
+          </div>
+          <div class="pub-authors">
+            Undergraduate Thesis · Advisor: Tran Hoai Hanh · Score: <strong>8.9 / 10</strong>
+          </div>
+          <div class="pub-venue">
+            Designed and deployed an outdoor cellular telemetry system using ESP32-S3, RS485/Modbus sensors, and SIM A7682S (4G LTE), producing traceable sensor snapshots with operational metadata for machine-learning benchmarks.
+          </div>
+          <div class="pub-links">
+            <a class="pub-badge" href="https://github.com/lawnguyenit/AgriFusion-IoT" target="_blank" rel="noreferrer">Project: AgriFusion-IoT →</a>
+            <a class="pub-badge" href="research.html#thesis">System Details →</a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            2. Tabular ML &amp; Weak Supervision in Agricultural IoT Analytics
+          </div>
+          <div class="pub-authors">
+            Co-authored study · Submitted to EAI AICON 2026
+          </div>
+          <div class="pub-venue">
+            Benchmarked tabular foundation models (TabPFN, FT-Transformer) against gradient boosting (XGBoost) on percentile-derived weak operational targets, analyzing model rank stability across temporal vs. random split protocols.
+          </div>
+          <div class="pub-links">
+            <a class="pub-badge" href="research.html#aicon">Study Details →</a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            3. Observation Contracts &amp; Benchmark Validity
+          </div>
+          <div class="pub-authors">
+            First-author study · Manuscript in preparation, 2026
+          </div>
+          <div class="pub-venue">
+            Developing an empirical evaluation framework with observation contracts and matched anchors to test whether models recover label-generating rules or observable proxies rather than independent physical evidence.
+          </div>
+          <div class="pub-links">
+            <a class="pub-badge" href="research.html#validity">Framework Overview →</a>
+          </div>
+        </div>
       </section>
 
-      <!-- Publications Section -->
+      <!-- Selected Publications -->
       <section>
-        <h2 class="section-title">Selected Publications & Manuscripts</h2>
+        <h2 class="section-title">Selected Publications &amp; Manuscripts</h2>
         <div class="pub-item">
           <div class="pub-title">
             Benchmarking Foundation Models and Gradient Boosting for Agricultural IoT Context Analytics: A Weakly Supervised Temporal Evaluation
@@ -137,7 +152,7 @@
             Hoai-Hanh Tran, Thanh-Nghi Doan, <strong>Lam-Nguyen Nguyen</strong>
           </div>
           <div class="pub-venue">
-            Manuscript submitted to EAI AICON 2026; under review
+            Manuscript submitted to EAI AICON 2026
           </div>
           <div class="pub-links">
             <span class="pub-badge highlight">Submitted</span>
@@ -162,16 +177,20 @@
         </div>
       </section>
 
-      <!-- Research Interests -->
+      <!-- Honors & Awards -->
       <section>
-        <h2 class="section-title">Research Interests</h2>
-        <div class="tags-wrap">
-          <span class="tag">Trustworthy Machine Learning for IoT/Edge Systems</span>
-          <span class="tag">Weak Supervision</span>
-          <span class="tag">Temporal ML Evaluation</span>
-          <span class="tag">AI Security</span>
-          <span class="tag">Edge Telemetry Traceability</span>
-          <span class="tag">Distribution Shift</span>
+        <h2 class="section-title">Honors &amp; Awards</h2>
+        <div class="cv-entry">
+          <div class="cv-entry-row">
+            <div><strong>Honorable Mention, Algebra Division B</strong> — National Student Mathematics Olympiad</div>
+            <span class="cv-entry-date">2025</span>
+          </div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-row">
+            <div><strong>University Representative</strong>, National Student Mathematics Olympiad</div>
+            <span class="cv-entry-date">4 Editions (2022–2025)</span>
+          </div>
         </div>
       </section>
 

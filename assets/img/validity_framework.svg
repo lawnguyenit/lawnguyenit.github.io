@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 145" width="100%" height="100%" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="arrow-v" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0969da"/>
+    </marker>
+    <filter id="subtle-shadow-v" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Step 1: Target Construction -->
+  <g transform="translate(10, 15)" filter="url(#subtle-shadow-v)">
+    <rect width="135" height="110" rx="8" fill="#ffffff" stroke="#d0d7de" stroke-width="1.2"/>
+    <rect width="135" height="24" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+    <rect y="16" width="135" height="8" fill="#f6f8fa"/>
+    <text x="67.5" y="16" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0f172a">1. Target Construction</text>
+    <text x="67.5" y="46" text-anchor="middle" font-size="9" font-weight="600" fill="#24292f">Weak Operational Rules</text>
+    <text x="67.5" y="62" text-anchor="middle" font-size="8.5" fill="#57606a">• Domain thresholds</text>
+    <text x="67.5" y="77" text-anchor="middle" font-size="8.5" fill="#57606a">• Percentile baselines</text>
+    <text x="67.5" y="92" text-anchor="middle" font-size="8.5" fill="#57606a">• Temporal windowing</text>
+    <text x="67.5" y="107" text-anchor="middle" font-size="8.5" fill="#57606a">• Rule provenance logs</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <path d="M 145 70 L 165 70" stroke="#0969da" stroke-width="1.5" fill="none" marker-end="url(#arrow-v)"/>
+
+  <!-- Step 2: Observation Contract -->
+  <g transform="translate(165, 15)" filter="url(#subtle-shadow-v)">
+    <rect width="135" height="110" rx="8" fill="#ffffff" stroke="#0969da" stroke-width="1.4"/>
+    <rect width="135" height="24" rx="8" fill="#ddf4ff" stroke="#0969da" stroke-width="1.4"/>
+    <rect y="16" width="135" height="8" fill="#ddf4ff"/>
+    <text x="67.5" y="16" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0550ae">2. Observation Contract</text>
+    <text x="67.5" y="46" text-anchor="middle" font-size="9" font-weight="600" fill="#24292f">Information Entitlement</text>
+    <text x="67.5" y="62" text-anchor="middle" font-size="8.5" fill="#57606a">• Explicit time bounds</text>
+    <text x="67.5" y="77" text-anchor="middle" font-size="8.5" fill="#57606a">• Purge lookahead gaps</text>
+    <text x="67.5" y="92" text-anchor="middle" font-size="8.5" fill="#57606a">• Eligible telemetry states</text>
+    <text x="67.5" y="107" text-anchor="middle" font-size="8.5" fill="#57606a">• Leakage prevention</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 300 70 L 320 70" stroke="#0969da" stroke-width="1.5" fill="none" marker-end="url(#arrow-v)"/>
+
+  <!-- Step 3: Information Regimes -->
+  <g transform="translate(320, 15)" filter="url(#subtle-shadow-v)">
+    <rect width="130" height="110" rx="8" fill="#ffffff" stroke="#d0d7de" stroke-width="1.2"/>
+    <rect width="130" height="24" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+    <rect y="16" width="130" height="8" fill="#f6f8fa"/>
+    <text x="65" y="16" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0f172a">3. Information Regimes</text>
+    <text x="65" y="46" text-anchor="middle" font-size="9" font-weight="600" fill="#24292f">Controlled Feature Views</text>
+    <text x="65" y="62" text-anchor="middle" font-size="8.5" fill="#57606a">• View 0: Point snapshot</text>
+    <text x="65" y="77" text-anchor="middle" font-size="8.5" fill="#57606a">• View 1: 3-hour history</text>
+    <text x="65" y="92" text-anchor="middle" font-size="8.5" fill="#57606a">• View 2: 8-hour history</text>
+    <text x="65" y="107" text-anchor="middle" font-size="8.5" fill="#57606a">• View 3: Full temporal context</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 450 70 L 470 70" stroke="#0969da" stroke-width="1.5" fill="none" marker-end="url(#arrow-v)"/>
+
+  <!-- Step 4: Controlled Experiments -->
+  <g transform="translate(470, 15)" filter="url(#subtle-shadow-v)">
+    <rect width="135" height="110" rx="8" fill="#ffffff" stroke="#d0d7de" stroke-width="1.2"/>
+    <rect width="135" height="24" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.2"/>
+    <rect y="16" width="135" height="8" fill="#f6f8fa"/>
+    <text x="67.5" y="16" text-anchor="middle" font-size="10.5" font-weight="600" fill="#0f172a">4. Controlled Protocol</text>
+    <text x="67.5" y="46" text-anchor="middle" font-size="9" font-weight="600" fill="#24292f">Anchor &amp; Transport Tests</text>
+    <text x="67.5" y="62" text-anchor="middle" font-size="8.5" fill="#57606a">• Matched anchors (same-Y)</text>
+    <text x="67.5" y="77" text-anchor="middle" font-size="8.5" fill="#57606a">• Temporal forward splits</text>
+    <text x="67.5" y="92" text-anchor="middle" font-size="8.5" fill="#57606a">• Deployment transport test</text>
+    <text x="67.5" y="107" text-anchor="middle" font-size="8.5" fill="#57606a">• Frozen models &amp; bounds</text>
+  </g>
+
+  <!-- Arrow 4 -->
+  <path d="M 605 70 L 625 70" stroke="#0969da" stroke-width="1.5" fill="none" marker-end="url(#arrow-v)"/>
+
+  <!-- Step 5: Evidence Boundary -->
+  <g transform="translate(625, 15)" filter="url(#subtle-shadow-v)">
+    <rect width="125" height="110" rx="8" fill="#ffffff" stroke="#0969da" stroke-width="1.2"/>
+    <rect width="125" height="24" rx="8" fill="#ddf4ff" stroke="#0969da" stroke-width="1.2"/>
+    <rect y="16" width="125" height="8" fill="#ddf4ff"/>
+    <text x="62.5" y="16" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0550ae">5. Evidence Boundary</text>
+    <text x="62.5" y="46" text-anchor="middle" font-size="9" font-weight="600" fill="#24292f">Validity Audit</text>
+    <text x="62.5" y="62" text-anchor="middle" font-size="8.5" fill="#57606a">• Rule memorization vs.</text>
+    <text x="62.5" y="76" text-anchor="middle" font-size="8.5" fill="#57606a">  physical state recovery</text>
+    <text x="62.5" y="92" text-anchor="middle" font-size="8.5" fill="#57606a">• Performance under shift</text>
+    <text x="62.5" y="107" text-anchor="middle" font-size="8.5" font-weight="600" fill="#0969da">Benchmark Validity</text>
+  </g>
+</svg>

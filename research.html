@@ -33,15 +33,15 @@
       <section>
         <p>
           My work addresses an essential problem in applying machine learning to real-world edge systems: 
-          <em>How do we know whether a model's high benchmark score reflects genuine physical knowledge or merely the artifact of rule construction, temporal leakage, and deployment shift?</em>
+          <em>When does a high benchmark score support inference about an underlying physical state, and when does it primarily reflect label construction, temporal information, or deployment conditions?</em>
         </p>
       </section>
 
       <!-- Stage 01 -->
       <section id="thesis">
-        <h2 class="section-title">Stage 01: Edge IoT Telemetry & Traceability Pipeline</h2>
+        <h2 class="section-title">Stage 01: IoT Telemetry & Traceability Pipeline</h2>
         <div style="margin-bottom: 6px;">
-          <strong>Undergraduate Thesis (AgriFusion-IoT)</strong> · <span class="muted">2025 – 2026</span> · <span class="pub-badge">Advisor: Tran Hoai Hanh, M.Sc.</span> · <span class="pub-badge">Defense Score: 8.9 / 10</span> · <a class="pub-badge" href="https://github.com/lawnguyenit/AgriFusion-IoT" target="_blank" rel="noreferrer">GitHub Repo →</a>
+          <strong>Undergraduate Thesis (AgriFusion-IoT)</strong> · <span class="muted">2025 – 2026</span> · <span class="pub-badge">Advisor: Tran Hoai Hanh</span> · <span class="pub-badge">Defense Score: 8.9 / 10</span> · <a class="pub-badge" href="https://github.com/lawnguyenit/AgriFusion-IoT" target="_blank" rel="noreferrer">GitHub Repo →</a>
         </div>
         <p>
           Developed an end-to-end telemetry system deployed in a durian orchard using ESP32-S3, SHT30, an ES-SOIL-7-IN-1 Modbus/RS485 sensor, SIM A7682S 4G LTE cellular connectivity, and Firebase Realtime Database.
@@ -49,6 +49,12 @@
         <p>
           Rather than treating IoT simply as an LCD sensor readout, each record was structured as traceable telemetry—recording measurements, transmission status, retry metadata, and temporal provenance. A downstream data pipeline transformed raw records into structured benchmark views with temporal features.
         </p>
+        
+        <figure class="research-figure">
+          <img src="assets/img/agrifusion_arch.svg" alt="AgriFusion-IoT Architecture">
+          <figcaption class="figure-caption"><strong>Figure 1:</strong> End-to-end telemetry acquisition and data traceability pipeline of AgriFusion-IoT.</figcaption>
+        </figure>
+
         <div class="tags-wrap">
           <span class="tag">ESP32-S3</span>
           <span class="tag">RS485 / Modbus</span>
@@ -62,7 +68,7 @@
       <section id="aicon">
         <h2 class="section-title">Stage 02: Benchmarking Tabular Models on Weakly Supervised IoT Data</h2>
         <div style="margin-bottom: 6px;">
-          <strong>Co-Authored Manuscript</strong> · <span class="muted">Submitted to EAI AICON 2026; under review</span>
+          <strong>Co-Authored Manuscript</strong> · <span class="muted">Submitted to EAI AICON 2026</span>
         </div>
         <p>
           Benchmarked XGBoost, FT-Transformer, TabM, and TabPFN on agricultural telemetry targets constructed via weak rule-based supervision. Evaluated the contrast between random-split and temporal-split protocols, revealing how model rankings change under future-oriented evaluation.
@@ -99,12 +105,18 @@
             <strong>Temporal validity:</strong> Separating instantaneous measurements from 3h and 8h history while guarding against temporal leakage.
           </li>
           <li style="margin-left: 20px; margin-bottom: 6px;">
-            <strong>Rule recoverability:</strong> Testing whether neural or gradient-boosted models merely memorize the mathematical rules used to create the labels.
+            <strong>Rule recoverability:</strong> Testing the extent to which models recover label-generating rules or their observable proxies rather than independent physical evidence.
           </li>
           <li style="margin-left: 20px; margin-bottom: 6px;">
             <strong>Deployment transport:</strong> Freezing thresholds, preprocessing, and model weights prior to evaluation on an unseen field position.
           </li>
         </ul>
+
+        <figure class="research-figure">
+          <img src="assets/img/validity_framework.svg" alt="Observation Contracts & Validity Framework">
+          <figcaption class="figure-caption"><strong>Figure 2:</strong> Observation contracts and information regime audit for weakly supervised temporal targets.</figcaption>
+        </figure>
+
         <div class="tags-wrap">
           <span class="tag">Benchmark Validity</span>
           <span class="tag">Observation Contracts</span>

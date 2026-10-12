@@ -442,6 +442,38 @@ a.pub-badge:hover {
   border-radius: 12px;
 }
 
+/* Research Figures */
+.research-figure {
+  margin: 20px 0 24px;
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 18px 14px 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.research-figure img,
+.research-figure svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.figure-caption {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.figure-caption strong {
+  font-style: normal;
+  color: var(--heading);
+}
+
 /* ==========================================================================
    CV SPECIFIC STYLES (Academic LaTeX / Paper Inspired)
    ========================================================================== */
