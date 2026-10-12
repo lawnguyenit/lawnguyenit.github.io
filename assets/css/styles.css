@@ -668,13 +668,13 @@ a.pub-badge:hover {
 }
 
 /* ==========================================================================
-   PRINT STYLESHEET (Perfect LaTeX-grade A4 CV)
+   PRINT STYLESHEET (Strict 1-Page LaTeX-grade A4 CV)
    ========================================================================== */
 
 @media print {
   @page {
-    margin: 1.2cm 1.4cm;
-    size: A4;
+    margin: 0.8cm 1.2cm;
+    size: A4 portrait;
   }
 
   *, *::before, *::after {
@@ -685,8 +685,8 @@ a.pub-badge:hover {
   }
 
   body {
-    font-size: 9.5pt;
-    line-height: 1.45;
+    font-size: 8.8pt;
+    line-height: 1.32;
     background: #fff !important;
   }
 
@@ -707,70 +707,90 @@ a.pub-badge:hover {
     margin: 0 !important;
   }
 
+  .cv-paper {
+    padding: 0 !important;
+  }
+
   .cv-header {
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 6pt;
   }
 
   .cv-header h1 {
-    font-size: 18pt;
+    font-size: 15pt;
     font-weight: 700;
-    margin-bottom: 2pt;
+    margin-bottom: 1.5pt;
+    line-height: 1.15;
   }
 
   .cv-header-subtitle {
-    font-size: 10pt;
-    margin-bottom: 2pt;
+    font-size: 9pt;
+    margin-bottom: 1.5pt;
   }
 
   .cv-header-affiliation {
-    font-size: 9.5pt;
+    font-size: 8.5pt;
     color: #333 !important;
-    margin-bottom: 4pt;
+    margin-bottom: 2.5pt;
   }
 
   .cv-header-contact {
-    font-size: 8.5pt;
-    gap: 10pt;
+    font-size: 8pt;
+    gap: 8pt;
   }
 
   .cv-divider {
-    border-top: 1.2pt solid #000;
-    margin: 8pt 0 14pt;
+    border-top: 1pt solid #000;
+    margin: 4pt 0 8pt;
   }
 
   .cv-sec-title {
-    font-size: 10pt;
+    font-size: 8.8pt;
     font-weight: 700;
-    border-bottom: 0.8pt solid #000;
-    padding-bottom: 2pt;
-    margin-top: 14pt;
-    margin-bottom: 7pt;
+    border-bottom: 0.6pt solid #000;
+    padding-bottom: 1pt;
+    margin-top: 7pt;
+    margin-bottom: 4pt;
     page-break-after: avoid;
     break-after: avoid;
   }
 
   .cv-entry {
-    margin-bottom: 9pt;
+    margin-bottom: 4.5pt;
     page-break-inside: avoid;
     break-inside: avoid;
   }
 
   .cv-entry-row strong {
-    font-size: 9.5pt;
+    font-size: 8.8pt;
   }
 
   .cv-entry-date {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
   }
 
   .cv-entry-sub {
-    font-size: 9pt;
+    font-size: 8.2pt;
+    margin-bottom: 1pt;
   }
 
   .cv-entry-desc {
-    font-size: 9pt;
-    line-height: 1.4;
+    font-size: 8.2pt;
+    line-height: 1.3;
+    margin-top: 1.5pt;
+  }
+
+  .cv-entry-desc ul {
+    margin-top: 1.5pt;
+    padding-left: 12pt;
+  }
+
+  .cv-entry-desc li {
+    margin-bottom: 1pt;
+  }
+
+  p {
+    margin-bottom: 2pt;
   }
 
   a {
