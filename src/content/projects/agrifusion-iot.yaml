@@ -23,9 +23,9 @@ highlights_en:
 - '**Data:** uploaded the data to the cloud (Firebase), pulled it back, then cleaned and standardized it into an analysis dataset.'
 - '**Models:** trained and compared machine-learning models (XGBoost, TabPFN, deep-learning models) over time; validated the results and wrote 2 papers (see Publications).'
 highlights_vi:
-- '**Thiết bị:** thiết kế và triển khai thiết bị đo ngoài vườn (ESP32-S3, cảm biến RS485/Modbus), gửi dữ liệu qua 4G.'
-- '**Dữ liệu:** đưa dữ liệu lên cloud (Firebase), kéo về, làm sạch và chuẩn hóa thành bộ dữ liệu phân tích.'
-- '**Mô hình:** huấn luyện và so sánh các mô hình học máy (XGBoost, TabPFN, mô hình học sâu) theo thời gian; kiểm định kết quả và viết 2 bài báo (mục Công bố).'
+- '**Thiết bị:** thiết kế và triển khai thiết bị đo ngoài vườn (ESP32-S3, RS485/Modbus), truyền dữ liệu qua 4G lên Firebase.'
+- '**Dữ liệu:** xây dựng pipeline lấy dữ liệu từ Firebase, làm sạch, chuẩn hóa và gán nhãn.'
+- '**Mô hình:** huấn luyện và so sánh các mô hình học máy (XGBoost, TabPFN, mô hình học sâu) theo trục thời gian; kiểm định độ tin cậy của kết quả đánh giá.'
 tech:
 - ESP32-S3
 - RS485/Modbus

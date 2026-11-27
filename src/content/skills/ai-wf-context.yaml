@@ -3,7 +3,7 @@ id: ai-wf-context
 visible:
 - job
 order: 2
-name_vi: '**Cách làm:** viết yêu cầu và kế hoạch trước, giao agent AI viết mã, dùng một agent khác kiểm thử, tự duyệt kết quả trước khi dùng.'
+name_vi: '**Cách làm:** viết yêu cầu và kế hoạch, giao agent AI viết mã, agent khác kiểm thử, tự duyệt kết quả.'
 group_job: job-ai-workflow
 order_job: 2
 status: confirmed

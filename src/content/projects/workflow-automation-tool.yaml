@@ -22,7 +22,7 @@ highlights_en:
 - '**Failure safeguards:** never processes the same document twice, caps the number of AI calls per day to avoid unexpected cost, and has a test mode that sends nothing outside.'
 highlights_vi:
 - '**Quy trình:** nhận email có hóa đơn PDF → đọc và trích xuất thông tin → kiểm tra → lưu cơ sở dữ liệu → tạo thông báo; chạy trên n8n.'
-- '**Chống sự cố:** không xử lý trùng một tài liệu, giới hạn số lần gọi AI mỗi ngày để tránh phát sinh chi phí, chế độ chạy thử không gửi gì ra ngoài.'
+- '**Độ tin cậy:** chống xử lý trùng lặp, giới hạn lượt gọi AI theo ngày để kiểm soát chi phí, chế độ chạy thử không tác động ra hệ thống bên ngoài.'
 tech:
 - Python
 - n8n

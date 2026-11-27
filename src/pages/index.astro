@@ -91,7 +91,7 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
     <Section title="Công bố khoa học">
       {pubs.map((p, i) => (
         <Entry id={`pub-${p.id}`} title={`${i + 1}. ${p.title}`} when={String(p.year)} lang="en">
-          <p class="pub"><Authors authors={p.authors} /> · <em>{f(p, 'venue', lang)}</em>{p.authors.some((a) => a.is_corresponding) && <span class="x"> (* tác giả liên hệ)</span>}</p>
+          <p class="pub"><Authors authors={p.authors.map((a) => ({ ...a, is_corresponding: false }))} /> · <em>{f(p, 'venue', lang)}</em></p>
         </Entry>
       ))}
     </Section>
