@@ -10,21 +10,19 @@ status: ongoing
 title: Workflow_Automation_Tool
 status_note_en: release 0.14.0
 status_note_vi: phiên bản 0.14.0
-tags:
-- label_en: Built with Claude/Codex
-  label_vi: Phát triển cùng Claude/Codex
-tagline_en: 'Practice project (portfolio, not client work): reusable n8n workflow automation modules'
-tagline_vi: 'Dự án thực hành (portfolio, không phải việc cho khách): module tự động hóa quy trình n8n dùng lại được'
+tags: []
+tagline_en: 'Practice project: reusable n8n workflow automation modules (built with Claude Code/Codex)'
+tagline_vi: 'Dự án thực hành: module tự động hóa quy trình n8n dùng lại được (phát triển cùng Claude Code/Codex)'
 summary_en: 'A repository of reusable workflow module contracts, with concrete implementations added per job; n8n is the main target. Includes an API (Python, uvicorn, PostgreSQL via Docker Compose), four run modes (DRY_RUN, REPLAY, MOCK, REAL) and two reference systems: an intelligent document intake pipeline and a lead-management flow. Portfolio work, not a client deployment.'
 summary_vi: 'Thư viện hợp đồng module workflow dùng lại được, thêm triển khai cụ thể khi có việc; n8n là mục tiêu chính. Có API (Python, uvicorn, PostgreSQL qua Docker Compose), bốn chế độ chạy (DRY_RUN, REPLAY, MOCK, REAL) và hai hệ thống tham chiếu: nhận tài liệu thông minh và quản lý lead. Là dự án portfolio, không phải triển khai cho khách.'
 contribution_en: Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results.
 contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
 highlights_en:
 - 'Four run modes: DRY_RUN and REPLAY write nothing, MOCK writes to PostgreSQL without contacting any provider, REAL only when configured and authorized.'
-- 'Idempotent PostgreSQL storage, outbox and incident log; document-intake flow runs end to end in DRY_RUN on synthetic data; 198 tests. No live Gmail, OpenAI, Slack or CRM call; no client deployment.'
+- 'Idempotent PostgreSQL storage; the document-intake flow runs end to end in DRY_RUN on synthetic data; 198 tests. No live provider calls (Gmail, OpenAI, Slack, CRM); not client work.'
 highlights_vi:
 - 'Bốn chế độ chạy: DRY_RUN và REPLAY không ghi gì, MOCK ghi PostgreSQL nhưng không gọi nhà cung cấp, REAL chỉ khi được cấu hình và cho phép.'
-- 'Lưu trữ idempotent trên PostgreSQL, outbox, nhật ký sự cố; luồng nhận tài liệu chạy trọn ở DRY_RUN trên dữ liệu giả lập; 198 test. Chưa gọi thật Gmail, OpenAI, Slack, CRM; chưa triển khai cho khách.'
+- 'Lưu trữ idempotent trên PostgreSQL; luồng nhận tài liệu chạy trọn ở DRY_RUN trên dữ liệu giả lập; 198 test. Chưa gọi nhà cung cấp thật (Gmail, OpenAI, Slack, CRM); không phải việc cho khách.'
 tech:
 - Python
 - n8n

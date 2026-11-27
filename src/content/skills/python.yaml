@@ -3,12 +3,10 @@ visible:
 - academic
 - job
 order: 1
-name_en: Python
-name_vi: Python
+name_en: 'Python (pandas, scikit-learn, XGBoost)'
+name_vi: 'Python (pandas, scikit-learn, XGBoost)'
 group_academic: acad-programming
 order_academic: 1
 group_job: job-programming
 order_job: 1
 status: confirmed
-note_en: primary
-note_vi: chính

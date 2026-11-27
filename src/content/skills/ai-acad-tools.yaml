@@ -1,0 +1,9 @@
+# Nguồn: như bản tiếng Việt (job-ai-workflow); không thêm số đo mới.
+id: ai-acad-tools
+visible:
+- academic
+order: 11
+name_en: 'Tools: Claude Code and Codex, used for investigation, planning and implementation.'
+group_academic: acad-ai-workflow
+order_academic: 1
+status: confirmed

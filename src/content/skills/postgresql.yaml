@@ -1,12 +1,6 @@
 id: postgresql
-visible:
-- academic
-- job
+visible: []
 order: 6
 name_en: 'PostgreSQL (via projects)'
 name_vi: 'PostgreSQL (qua dự án)'
-group_academic: acad-databases
-order_academic: 2
-group_job: job-database
-order_job: 2
 status: confirmed

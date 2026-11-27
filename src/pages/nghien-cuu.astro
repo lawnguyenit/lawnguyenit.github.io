@@ -58,7 +58,7 @@ const interests = profile.research_interests_en;
       const summary = viOrEn(p, 'summary');
       return (
         <Entry id={`pub-${p.id}`} title={p.title} when={String(p.year)} lang="en">
-          <p class="pub"><Authors authors={p.authors} /></p>
+          <p class="pub"><Authors authors={p.authors} />{p.authors.some((a) => a.is_corresponding) && <span class="x"> (* tác giả liên hệ)</span>}</p>
           {venue.text && <p class="pub" lang={venue.lang}><em>{venue.text}</em></p>}
           {summary.text && <p lang={summary.lang}>{summary.text}</p>}
           {p.links.map((l) => <p class="pub"><a href={l.url}>{f(l, 'label', 'vi', true)}</a></p>)}

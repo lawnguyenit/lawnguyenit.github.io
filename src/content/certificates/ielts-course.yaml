@@ -1,7 +1,6 @@
 # Mục tiêu, không phải chứng chỉ đã có. Không hiện điểm như thể đã đạt.
 id: ielts-course
-visible:
-- job
+visible: []
 order: 2
 type: language
 status: in_progress

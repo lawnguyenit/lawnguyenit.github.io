@@ -1,6 +1,6 @@
 id: job-network
 visible:
 - job
-order: 6
-title_en: 'Networking & systems (foundation)'
-title_vi: 'Mạng & hệ thống (nền tảng)'
+order: 5
+title_en: 'Networking & systems'
+title_vi: 'Mạng & hệ thống'

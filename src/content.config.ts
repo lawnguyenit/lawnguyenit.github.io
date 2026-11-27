@@ -192,6 +192,7 @@ const education = defineCollection({
       gpa_scale: z.number().positive().nullable().optional(),
       note_en: OptStr,
       note_vi: OptStr,
+      internal_note: OptStr, // ghi chú nội bộ (ví dụ lý do ẩn mục), KHÔNG bao giờ render
     }),
     ['institution', 'degree_title', 'program'],
   ),
@@ -208,7 +209,7 @@ const publications = defineCollection({
       status: z.enum(['in_preparation', 'submitted', 'accepted', 'published']),
       year: z.number().int(),
       title: Str, // tiêu đề gốc, không dịch
-      authors: z.array(z.object({ name: Str, is_owner: z.boolean().default(false) })).min(1),
+      authors: z.array(z.object({ name: Str, is_owner: z.boolean().default(false), is_corresponding: z.boolean().default(false) })).min(1),
       venue_en: OptStr,
       venue_vi: OptStr,
       summary_en: OptStr,

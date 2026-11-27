@@ -1,7 +1,6 @@
 # Dự án do chủ site chỉ đạo toàn bộ bằng agent AI. Đọc Showcase-Claims trước khi sửa: không viết 'tự code'.
 id: examhub
-visible:
-- job
+visible: []
 order: 4
 featured: false
 kind: system
@@ -10,9 +9,7 @@ status: ongoing
 title: ExamHub
 status_note_en: preparing for production
 status_note_vi: đang chuẩn bị đưa lên production
-tags:
-- label_en: Built with Claude/Codex
-  label_vi: Phát triển cùng Claude/Codex
+tags: []
 tagline_en: 'Online exam web app with three roles (student, teacher, admin); Go, React, PostgreSQL'
 tagline_vi: 'Web thi trực tuyến ba vai trò (sinh viên, giáo viên, admin); Go, React, PostgreSQL'
 summary_en: 'Online exam web application with three roles: students take exams and review results; teachers manage classes, question banks, question import, exam creation and results; admins. Backend in Go, frontend in React, PostgreSQL database, optional Python worker. Not yet in production.'
@@ -35,4 +32,4 @@ end: null
 advisor: null
 links: []
 figures: []
-internal_note: 'Repo lawnguyenit/v-exam-hub là PRIVATE: không đặt link. KHÔNG nói đã ở production hoặc có người dùng thật (chưa biết). Nguồn: Brain/Projects/v-exam-hub.md (audit 2026-11-21) và Plans/v-exam-hub/v-exam-hub.md. Đường nhập docx/pdf/tex qua Gemini mới đổi 2026-11-04 và chưa commit: không nêu. Giai đoạn 1 của kế hoạch là chặn lộ mật khẩu: không nêu cụ thể trên web. Ngày bắt đầu chưa biết (commit cuối 2026-10-10). Plan trạng thái ''chờ duyệt''. Trạng thái hiển thị theo lời chủ site 2026-11-27: đang chuẩn bị đưa lên production.'
+internal_note: 'Ẩn khỏi mọi hồ sơ theo quyết định chủ site 2026-11-27 (CV chỉ nêu 2 dự án nổi bật); bật lại khi chủ site quyết định. Repo lawnguyenit/v-exam-hub là PRIVATE: không đặt link. KHÔNG nói đã ở production hoặc có người dùng thật (chưa biết). Nguồn: Brain/Projects/v-exam-hub.md (audit 2026-11-21) và Plans/v-exam-hub/v-exam-hub.md. Đường nhập docx/pdf/tex qua Gemini mới đổi 2026-11-04 và chưa commit: không nêu. Giai đoạn 1 của kế hoạch là chặn lộ mật khẩu: không nêu cụ thể trên web. Ngày bắt đầu chưa biết (commit cuối 2026-10-10). Plan trạng thái ''chờ duyệt''. Trạng thái hiển thị theo lời chủ site 2026-11-27: đang chuẩn bị đưa lên production.'

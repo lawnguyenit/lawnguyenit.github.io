@@ -66,8 +66,8 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
 
   {aiGroup && (
     <Section title={f(aiGroup, 'title', lang)}>
+      {aiLink && <span slot="aside" class="aside">Chi tiết: <a href={aiLink.href}>{aiLink.host + aiLink.pathname}</a></span>}
       <ul>{aiGroup.skills.map((s) => <li>{f(s, 'name', lang)}</li>)}</ul>
-      {aiLink && <p class="meta">Chi tiết: <a href={aiLink.href}>{aiLink.host + aiLink.pathname}</a></p>}
     </Section>
   )}
 
@@ -78,8 +78,7 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
         const when = range(p.start ?? '', p.end, lang) || f(p, 'status_note', lang);
         const sub = f(p, 'tagline', lang);
         return (
-          <Entry title={p.title} when={when} sub={sub}>
-            {link && <span class="x" slot="extra"> <a href={link.url}>{link.url.replace(/^https?:\/\//, '')}</a></span>}
+          <Entry title={p.title} when={when} sub={sub} href={link?.url}>
             <Tags tags={tagsOf(p, lang)} />
             {p.highlights_vi.length > 0 && <ul>{p.highlights_vi.map((h) => <li>{h}</li>)}</ul>}
           </Entry>
@@ -92,8 +91,7 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
     <Section title="Công bố khoa học">
       {pubs.map((p) => (
         <Entry id={`pub-${p.id}`} title={p.title} when={String(p.year)} lang="en">
-          <p class="pub"><Authors authors={p.authors} /></p>
-          <p class="pub"><em>{f(p, 'venue', lang)}</em></p>
+          <p class="pub"><Authors authors={p.authors} /> · <em>{f(p, 'venue', lang)}</em>{p.authors.some((a) => a.is_corresponding) && <span class="x"> (* tác giả liên hệ)</span>}</p>
         </Entry>
       ))}
     </Section>
@@ -109,10 +107,7 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
 
   <Section title="Ngoại ngữ">
     <ul class="inline-list">
-      {certs.map((c) => (
-        <li>{f(c, 'name', lang)}{c.status === 'in_progress' && c.target_score ? ` (mục tiêu ${[c.framework && !f(c, 'name', lang).includes(c.framework) ? c.framework : '', c.target_score].filter(Boolean).join(' ')})` : ''}</li>
-      ))}
-      <li>{clean(profile.native_language_vi)}</li>
+      {certs.map((c) => <li>{f(c, 'name', lang)}</li>)}
     </ul>
   </Section>
 </Base>

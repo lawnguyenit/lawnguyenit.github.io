@@ -1,7 +1,5 @@
 id: master-it
-visible:
-- academic
-- job
+visible: []
 order: 0
 institution_en: Vinh Long University of Technology and Engineering (VLUTE)
 institution_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
@@ -19,3 +17,4 @@ gpa: null
 gpa_scale: null
 note_en: Evening and weekend classes.
 note_vi: Học buổi tối và cuối tuần.
+internal_note: bật lại khi có quyết định công nhận học viên, dự kiến 12/2026

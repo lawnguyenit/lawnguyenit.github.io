@@ -1,0 +1,9 @@
+# Nguồn: như bản tiếng Việt (job-ai-workflow); không thêm số đo mới.
+id: ai-acad-context
+visible:
+- academic
+order: 12
+name_en: 'Context organized so agents read only the documents they need, reducing data and tokens; several agents work in parallel, with testing by an independent agent.'
+group_academic: acad-ai-workflow
+order_academic: 2
+status: confirmed

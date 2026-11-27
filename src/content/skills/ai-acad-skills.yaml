@@ -1,0 +1,9 @@
+# Nguồn: như bản tiếng Việt (job-ai-workflow); không thêm số đo mới.
+id: ai-acad-skills
+visible:
+- academic
+order: 13
+name_en: 'Repeated tasks packaged as skills; plans shown on a canvas so others can review and approve them before implementation.'
+group_academic: acad-ai-workflow
+order_academic: 3
+status: confirmed

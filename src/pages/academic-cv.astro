@@ -79,7 +79,7 @@ const sharedOrg = orgs.length === 1 ? orgs[0] : '';
   <Section title="Publications">
     {pubs.map((p) => (
       <Entry id={`pub-${p.id}`} title={p.title} when={String(p.year)}>
-        <p class="pub"><Authors authors={p.authors} /> · <em>{f(p, 'venue', lang)}</em>{p.links.map((l) => <> · <a href={l.url}>{f(l, 'label', lang)}</a></>)}</p>
+        <p class="pub"><Authors authors={p.authors} /> · <em>{f(p, 'venue', lang)}</em>{p.authors.some((a) => a.is_corresponding) && <span class="x"> (* corresponding author)</span>}{p.links.map((l) => <> · <a href={l.url}>{f(l, 'label', lang)}</a></>)}</p>
       </Entry>
     ))}
   </Section>
@@ -91,8 +91,7 @@ const sharedOrg = orgs.length === 1 ? orgs[0] : '';
       const brief = p.kind === 'research';
       const when = range(p.start ?? '', p.end, lang) || f(p, 'status_note', lang);
       return (
-        <Entry title={p.title} when={when} sub={f(p, 'tagline', lang)} where={p.advisor ? `Advisor: ${p.advisor}` : undefined}>
-          {link && <span class="x" slot="extra"> <a href={link.url}>{link.url.replace(/^https?:\/\//, '')}</a></span>}
+        <Entry title={p.title} when={when} sub={f(p, 'tagline', lang)} where={p.advisor ? `Advisor: ${p.advisor}` : undefined} href={link?.url}>
           {!brief && <Tags tags={tagsOf(p, lang)} />}
           {!brief && p.highlights_en.length > 0 && <ul>{p.highlights_en.map((h) => <li>{h}</li>)}</ul>}
         </Entry>

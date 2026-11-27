@@ -80,7 +80,7 @@ profile_fields = [
     *en_vi('location', 'Nơi ở', hint_en='Ví dụ: Vinh Long, Vietnam', hint_vi='Ví dụ: Vĩnh Long', required=True),
     IMG('photo', 'Ảnh đại diện', 'Chọn ảnh có sẵn hoặc tải ảnh mới lên. Ảnh lưu ở public/assets/img.', True),
     *en_vi('headline', 'Chức danh mục tiêu (dòng dưới tên)', required=True,
-           hint_en='Một dòng ngắn, ví dụ: Master\'s student in IT · Applied ML for IoT. Đổi theo từng job.',
+           hint_en='Một dòng ngắn, ví dụ: Information Security Engineer · Applied ML for IoT. Đổi theo từng job.',
            hint_vi='Một dòng ngắn, ví dụ: Phân tích dữ liệu & Ứng dụng AI. Đổi theo từng job.'),
     *en_vi('affiliation', 'Nơi học / đơn vị', required=True),
     *en_vi('summary', 'Giới thiệu ngắn', 'text', required=True,
@@ -172,6 +172,7 @@ C.append(coll('education', 'Học vấn', f'{C_ROOT}/education',
         N('gpa', 'Điểm trung bình (GPA)', 'Ví dụ: 3.18', value_type='float', min=0),
         N('gpa_scale', 'Thang điểm', 'Ví dụ: 4', value_type='float', min=0),
         *en_vi('note', 'Ghi chú', hint_en='Tùy chọn. Hiện bên phải dòng thứ hai khi mục không có khóa/GPA (ví dụ "Evening and weekend classes").', hint_vi='Tùy chọn. Ghi trong dữ liệu; hồ sơ đi làm không hiện (ý này đã nằm trong phần Giới thiệu).'),
+        T('internal_note', 'Ghi chú nội bộ (KHÔNG hiện lên web)', 'Ví dụ: lý do ẩn mục này, khi nào bật lại. Không bao giờ hiển thị.'),
     ],
     '{{id}} · {{institution_vi}}{{institution_en}}', 'mục học vấn'))
 
@@ -186,6 +187,7 @@ C.append(coll('publications', 'Công bố / bài báo', f'{C_ROOT}/publications'
         LOBJ('authors', 'Tác giả', [
             S('name', 'Tên tác giả', None, True),
             B('is_owner', 'Là tôi', 'Bật để in đậm tên bạn.'),
+            B('is_corresponding', 'Tác giả liên hệ', 'Bật để thêm dấu * sau tên và chú thích "tác giả liên hệ".'),
         ], 'Cần ít nhất một tác giả. Thứ tự như trên bài báo.', True, label_singular='tác giả', summary='{{name}}', min=1),
         *en_vi('venue', 'Nơi công bố (hội nghị / tạp chí)'),
         *en_vi('summary', 'Tóm tắt', 'text', hint_en='Tùy chọn.', hint_vi='Tùy chọn.'),

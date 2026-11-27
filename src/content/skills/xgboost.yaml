@@ -1,12 +1,6 @@
 id: xgboost
-visible:
-- academic
-- job
+visible: []
 order: 1
 name_en: XGBoost
 name_vi: XGBoost
-group_academic: acad-ml-data
-order_academic: 1
-group_job: job-ai-ml
-order_job: 3
 status: confirmed

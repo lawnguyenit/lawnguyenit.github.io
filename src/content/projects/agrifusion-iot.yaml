@@ -11,15 +11,9 @@ title: AgriFusion-IoT
 # Ngày bắt đầu: chủ site chưa chắc 09 hay 10/2025; đang dùng 2025-09, chờ xác nhận.
 start: 2025-09
 end: 2026-05
-tags:
-- label_en: 'Paper: EAI AICON 2026 (under review)'
-  label_vi: 'Bài báo: EAI AICON 2026 (đang phản biện)'
-  url: '#pub-eaicon-2026-benchmark'
-- label_en: SN Computer Science (submitted, in process)
-  label_vi: SN Computer Science (đã nộp 11/2026, đang xử lý)
-  url: '#pub-sncs-auditing-temporal-sensor-classifiers'
-tagline_en: 'Graduation project: durian-orchard IoT system and weak-label ML benchmark'
-tagline_vi: 'Đồ án tốt nghiệp: hệ IoT giám sát vườn sầu riêng và pipeline benchmark ML'
+tags: []
+tagline_en: 'Graduation thesis: Building an IoT-based System for Monitoring Environmental and Nutritional Conditions in Durian Orchards'
+tagline_vi: 'Đồ án tốt nghiệp: Xây dựng hệ thống IoT giám sát điều kiện môi trường và dinh dưỡng trong vườn sầu riêng'
 summary_en: 'An end-to-end cellular telemetry system for a durian orchard (ESP32-S3, SHT30, an ES-SOIL-7-IN-1 Modbus/RS485 soil sensor, SIM A7682S 4G LTE, Firebase Realtime Database). Each record is structured as traceable telemetry: measurements, transmission status, retry metadata and temporal provenance. A downstream pipeline turns raw records into structured benchmark views with temporal features.'
 summary_vi: Hệ thu thập dữ liệu ngoài trời cho vườn sầu riêng (ESP32-S3, 4G, RS485/Modbus, Firebase) và pipeline biến dữ liệu thô thành tập benchmark ML có truy vết. Mỗi bản ghi có trạng thái truyền, số lần thử lại và nguồn thời gian. Dự án tốt nghiệp, đồng thời là nền cho bài báo nghiên cứu.
 contribution_en: 'Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results. Field hardware: designed and deployed.'
@@ -47,4 +41,4 @@ figures:
 - src: /assets/img/agrifusion_arch.svg
   alt_en: AgriFusion-IoT architecture
   caption_en: End-to-end telemetry acquisition and data traceability pipeline of AgriFusion-IoT.
-internal_note: 'Giới hạn: không phải bằng chứng độc lập về stress cây trồng (nhãn là nhãn yếu); dashboard ở chế độ demo; chưa có chứng nhận triển khai; WADE V9 riêng tư, không nhắc. Cần chủ site xác nhận mô tả đóng góp từng phần. Bài EAI: chỉ viết ''nộp, đang phản biện''; không viết accepted. Bài SNCS: ''đã nộp, đang xử lý'' (Editor Assigned 24/11/2026). Câu ''thiết bị do mình thiết kế và triển khai'' theo Showcase-Claims (phần thiết bị giữ ''designed and deployed''); phần phần mềm/pipeline do agent AI viết, nên có thẻ ''Phát triển cùng Claude/Codex''. Ngày bắt đầu 09/2025: chờ xác nhận (có thể là 10/2025). Hồ sơ đi làm không hiện GVHD cho gọn (dữ liệu advisor vẫn giữ).'
+internal_note: 'Giới hạn: không phải bằng chứng độc lập về stress cây trồng (nhãn là nhãn yếu); dashboard ở chế độ demo; chưa có chứng nhận triển khai; WADE V9 riêng tư, không nhắc. Cần chủ site xác nhận mô tả đóng góp từng phần. Bài EAI: chỉ viết ''nộp, đang phản biện''; không viết accepted. Bài SNCS: ''đã nộp, đang xử lý'' (Editor Assigned 24/11/2026). Câu ''thiết bị do mình thiết kế và triển khai'' theo Showcase-Claims (phần thiết bị giữ ''designed and deployed''); phần phần mềm/pipeline do agent AI viết, đã gỡ thẻ ''Phát triển cùng Claude/Codex'' khỏi CV. Tên tiếng Việt của đồ án là bản dịch từ tên tiếng Anh, chờ chủ site xác nhận tên tiếng Việt chính thức. Thẻ bài báo đã gỡ (mục Công bố đã đủ). Ngày bắt đầu 09/2025: chờ xác nhận (có thể là 10/2025). Hồ sơ đi làm không hiện GVHD cho gọn (dữ liệu advisor vẫn giữ).'

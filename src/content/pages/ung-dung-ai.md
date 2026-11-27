@@ -11,7 +11,13 @@ nav_order: 4
 ---
 # Ứng dụng AI trong công việc
 
-Trang này là bản đầy đủ của mục "Ứng dụng AI trong công việc" trong hồ sơ đi làm. Các số đo ghi ở đây là số trong nhật ký đo của chính mình; không có số hiệu quả nào khác.
+Trang này là bản đầy đủ của mục "Ứng dụng AI trong công việc" trong hồ sơ đi làm, gồm ba ý chính:
+
+- Công cụ: Claude Code, Codex, dùng cho khảo sát, lập kế hoạch và triển khai.
+- Tổ chức ngữ cảnh để agent đọc đúng tài liệu cần thiết, giảm dữ liệu và token; điều phối nhiều agent làm song song, kiểm thử bằng agent độc lập.
+- Đóng gói việc lặp lại thành skill; dựng giao diện kế hoạch (canvas) để người khác xem và duyệt trước khi triển khai.
+
+Các số đo ghi ở đây là số trong nhật ký đo của chính mình; không có số hiệu quả nào khác.
 
 ## 1. Điều phối nhiều agent AI chạy song song, kiểm thử bởi agent độc lập
 
@@ -41,4 +47,4 @@ Mỗi câu dùng trong CV và hồ sơ freelance có nguồn và giới hạn, k
 
 ## 6. Buộc agent phản biện và nêu điều chưa biết
 
-Quy tắc yêu cầu agent nêu giả định ẩn và điều người dùng có thể chưa biết (tối đa 3 điểm mỗi lần), phân loại: người dùng biết / người dùng tưởng agent biết / chưa ai biết, ưu tiên chặng triển khai, vận hành, bảo trì. Ví dụ: audit tĩnh ExamHub do 3 agent đọc code, các điểm bảo mật được kiểm tay trước khi đưa vào kế hoạch; báo cáo ghi rõ chưa chạy build, test, UI.
+Quy tắc yêu cầu agent nêu giả định ẩn và điều người dùng có thể chưa biết (tối đa 3 điểm mỗi lần), phân loại: người dùng biết / người dùng tưởng agent biết / chưa ai biết, ưu tiên chặng triển khai, vận hành, bảo trì. Ví dụ: audit tĩnh một ứng dụng web do 3 agent đọc code, các điểm bảo mật được kiểm tay trước khi đưa vào kế hoạch; báo cáo ghi rõ chưa chạy build, test, UI.

@@ -1,6 +1,5 @@
 id: ai-wf-claims-ledger
-visible:
-- job
+visible: []
 order: 5
 name_vi: 'Sổ khẳng định: mỗi câu dùng trong CV có nguồn và giới hạn, kèm danh sách điều không được nói (như bài mới nộp không viết là đã được chấp nhận); nội dung AI soạn phải khớp sổ trước khi dùng.'
 group_job: job-ai-workflow

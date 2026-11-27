@@ -1,8 +1,6 @@
 # Dự án thực hành, đang hoàn thiện. Không nói đã có RAG chạy được hoặc số đo.
 id: layered-rag-harness
-visible:
-- academic
-- job
+visible: []
 order: 2
 featured: false
 kind: practice
@@ -11,9 +9,7 @@ status: ongoing
 title: layered-rag-harness
 status_note_en: in progress
 status_note_vi: đang hoàn thiện
-tags:
-- label_en: Built with Claude/Codex
-  label_vi: Phát triển cùng Claude/Codex
+tags: []
 tagline_en: 'Practice project: permissions for internal-document AI Q&A (RAG); retrieval and answers in progress'
 tagline_vi: 'Dự án thực hành: phân quyền tài liệu cho hỏi đáp AI nội bộ (RAG); đang làm phần truy xuất và trả lời'
 summary_en: 'A learning and portfolio project: a retrieval-augmented document Q&A assistant with access control and tool calling, built one layer at a time. After each layer the same fixed question set is re-run to show which failure that layer fixes. Components (model provider, search backend, orchestrator, MCP transport) sit behind adapters that must pass the same contract tests, including cases where the user lacks permission. Still in progress.'
@@ -41,4 +37,4 @@ links:
   label_vi: Kho mã GitHub
   url: https://github.com/lawnguyenit/layered-rag-harness
 figures: []
-internal_note: 'Nguồn: README công khai đọc 2026-11-27 (chưa đọc code). README ghi một phần mã viết có AI hỗ trợ. Chưa kiểm Keycloak thật, chưa có điểm đo LLM; nút ''ask via harness'' chưa nối. Không nói: có RAG chạy được, có kết quả đo, dùng được ở production. "Tài liệu nội bộ" = kho tài liệu giả lập của một công ty hư cấu (data/corpus). Ngày bắt đầu chưa biết. Hiện ở cả academic (liên quan AI security/kiểm soát truy cập): chủ site có thể gỡ ''academic''.'
+internal_note: 'Ẩn khỏi cả hai hồ sơ: bật lại khi hoàn thiện phần truy xuất và trả lời RAG. Nguồn: README công khai đọc 2026-11-27 (chưa đọc code). README ghi một phần mã viết có AI hỗ trợ. Chưa kiểm Keycloak thật, chưa có điểm đo LLM; nút ''ask via harness'' chưa nối. Không nói: có RAG chạy được, có kết quả đo, dùng được ở production. "Tài liệu nội bộ" = kho tài liệu giả lập của một công ty hư cấu (data/corpus). Ngày bắt đầu chưa biết. Hiện ở cả academic (liên quan AI security/kiểm soát truy cập): chủ site có thể gỡ ''academic''.'

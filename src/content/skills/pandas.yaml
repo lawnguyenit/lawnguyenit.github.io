@@ -1,12 +1,6 @@
 id: pandas
-visible:
-- academic
-- job
+visible: []
 order: 8
 name_en: pandas
 name_vi: pandas
-group_academic: acad-ml-data
-order_academic: 0
-group_job: job-ai-ml
-order_job: 1
 status: confirmed

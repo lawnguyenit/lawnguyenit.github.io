@@ -144,7 +144,8 @@ export function skillLine(skills: any[], lang: Lang): string {
     if (note === FOUNDATION[lang]) base.push(name);
     else main.push(note === PRIMARY[lang] ? `${name} (${note})` : name);
   }
-  return [main.join(', '), base.length ? `${FOUNDATION[lang]} ${base.join(', ')}` : ''].filter(Boolean).join('; ');
+  const basic = base.length ? `${base.join(', ')} (${lang === 'vi' ? 'cơ bản' : 'basic'})` : '';
+  return [main.join(', '), basic].filter(Boolean).join(' · ');
 }
 
 /** Tiered group: nested list. Skills noted "primary" form the first line, "foundation" the second; unmarked skills join the first. */

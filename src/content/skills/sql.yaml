@@ -3,8 +3,8 @@ visible:
 - academic
 - job
 order: 5
-name_en: 'SQL (MySQL, SQL Server)'
-name_vi: 'SQL (MySQL, SQL Server)'
+name_en: 'SQL — MySQL, SQL Server, PostgreSQL'
+name_vi: 'SQL — MySQL, SQL Server, PostgreSQL'
 group_academic: acad-databases
 order_academic: 1
 group_job: job-database

@@ -4,9 +4,9 @@ visible:
 - job
 order: 5
 name_en: temporal evaluation, leakage control
-name_vi: 'đánh giá theo thời gian (temporal split), kiểm soát rò rỉ dữ liệu'
+name_vi: đánh giá mô hình theo thời gian, chống rò rỉ dữ liệu
 group_academic: acad-ml-data
 order_academic: 5
 group_job: job-ml-methods
-order_job: 2
+order_job: 1
 status: confirmed
