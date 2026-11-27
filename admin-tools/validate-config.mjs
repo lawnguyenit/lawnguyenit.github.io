@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Đối chiếu admin/config.yml với schema.ts (Zod) và (tùy chọn) với JSON schema chính thức của Sveltia.
-// Dùng:  node tools/validate-config.mjs [--schema ../content/schema.ts] [--config config.yml]
-//                                        [--content ../content] [--deps ../../site/node_modules]
+// Chạy từ gốc repo: node admin-tools/validate-config.mjs
+// Tùy chọn: [--schema src/content.config.ts] [--config public/admin/config.yml] [--content src/content] [--deps node_modules]
 // Thoát mã 0 = khớp, 1 = có lỗi. Cảnh báo (WARN) không làm hỏng kết quả.
 import fs from 'node:fs';
 import os from 'node:os';
@@ -11,10 +11,10 @@ import { pathToFileURL, fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? process.argv[i + 1] : d; };
-const schemaTs = path.resolve(arg('schema', path.join(here, '../../content/schema.ts')));
-const configYml = path.resolve(arg('config', path.join(here, '../config.yml')));
-const contentDir = path.resolve(arg('content', path.dirname(schemaTs)));
-const depsDir = path.resolve(arg('deps', path.join(here, '../../site/node_modules')));
+const schemaTs = path.resolve(arg('schema', path.join(here, '../src/content.config.ts')));
+const configYml = path.resolve(arg('config', path.join(here, '../public/admin/config.yml')));
+const contentDir = path.resolve(arg('content', path.join(here, '../src/content')));
+const depsDir = path.resolve(arg('deps', path.join(here, '../node_modules')));
 
 const req = createRequire(path.join(depsDir, 'noop.js'));
 const zodPath = req.resolve('zod');
@@ -191,7 +191,7 @@ if (fs.existsSync(schemaFile)) {
   const validate = ajv.compile(JSON.parse(fs.readFileSync(schemaFile, 'utf8')));
   if (!validate(cfg)) for (const e of validate.errors.slice(0, 10)) E('sveltia-schema', `${e.instancePath} ${e.message}`);
   else console.log('OK  config.yml hợp lệ theo JSON schema của @sveltia/cms 5.0.1');
-} else W('sveltia-schema', 'không tìm thấy tools/sveltia-cms.schema.json, bỏ qua bước này');
+} else W('sveltia-schema', 'không tìm thấy admin-tools/sveltia-cms.schema.json, bỏ qua bước này');
 
 console.log(`Đã đối chiếu ${Object.keys(collections).length} collection, ${fieldCount} trường schema.`);
 for (const w of warns) console.log('WARN ' + w);

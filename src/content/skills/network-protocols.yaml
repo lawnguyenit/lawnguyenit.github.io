@@ -1,0 +1,9 @@
+id: network-protocols
+visible:
+- job
+order: 1
+name_en: 'TCP/IP, DNS, DHCP, HTTP/HTTPS, FTP'
+name_vi: 'TCP/IP, DNS, DHCP, HTTP/HTTPS, FTP'
+group_job: job-network
+order_job: 1
+status: confirmed

@@ -7,6 +7,6 @@ name_en: Linux
 name_vi: Linux
 group_academic: acad-development
 order_academic: 2
-group_job: job-it-security
-order_job: 3
+group_job: job-network
+order_job: 2
 status: confirmed

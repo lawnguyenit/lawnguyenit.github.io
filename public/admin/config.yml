@@ -1,6 +1,6 @@
 # Sveltia CMS 5.0.1 · repo lawnguyenit/lawnguyenit.github.io · nhánh main
-# FILE NÀY ĐƯỢC SINH TỰ ĐỘNG bởi tools/gen-config.py. Sửa bằng script rồi sinh lại.
-# Tên trường (name) trùng với schema.ts; kiểm tra bằng: node tools/validate-config.mjs
+# FILE NÀY ĐƯỢC SINH TỰ ĐỘNG bởi admin-tools/gen-config.py. Sửa bằng script rồi sinh lại.
+# Tên trường (name) trùng với src/content.config.ts; kiểm tra bằng: node admin-tools/validate-config.mjs
 $schema: https://unpkg.com/@sveltia/cms@5.0.1/schema/sveltia-cms.json
 backend:
   name: github
@@ -90,7 +90,7 @@ collections:
     - name: location_vi
       label: Nơi ở (tiếng Việt)
       widget: string
-      hint: 'Ví dụ: Vĩnh Long (có thể làm việc tại Cần Thơ)'
+      hint: 'Ví dụ: Vĩnh Long'
       required: true
     - name: photo
       label: Ảnh đại diện
@@ -98,14 +98,14 @@ collections:
       hint: Chọn ảnh có sẵn hoặc tải ảnh mới lên. Ảnh lưu ở public/assets/img.
       required: true
     - name: headline_en
-      label: Dòng tiêu đề dưới tên (tiếng Anh)
+      label: Chức danh mục tiêu (dòng dưới tên) (tiếng Anh)
       widget: string
-      hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+      hint: 'Một dòng ngắn, ví dụ: Master''s student in IT · Applied ML for IoT. Đổi theo từng job.'
       required: true
     - name: headline_vi
-      label: Dòng tiêu đề dưới tên (tiếng Việt)
+      label: Chức danh mục tiêu (dòng dưới tên) (tiếng Việt)
       widget: string
-      hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+      hint: 'Một dòng ngắn, ví dụ: Phân tích dữ liệu & Ứng dụng AI. Đổi theo từng job.'
       required: true
     - name: affiliation_en
       label: Nơi học / đơn vị (tiếng Anh)
@@ -224,6 +224,17 @@ collections:
     widget: string
     hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
     required: false
+  - name: layout
+    label: Cách hiện
+    widget: select
+    hint: Chọn "Danh sách lồng" thì kỹ năng có ghi chú "primary/chính" hiện ở dòng "Sử dụng chính", ghi chú "foundation/nền tảng" ở dòng "Nền tảng".
+    required: false
+    options:
+    - label: 'Một dòng: Nhóm: a, b, c'
+      value: inline
+    - label: 'Danh sách lồng: "Sử dụng chính" và "Nền tảng"'
+      value: tiered
+    default: inline
 - name: skills
   label: Kỹ năng
   label_singular: kỹ năng
@@ -413,6 +424,37 @@ collections:
     widget: string
     hint: Tên gốc, không dịch.
     required: true
+  - name: status_note_en
+    label: Chữ trạng thái (bên phải tên dự án) (tiếng Anh)
+    widget: string
+    hint: 'Tùy chọn. Chỉ hiện khi dự án không có ngày bắt đầu. Ví dụ: in progress.'
+    required: false
+  - name: status_note_vi
+    label: Chữ trạng thái (bên phải tên dự án) (tiếng Việt)
+    widget: string
+    hint: 'Tùy chọn. Chỉ hiện khi dự án không có ngày bắt đầu. Ví dụ: đang hoàn thiện.'
+    required: false
+  - name: tags
+    label: Thẻ nhỏ
+    widget: list
+    hint: 'Ví dụ: "Phát triển cùng Claude/Codex", "Bài báo: EAI AICON 2026 (đang phản biện)". Thẻ chỉ hiện ở hồ sơ có chữ tương ứng.'
+    required: false
+    fields:
+    - name: label_en
+      label: Chữ thẻ (tiếng Anh)
+      widget: string
+      required: false
+    - name: label_vi
+      label: Chữ thẻ (tiếng Việt)
+      widget: string
+      required: false
+    - name: url
+      label: Liên kết (tùy chọn)
+      widget: string
+      hint: 'https://... hoặc #pub-<id bài báo> để nhảy tới bài báo trong trang.'
+      required: false
+    label_singular: thẻ
+    summary: '{{label_vi}}{{label_en}}'
   - name: tagline_en
     label: Mô tả một dòng (tiếng Anh)
     widget: string
@@ -638,7 +680,7 @@ collections:
   - name: gpa
     label: Điểm trung bình (GPA)
     widget: number
-    hint: 'Ví dụ: 3.19'
+    hint: 'Ví dụ: 3.18'
     required: false
     value_type: float
     min: 0
@@ -712,7 +754,7 @@ collections:
   - name: status
     label: Tình trạng
     widget: select
-    hint: CHỈ chọn "Đã được chấp nhận" hoặc "Đã xuất bản" khi có thư chấp nhận. Bài EAI AICON 2026 phải là "Đã nộp".
+    hint: CHỈ chọn "Đã được chấp nhận" hoặc "Đã xuất bản" khi có thư chấp nhận. Bài EAI AICON 2026 và bài SN Computer Science phải là "Đã nộp".
     required: true
     options:
     - label: Đang chuẩn bị
@@ -794,6 +836,11 @@ collections:
       type: url
     label_singular: liên kết
     summary: '{{label_vi}}{{label_en}} {{url}}'
+  - name: internal_note
+    label: Ghi chú nội bộ (KHÔNG hiện lên web)
+    widget: text
+    hint: 'Ví dụ: số bản thảo, điều chờ xác nhận. Không bao giờ hiển thị.'
+    required: false
 - name: awards
   label: Giải thưởng
   label_singular: giải thưởng

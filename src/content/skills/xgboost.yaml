@@ -8,5 +8,5 @@ name_vi: XGBoost
 group_academic: acad-ml-data
 order_academic: 1
 group_job: job-ai-ml
-order_job: 1
+order_job: 3
 status: confirmed

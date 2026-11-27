@@ -3,26 +3,29 @@ id: layered-rag-harness
 visible:
 - academic
 - job
-order: 4
+order: 2
 featured: false
 kind: practice
 stage: null
 status: ongoing
 title: layered-rag-harness
-tagline_en: 'Practice project (in progress): document Q&A with access control, built one layer at a time'
-tagline_vi: Hỏi đáp tài liệu (RAG) có kiểm soát quyền truy cập, xây từng lớp; đang hoàn thiện
+status_note_en: in progress
+status_note_vi: đang hoàn thiện
+tags:
+- label_en: Built with Claude/Codex
+  label_vi: Phát triển cùng Claude/Codex
+tagline_en: 'Practice project: permissions for internal-document AI Q&A (RAG); retrieval and answers in progress'
+tagline_vi: 'Dự án thực hành: phân quyền tài liệu cho hỏi đáp AI nội bộ (RAG); đang làm phần truy xuất và trả lời'
 summary_en: 'A learning and portfolio project: a retrieval-augmented document Q&A assistant with access control and tool calling, built one layer at a time. After each layer the same fixed question set is re-run to show which failure that layer fixes. Components (model provider, search backend, orchestrator, MCP transport) sit behind adapters that must pass the same contract tests, including cases where the user lacks permission. Still in progress.'
 summary_vi: 'Dự án học tập và portfolio: trợ lý hỏi đáp tài liệu (RAG) có kiểm soát quyền truy cập và gọi công cụ, xây từng lớp một. Sau mỗi lớp chạy lại cùng một bộ câu hỏi cố định để thấy lớp đó sửa được lỗi nào. Các thành phần (nhà cung cấp model, công cụ tìm kiếm, bộ điều phối, MCP transport) nằm sau adapter và phải qua cùng bộ contract test, kể cả trường hợp người dùng không có quyền. Đang hoàn thiện.'
 contribution_en: Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results.
 contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
 highlights_en:
-- Synthetic business system (orders, tickets, invoices, permissioned search) and web UI for testing; the sample user can read her own order but not another customer's.
-- Runtime API with OIDC authentication (Keycloak) and a route catalog that turns intents into route plans; runtime tiers 1-2 have code and contract tests.
-- 'Reports only measured numbers with their conditions. Status: retrieval and answer generation are not implemented yet and no baseline score is published; the demo is local-only.'
+- 'Keycloak/OIDC and PostgreSQL row-level security: a user reads only her own order, and a record she may not see gets the same response as one that does not exist. One-command Docker demo.'
+- 'Route API (tiers 1-2) and a model adapter with a spend cap, 83 tests; 40 eval questions over a 23-document synthetic corpus. No retrieval, answer generation or baseline score yet.'
 highlights_vi:
-- 'Hệ nghiệp vụ giả lập có tìm kiếm theo quyền: người dùng mẫu đọc được đơn của mình, không đọc được đơn khách khác.'
-- API runtime có xác thực OIDC (Keycloak) và danh mục route; hai tầng đầu đã có mã và contract test.
-- Chỉ báo số đo thật; chưa làm truy xuất và sinh câu trả lời, chưa có điểm baseline, demo chỉ chạy cục bộ.
+- 'Keycloak/OIDC và PostgreSQL row-level security: người dùng chỉ đọc được đơn của mình; bản ghi không có quyền trả lời giống hệt bản ghi không tồn tại. Demo Docker một lệnh.'
+- 'API route (tầng 1-2) và model adapter có giới hạn chi phí, 83 test pass; 40 câu hỏi đánh giá trên 23 tài liệu giả lập. Chưa có truy xuất, sinh câu trả lời và điểm baseline.'
 tech:
 - Python
 - PostgreSQL
@@ -38,4 +41,4 @@ links:
   label_vi: Kho mã GitHub
   url: https://github.com/lawnguyenit/layered-rag-harness
 figures: []
-internal_note: 'Nguồn: README công khai đọc 2026-11-27 (chưa có note trong Brain/Projects; chưa đọc code). README ghi một phần mã viết có AI hỗ trợ. Chưa kiểm Keycloak thật, chưa có điểm đo LLM; nút ''ask via harness'' chưa nối. Không nói: có RAG chạy được, có kết quả đo, dùng được ở production. Ngày bắt đầu chưa biết. Hiện ở cả academic (liên quan AI security/kiểm soát truy cập): chủ site có thể gỡ ''academic''.'
+internal_note: 'Nguồn: README công khai đọc 2026-11-27 (chưa đọc code). README ghi một phần mã viết có AI hỗ trợ. Chưa kiểm Keycloak thật, chưa có điểm đo LLM; nút ''ask via harness'' chưa nối. Không nói: có RAG chạy được, có kết quả đo, dùng được ở production. "Tài liệu nội bộ" = kho tài liệu giả lập của một công ty hư cấu (data/corpus). Ngày bắt đầu chưa biết. Hiện ở cả academic (liên quan AI security/kiểm soát truy cập): chủ site có thể gỡ ''academic''.'

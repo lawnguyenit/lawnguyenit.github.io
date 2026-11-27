@@ -1,0 +1,22 @@
+# status phải là submitted. KHÔNG viết accepted/được chấp nhận.
+# Danh sách tác giả CHƯA xác nhận: đang hiện "Lam-Nguyen Nguyen et al.".
+id: sncs-auditing-temporal-sensor-classifiers
+visible:
+- academic
+- job
+order: 2
+type: journal_article
+status: submitted
+year: 2026
+title: 'Auditing temporal sensor classifiers: target definitions, rule fidelity, and corrective decisions'
+authors:
+- name: Lam-Nguyen Nguyen
+  is_owner: true
+- name: et al.
+  is_owner: false
+venue_en: Submitted to SN Computer Science (Springer Nature), 22 Nov 2026; in process
+venue_vi: Nộp SN Computer Science (Springer Nature) ngày 22/11/2026, đang xử lý
+summary_en: null
+summary_vi: null
+links: []
+internal_note: 'Manuscript SNCS-D-26-10794. Trạng thái hệ thống ngày 24/11/2026: Editor Assigned (viết là đã nộp, đang xử lý). Chờ xác nhận danh sách tác giả. Có thể thay thế bản thảo cũ Observation Contracts (đã ẩn).'

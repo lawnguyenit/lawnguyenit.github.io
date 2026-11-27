@@ -26,6 +26,13 @@ const Link = z.object({
   url: z.url(),
 });
 
+// Thẻ nhỏ cạnh dự án (ví dụ "Phát triển cùng Claude/Codex", "Bài báo: ..."). url tùy chọn: https://... hoặc #neo-trong-trang.
+const Tag = z.object({
+  label_en: OptStr,
+  label_vi: OptStr,
+  url: OptStr,
+});
+
 // Hồ sơ academic hiển thị tiếng Anh (*_en), hồ sơ job hiển thị tiếng Việt (*_vi).
 // Nếu mục hiện ở hồ sơ nào thì các trường bắt buộc phải có bản ngôn ngữ tương ứng.
 function requireLang<T extends z.ZodTypeAny>(schema: T, fields: string[]) {
@@ -84,7 +91,13 @@ const profile = defineCollection({
 const skill_groups = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/skill-groups' }),
   schema: requireLang(
-    z.object({ ...base, title_en: OptStr, title_vi: OptStr }),
+    z.object({
+      ...base,
+      title_en: OptStr,
+      title_vi: OptStr,
+      // inline: một dòng "Nhóm: a, b, c". tiered: danh sách lồng (kỹ năng có note "primary/chính" thành dòng "Sử dụng chính", note "foundation/nền tảng" thành dòng "Nền tảng").
+      layout: z.enum(['inline', 'tiered']).default('inline'),
+    }),
     ['title'],
   ),
 });
@@ -132,6 +145,9 @@ const projects = defineCollection({
       stage: z.number().int().nullable().optional(), // thứ tự giai đoạn trên trang Research
       status: z.enum(['ongoing', 'completed', 'submitted', 'in_preparation', 'archived']),
       title: Str,
+      status_note_en: OptStr, // chữ trạng thái hiện bên phải tên dự án khi không có ngày (ví dụ "đang hoàn thiện")
+      status_note_vi: OptStr,
+      tags: z.array(Tag).default([]),
       tagline_en: OptStr,
       tagline_vi: OptStr,
       summary_en: OptStr,
@@ -198,6 +214,7 @@ const publications = defineCollection({
       summary_en: OptStr,
       summary_vi: OptStr,
       links: z.array(Link).default([]),
+      internal_note: OptStr, // ghi chú nội bộ (ví dụ số bản thảo, điều chờ xác nhận), KHÔNG bao giờ render
     }),
     ['venue'],
   ),

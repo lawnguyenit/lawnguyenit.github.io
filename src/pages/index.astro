@@ -5,7 +5,9 @@ import CvHeader from '../components/CvHeader.astro';
 import Section from '../components/Section.astro';
 import Entry from '../components/Entry.astro';
 import Authors from '../components/Authors.astro';
-import { f, clean, range, skillLine, getVisiblePages, getProfile, getEducation, getExperience, getProjects, getPublications, getAwards, getCertificates, getSkillGroups, advisorName } from '../lib/content';
+import Skills from '../components/Skills.astro';
+import Tags from '../components/Tags.astro';
+import { f, clean, range, tagsOf, getVisiblePages, getProfile, getEducation, getExperience, getProjects, getPublications, getAwards, getCertificates, getSkillGroups } from '../lib/content';
 
 const aud = 'job';
 const lang = 'vi';
@@ -24,11 +26,6 @@ const skillGroups = groups.filter((g) => g.id !== AI_GROUP);
 const aiPage = (await getVisiblePages()).find((p) => p.data.slug === 'ung-dung-ai' && p.data.visible.includes('job'));
 const aiLink = aiPage ? new URL(`/p/${aiPage.data.slug}`, Astro.site) : null;
 
-// Project role: said once under the heading (the sentence shared by most projects); a project that says something else keeps its own.
-const firstSentence = (s: string) => s.split(/(?<=\.)\s+/)[0];
-const roles = projects.map((p) => firstSentence(f(p, 'contribution', lang))).filter(Boolean);
-const role = [...new Set(roles)].sort((a, b) => roles.filter((r) => r === b).length - roles.filter((r) => r === a).length)[0] ?? '';
-const sameRole = (p: any) => !f(p, 'contribution', lang) || f(p, 'contribution', lang) === role;
 const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ');
 ---
 <Base title={`${name} – Hồ sơ đi làm`} description={desc} lang="vi" pdf={profile.cv_pdf.job ?? undefined}>
@@ -64,11 +61,7 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
   </Section>
 
   <Section title="Kỹ năng">
-    <ul class="skills">
-      {skillGroups.map((g) => (
-        <li><strong>{f(g, 'title', lang)}:</strong> {skillLine(g.skills, lang)}</li>
-      ))}
-    </ul>
+    <Skills groups={skillGroups} lang={lang} />
   </Section>
 
   {aiGroup && (
@@ -79,21 +72,16 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
   )}
 
   {projects.length > 0 && (
-    <Section title="Dự án" class="pb">
-      {role && <p class="meta role">Vai trò: {role.charAt(0).toLowerCase() + role.slice(1)}</p>}
+    <Section title="Dự án">
       {projects.map((p) => {
-        const tag = p.kind === 'practice' ? 'Dự án thực hành' : '';
-        const contrib = f(p, 'contribution', lang);
         const link = p.links[0];
+        const when = range(p.start ?? '', p.end, lang) || f(p, 'status_note', lang);
+        const sub = f(p, 'tagline', lang);
         return (
-          <Entry title={p.title} when={range(p.start ?? '', p.end, lang)} sub={[tag, f(p, 'tagline', lang)].filter(Boolean).join(' · ')}
-            where={p.advisor ? `GVHD: ${advisorName(p.advisor, 'vi')}` : undefined}>
+          <Entry title={p.title} when={when} sub={sub}>
             {link && <span class="x" slot="extra"> <a href={link.url}>{link.url.replace(/^https?:\/\//, '')}</a></span>}
+            <Tags tags={tagsOf(p, lang)} />
             {p.highlights_vi.length > 0 && <ul>{p.highlights_vi.map((h) => <li>{h}</li>)}</ul>}
-            {!sameRole(p) && <p class="meta">Vai trò: {contrib}</p>}
-            <p class="meta tech">
-              {p.tech.length > 0 && <span><em>Công nghệ: {p.tech.join(', ')}</em></span>}
-            </p>
           </Entry>
         );
       })}
@@ -103,7 +91,7 @@ const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ')
   {pubs.length > 0 && (
     <Section title="Công bố khoa học">
       {pubs.map((p) => (
-        <Entry title={p.title} when={String(p.year)} lang="en">
+        <Entry id={`pub-${p.id}`} title={p.title} when={String(p.year)} lang="en">
           <p class="pub"><Authors authors={p.authors} /></p>
           <p class="pub"><em>{f(p, 'venue', lang)}</em></p>
         </Entry>

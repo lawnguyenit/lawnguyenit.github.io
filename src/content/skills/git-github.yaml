@@ -7,6 +7,6 @@ name_en: Git/GitHub
 name_vi: Git/GitHub
 group_academic: acad-development
 order_academic: 1
-group_job: job-it-security
-order_job: 2
+group_job: job-network
+order_job: 3
 status: confirmed

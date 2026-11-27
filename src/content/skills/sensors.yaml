@@ -1,7 +1,6 @@
 id: sensors
 visible:
 - academic
-- job
 order: 3
 name_en: sensors SHT30, ES-SOIL-7-IN-1
 name_vi: cảm biến SHT30, ES-SOIL-7-IN-1

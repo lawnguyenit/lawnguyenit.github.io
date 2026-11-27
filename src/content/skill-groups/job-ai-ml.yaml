@@ -2,5 +2,5 @@ id: job-ai-ml
 visible:
 - job
 order: 3
-title_en: AI / ML
-title_vi: AI / ML
+title_en: 'Data & ML'
+title_vi: 'Dữ liệu & ML'

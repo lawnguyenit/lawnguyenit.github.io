@@ -1,0 +1,5 @@
+---
+interface Props { tags: { label: string; url: string }[] }
+const { tags } = Astro.props;
+---
+{tags.length > 0 && <p class="tags">{tags.map((t) => t.url ? <a class="tag" href={t.url}>{t.label}</a> : <span class="tag">{t.label}</span>)}</p>}

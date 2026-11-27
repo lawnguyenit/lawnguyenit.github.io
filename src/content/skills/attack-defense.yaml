@@ -1,0 +1,9 @@
+id: attack-defense
+visible:
+- job
+order: 2
+name_en: 'attack and defense models'
+name_vi: 'mô hình tấn công – phòng thủ'
+group_job: job-it-security
+order_job: 2
+status: confirmed

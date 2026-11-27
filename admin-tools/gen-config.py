@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Sinh admin/config.yml (Sveltia CMS 5.0.1). Chạy: python3 tools/gen-config.py > config.yml
-Tên trường PHẢI trùng schema.ts; kiểm tra bằng tools/validate-config.mjs."""
+"""Sinh admin/config.yml (Sveltia CMS 5.0.1). Chạy (từ gốc repo): python3 admin-tools/gen-config.py > public/admin/config.yml
+Tên trường PHẢI trùng src/content.config.ts; kiểm tra bằng admin-tools/validate-config.mjs."""
 import yaml, sys
 
 SLUG_PAT = ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)']
@@ -77,9 +77,11 @@ profile_fields = [
         S('value', 'Số điện thoại', 'Còn giá trị giữ chỗ (chữ in hoa nối bằng dấu gạch dưới) nghĩa là chưa điền: số chưa hiện ở đâu cả. Điền số thật vào đây.', True),
         B('public', 'Hiện số trên web và PDF', 'Bật = hiện số trên web và PDF (khi đã điền số thật). Tắt = ẩn số. Đây là quyết định của chủ site.', default=True),
     ], 'Số điện thoại: chỉ hiện khi bật "Hiện số" và đã điền số thật.', True),
-    *en_vi('location', 'Nơi ở', hint_en='Ví dụ: Vinh Long, Vietnam', hint_vi='Ví dụ: Vĩnh Long (có thể làm việc tại Cần Thơ)', required=True),
+    *en_vi('location', 'Nơi ở', hint_en='Ví dụ: Vinh Long, Vietnam', hint_vi='Ví dụ: Vĩnh Long', required=True),
     IMG('photo', 'Ảnh đại diện', 'Chọn ảnh có sẵn hoặc tải ảnh mới lên. Ảnh lưu ở public/assets/img.', True),
-    *en_vi('headline', 'Dòng tiêu đề dưới tên', required=True),
+    *en_vi('headline', 'Chức danh mục tiêu (dòng dưới tên)', required=True,
+           hint_en='Một dòng ngắn, ví dụ: Master\'s student in IT · Applied ML for IoT. Đổi theo từng job.',
+           hint_vi='Một dòng ngắn, ví dụ: Phân tích dữ liệu & Ứng dụng AI. Đổi theo từng job.'),
     *en_vi('affiliation', 'Nơi học / đơn vị', required=True),
     *en_vi('summary', 'Giới thiệu ngắn', 'text', required=True,
            hint_en='Đoạn giới thiệu của hồ sơ học thuật.', hint_vi='Đoạn giới thiệu của hồ sơ đi làm.'),
@@ -98,7 +100,10 @@ C.append({'name': 'profile', 'label': 'Hồ sơ chung', 'label_singular': 'hồ 
 
 # ---------- skill_groups ----------
 C.append(coll('skill_groups', 'Nhóm kỹ năng', f'{C_ROOT}/skill-groups',
-    base() + en_vi('title', 'Tên nhóm'),
+    base() + en_vi('title', 'Tên nhóm') + [
+        SEL('layout', 'Cách hiện', [('inline', 'Một dòng: Nhóm: a, b, c'), ('tiered', 'Danh sách lồng: "Sử dụng chính" và "Nền tảng"')],
+            'Chọn "Danh sách lồng" thì kỹ năng có ghi chú "primary/chính" hiện ở dòng "Sử dụng chính", ghi chú "foundation/nền tảng" ở dòng "Nền tảng".', False, default='inline'),
+    ],
     '{{id}} · {{title_vi}}{{title_en}}', 'nhóm kỹ năng',
     'Nhóm acad-* cho hồ sơ học thuật, job-* cho hồ sơ đi làm. Thêm nhóm mới = thêm 1 mục.'))
 
@@ -124,6 +129,12 @@ C.append(coll('projects', 'Dự án', f'{C_ROOT}/projects',
         N('stage', 'Giai đoạn (trang Research)', 'Số thứ tự giai đoạn trên trang Research. Bỏ trống nếu không áp dụng.'),
         SEL('status', 'Tình trạng', [('ongoing', 'Đang làm'), ('completed', 'Hoàn thành'), ('submitted', 'Đã nộp'), ('in_preparation', 'Đang chuẩn bị'), ('archived', 'Lưu trữ')], None, True),
         S('title', 'Tên dự án', 'Tên gốc, không dịch.', True),
+        *en_vi('status_note', 'Chữ trạng thái (bên phải tên dự án)', hint_en='Tùy chọn. Chỉ hiện khi dự án không có ngày bắt đầu. Ví dụ: in progress.', hint_vi='Tùy chọn. Chỉ hiện khi dự án không có ngày bắt đầu. Ví dụ: đang hoàn thiện.'),
+        LOBJ('tags', 'Thẻ nhỏ', [
+            S('label_en', 'Chữ thẻ (tiếng Anh)'),
+            S('label_vi', 'Chữ thẻ (tiếng Việt)'),
+            S('url', 'Liên kết (tùy chọn)', 'https://... hoặc #pub-<id bài báo> để nhảy tới bài báo trong trang.'),
+        ], 'Ví dụ: "Phát triển cùng Claude/Codex", "Bài báo: EAI AICON 2026 (đang phản biện)". Thẻ chỉ hiện ở hồ sơ có chữ tương ứng.', label_singular='thẻ', summary='{{label_vi}}{{label_en}}'),
         *en_vi('tagline', 'Mô tả một dòng'),
         *en_vi('summary', 'Mô tả (đoạn)', 'text'),
         *en_vi('contribution', 'Vai trò của bạn', 'text',
@@ -158,7 +169,7 @@ C.append(coll('education', 'Học vấn', f'{C_ROOT}/education',
         S('start', 'Bắt đầu', 'Viết 2021 hoặc 2021-09', True, pattern=YM_PAT),
         S('end', 'Kết thúc', 'Viết 2026 hoặc 2026-06. Bỏ trống = chưa kết thúc (hiện "đang học").', False, pattern=YM_PAT),
         S('cohort', 'Khóa', 'Ví dụ: K47'),
-        N('gpa', 'Điểm trung bình (GPA)', 'Ví dụ: 3.19', value_type='float', min=0),
+        N('gpa', 'Điểm trung bình (GPA)', 'Ví dụ: 3.18', value_type='float', min=0),
         N('gpa_scale', 'Thang điểm', 'Ví dụ: 4', value_type='float', min=0),
         *en_vi('note', 'Ghi chú', hint_en='Tùy chọn. Hiện bên phải dòng thứ hai khi mục không có khóa/GPA (ví dụ "Evening and weekend classes").', hint_vi='Tùy chọn. Ghi trong dữ liệu; hồ sơ đi làm không hiện (ý này đã nằm trong phần Giới thiệu).'),
     ],
@@ -169,7 +180,7 @@ C.append(coll('publications', 'Công bố / bài báo', f'{C_ROOT}/publications'
     base() + [
         SEL('type', 'Loại', [('conference_manuscript', 'Bản thảo hội nghị'), ('journal_article', 'Bài báo tạp chí'), ('thesis', 'Luận văn / đồ án'), ('technical_note', 'Ghi chú kỹ thuật')], None, True),
         SEL('status', 'Tình trạng', [('in_preparation', 'Đang chuẩn bị'), ('submitted', 'Đã nộp / đang phản biện'), ('accepted', 'Đã được chấp nhận'), ('published', 'Đã xuất bản / hoàn thành')],
-            'CHỈ chọn "Đã được chấp nhận" hoặc "Đã xuất bản" khi có thư chấp nhận. Bài EAI AICON 2026 phải là "Đã nộp".', True),
+            'CHỈ chọn "Đã được chấp nhận" hoặc "Đã xuất bản" khi có thư chấp nhận. Bài EAI AICON 2026 và bài SN Computer Science phải là "Đã nộp".', True),
         N('year', 'Năm', None, True),
         S('title', 'Tiêu đề', 'Tiêu đề gốc, không dịch.', True),
         LOBJ('authors', 'Tác giả', [
@@ -179,6 +190,7 @@ C.append(coll('publications', 'Công bố / bài báo', f'{C_ROOT}/publications'
         *en_vi('venue', 'Nơi công bố (hội nghị / tạp chí)'),
         *en_vi('summary', 'Tóm tắt', 'text', hint_en='Tùy chọn.', hint_vi='Tùy chọn.'),
         links(),
+        T('internal_note', 'Ghi chú nội bộ (KHÔNG hiện lên web)', 'Ví dụ: số bản thảo, điều chờ xác nhận. Không bao giờ hiển thị.'),
     ],
     '{{id}} · {{title}} ({{year}})', 'công bố'))
 
@@ -258,7 +270,7 @@ class D(yaml.SafeDumper):
     def ignore_aliases(self, data): return True
 
 header = """# Sveltia CMS 5.0.1 · repo lawnguyenit/lawnguyenit.github.io · nhánh main
-# FILE NÀY ĐƯỢC SINH TỰ ĐỘNG bởi tools/gen-config.py. Sửa bằng script rồi sinh lại.
-# Tên trường (name) trùng với schema.ts; kiểm tra bằng: node tools/validate-config.mjs
+# FILE NÀY ĐƯỢC SINH TỰ ĐỘNG bởi admin-tools/gen-config.py. Sửa bằng script rồi sinh lại.
+# Tên trường (name) trùng với src/content.config.ts; kiểm tra bằng: node admin-tools/validate-config.mjs
 """
 sys.stdout.write(header + yaml.dump(CONFIG, Dumper=D, allow_unicode=True, sort_keys=False, width=1000))

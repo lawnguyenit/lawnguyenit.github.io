@@ -1,4 +1,4 @@
 ---
 interface Props { authors: { name: string; is_owner: boolean }[] }
 ---
-<span class="authors">{Astro.props.authors.map((a, i) => (<>{i > 0 && ', '}{a.is_owner ? <strong>{a.name}</strong> : a.name}</>))}</span>
+<span class="authors">{Astro.props.authors.map((a, i) => (<>{i > 0 && (a.name === 'et al.' ? ' ' : ', ')}{a.is_owner ? <strong>{a.name}</strong> : a.name}</>))}</span>

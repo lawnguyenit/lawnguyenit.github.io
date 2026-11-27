@@ -2,8 +2,8 @@ id: infosec
 visible:
 - job
 order: 1
-name_en: Information security (degree specialization)
-name_vi: chuyên ngành An toàn và an ninh thông tin
+name_en: 'web application security (access control, data-leak prevention, race-condition handling with locks/transactions)'
+name_vi: 'bảo mật ứng dụng web (kiểm soát truy cập, chống rò rỉ dữ liệu, xử lý tranh chấp đồng thời: race condition, khóa/giao dịch)'
 group_job: job-it-security
 order_job: 1
 status: confirmed
