@@ -17,6 +17,13 @@ export function clean(s: string | null | undefined): string {
   return /TODO/.test(r) ? '' : r;
 }
 
+/** Minimal inline markup for content strings: **bold** only. Everything else is HTML-escaped. */
+export function rich(s: string | null | undefined): string {
+  return clean(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
 /** Localised field `${key}_${lang}`; falls back to the other language when `fallback` is true. */
 export function f(obj: any, key: string, lang: Lang, fallback = false): string {
   const own = clean(obj?.[`${key}_${lang}`]);

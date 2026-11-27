@@ -11,11 +11,13 @@ nav_order: 4
 ---
 # Ứng dụng AI trong công việc
 
-Trang này là bản đầy đủ của mục "Ứng dụng AI trong công việc" trong hồ sơ đi làm, gồm ba ý chính:
+Trang này là bản đầy đủ của mục "Ứng dụng AI trong công việc" trong hồ sơ đi làm. Tóm tắt:
 
-- Công cụ: Claude Code, Codex, dùng cho khảo sát, lập kế hoạch và triển khai.
-- Tổ chức ngữ cảnh để agent đọc đúng tài liệu cần thiết, giảm dữ liệu và token; điều phối nhiều agent làm song song, kiểm thử bằng agent độc lập.
-- Đóng gói việc lặp lại thành skill; dựng giao diện kế hoạch (canvas) để người khác xem và duyệt trước khi triển khai.
+- **Công cụ:** Claude Code, Codex.
+- **Cách làm:** viết yêu cầu và kế hoạch trước, giao agent AI viết mã, dùng một agent khác kiểm thử, tự duyệt kết quả trước khi dùng.
+- **Đã áp dụng:** đồ án AgriFusion-IoT, Workflow_Automation_Tool và chính trang CV này (cv.lnit.id.vn).
+
+Phần dưới đi vào chi tiết từng việc.
 
 Các số đo ghi ở đây là số trong nhật ký đo của chính mình; không có số hiệu quả nào khác.
 

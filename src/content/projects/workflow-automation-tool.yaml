@@ -8,21 +8,21 @@ kind: practice
 stage: null
 status: ongoing
 title: Workflow_Automation_Tool
-status_note_en: release 0.14.0
-status_note_vi: phiên bản 0.14.0
+status_note_en: 'connecting to real services'
+status_note_vi: 'đang kết nối dịch vụ thật'
 tags: []
-tagline_en: 'Practice project: reusable n8n workflow automation modules (built with Claude Code/Codex)'
-tagline_vi: 'Dự án thực hành: module tự động hóa quy trình n8n dùng lại được (phát triển cùng Claude Code/Codex)'
+tagline_en: 'Practice project: automating a document-processing workflow (built with Claude Code/Codex)'
+tagline_vi: 'Dự án thực hành: tự động hóa quy trình xử lý tài liệu (phát triển cùng Claude Code/Codex)'
 summary_en: 'A repository of reusable workflow module contracts, with concrete implementations added per job; n8n is the main target. Includes an API (Python, uvicorn, PostgreSQL via Docker Compose), four run modes (DRY_RUN, REPLAY, MOCK, REAL) and two reference systems: an intelligent document intake pipeline and a lead-management flow. Portfolio work, not a client deployment.'
 summary_vi: 'Thư viện hợp đồng module workflow dùng lại được, thêm triển khai cụ thể khi có việc; n8n là mục tiêu chính. Có API (Python, uvicorn, PostgreSQL qua Docker Compose), bốn chế độ chạy (DRY_RUN, REPLAY, MOCK, REAL) và hai hệ thống tham chiếu: nhận tài liệu thông minh và quản lý lead. Là dự án portfolio, không phải triển khai cho khách.'
 contribution_en: Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results.
 contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
 highlights_en:
-- 'Four run modes: DRY_RUN and REPLAY write nothing, MOCK writes to PostgreSQL without contacting any provider, REAL only when configured and authorized.'
-- 'Idempotent PostgreSQL storage; the document-intake flow runs end to end in DRY_RUN on synthetic data; 198 tests. No live provider calls (Gmail, OpenAI, Slack, CRM); not client work.'
+- '**Workflow:** receive an email with a PDF invoice → read and extract the data → check it → store it in a database → prepare a notification; runs on n8n.'
+- '**Failure safeguards:** never processes the same document twice, caps the number of AI calls per day to avoid unexpected cost, and has a test mode that sends nothing outside.'
 highlights_vi:
-- 'Bốn chế độ chạy: DRY_RUN và REPLAY không ghi gì, MOCK ghi PostgreSQL nhưng không gọi nhà cung cấp, REAL chỉ khi được cấu hình và cho phép.'
-- 'Lưu trữ idempotent trên PostgreSQL; luồng nhận tài liệu chạy trọn ở DRY_RUN trên dữ liệu giả lập; 198 test. Chưa gọi nhà cung cấp thật (Gmail, OpenAI, Slack, CRM); không phải việc cho khách.'
+- '**Quy trình:** nhận email có hóa đơn PDF → đọc và trích xuất thông tin → kiểm tra → lưu cơ sở dữ liệu → tạo thông báo; chạy trên n8n.'
+- '**Chống sự cố:** không xử lý trùng một tài liệu, giới hạn số lần gọi AI mỗi ngày để tránh phát sinh chi phí, chế độ chạy thử không gửi gì ra ngoài.'
 tech:
 - Python
 - n8n

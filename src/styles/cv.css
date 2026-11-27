@@ -11,7 +11,7 @@
   --sans: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --fs: 9.5pt;
 }
-@page { size: A4; margin: 10mm 15mm; }
+@page { size: A4; margin: 9mm 13mm; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -113,7 +113,10 @@ a.tag:hover { border-color: var(--link); color: var(--link); text-decoration: no
 .meta span + span::before { content: ' · '; }
 .meta.role { margin: 0 0 5pt; }
 .meta.tech { margin-top: 2pt; }
-.pub { margin: 0 0 1pt; }
+.pub { margin: 1pt 0 0; padding-left: 13pt; font-size: 9pt; color: var(--muted); }
+.pub strong { color: var(--ink); font-weight: 600; }
+.entry[id^="pub-"] { margin-bottom: 6pt; }
+.entry[id^="pub-"]:last-child { margin-bottom: 0; }
 .statement { margin-top: 5pt; }
 .entry > p { margin-top: 3pt; }
 

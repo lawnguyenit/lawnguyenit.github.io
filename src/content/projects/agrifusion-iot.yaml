@@ -19,11 +19,13 @@ summary_vi: Hệ thu thập dữ liệu ngoài trời cho vườn sầu riêng (
 contribution_en: 'Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results. Field hardware: designed and deployed.'
 contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
 highlights_en:
-- 'Designed and deployed the field device (ESP32-S3, RS485/Modbus, 4G LTE, Firebase RTDB); each record carries transmission status, retry count and time source.'
-- 'Two-layer data pipeline with manifest and hash checks (202-file reproducibility bundle); benchmarked XGBoost, TabPFN, FT-Transformer and TabM under temporal vs. random splits on weak labels.'
+- '**Device:** designed and deployed a field measuring device (ESP32-S3, RS485/Modbus sensors) that sends data over 4G.'
+- '**Data:** uploaded the data to the cloud (Firebase), pulled it back, then cleaned and standardized it into an analysis dataset.'
+- '**Models:** trained and compared machine-learning models (XGBoost, TabPFN, deep-learning models) over time; validated the results and wrote 2 papers (see Publications).'
 highlights_vi:
-- 'Thiết kế và triển khai thiết bị ngoài vườn (ESP32-S3, RS485/Modbus, 4G LTE, Firebase RTDB); mỗi bản ghi có trạng thái truyền, số lần thử lại, nguồn thời gian.'
-- 'Pipeline dữ liệu 2 lớp có manifest và kiểm tra hash (bộ tái lập 202 file); so sánh XGBoost, TabPFN, FT-Transformer, TabM theo temporal split và random split trên nhãn yếu.'
+- '**Thiết bị:** thiết kế và triển khai thiết bị đo ngoài vườn (ESP32-S3, cảm biến RS485/Modbus), gửi dữ liệu qua 4G.'
+- '**Dữ liệu:** đưa dữ liệu lên cloud (Firebase), kéo về, làm sạch và chuẩn hóa thành bộ dữ liệu phân tích.'
+- '**Mô hình:** huấn luyện và so sánh các mô hình học máy (XGBoost, TabPFN, mô hình học sâu) theo thời gian; kiểm định kết quả và viết 2 bài báo (mục Công bố).'
 tech:
 - ESP32-S3
 - RS485/Modbus

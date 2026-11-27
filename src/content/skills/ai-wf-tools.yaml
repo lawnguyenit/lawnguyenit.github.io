@@ -3,7 +3,7 @@ id: ai-wf-tools
 visible:
 - job
 order: 1
-name_vi: 'Công cụ: Claude Code, Codex, dùng cho khảo sát, lập kế hoạch và triển khai.'
+name_vi: '**Công cụ:** Claude Code, Codex.'
 group_job: job-ai-workflow
 order_job: 1
 status: confirmed

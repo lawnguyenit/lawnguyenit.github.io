@@ -3,8 +3,8 @@ visible:
 - academic
 - job
 order: 1
-name_en: 'Python (pandas, scikit-learn, XGBoost)'
-name_vi: 'Python (pandas, scikit-learn, XGBoost)'
+name_en: 'Python, with pandas (data processing), scikit-learn (machine learning), PyTorch (basic deep learning)'
+name_vi: 'Python, với pandas (xử lý dữ liệu), scikit-learn (học máy), PyTorch (học sâu cơ bản)'
 group_academic: acad-programming
 order_academic: 1
 group_job: job-programming

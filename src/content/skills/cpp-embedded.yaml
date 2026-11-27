@@ -1,8 +1,6 @@
 # Chủ site quyết định 2026-11-27: C/C++, C#, Java, JavaScript ở mức nền tảng (đã học); Python là ngôn ngữ chính.
 id: cpp-embedded
-visible:
-- academic
-- job
+visible: []
 order: 2
 name_en: C/C++
 name_vi: C/C++

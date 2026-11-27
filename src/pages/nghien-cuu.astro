@@ -5,7 +5,7 @@ import Section from '../components/Section.astro';
 import Entry from '../components/Entry.astro';
 import Authors from '../components/Authors.astro';
 import Tags from '../components/Tags.astro';
-import { clean, f, range, tagsOf, viOrEn, PROJECT_STATUS_VI, getProfile, getResearchProjects, getResearchPublications, advisorName } from '../lib/content';
+import { clean, rich, f, range, tagsOf, viOrEn, PROJECT_STATUS_VI, getProfile, getResearchProjects, getResearchPublications, advisorName } from '../lib/content';
 
 const profile = await getProfile();
 const projects = await getResearchProjects();
@@ -35,7 +35,7 @@ const interests = profile.research_interests_en;
           <Tags tags={tagsOf(p, 'vi')} />
           {tag.text && <p lang={tag.lang}><em>{tag.text}</em></p>}
           {summary.text && <p lang={summary.lang}>{summary.text}</p>}
-          {hl.items.length > 0 && <ul lang={hl.lang}>{hl.items.map((h) => <li>{h}</li>)}</ul>}
+          {hl.items.length > 0 && <ul lang={hl.lang}>{hl.items.map((h) => <li set:html={rich(h)} />)}</ul>}
           {contrib.text && <p class="meta"><span lang={contrib.lang}>Vai trò: {contrib.text}</span></p>}
           {p.figures.map((fig) => (
             <figure>

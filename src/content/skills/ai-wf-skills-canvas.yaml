@@ -3,7 +3,7 @@ id: ai-wf-skills-canvas
 visible:
 - job
 order: 3
-name_vi: 'Đóng gói việc lặp lại thành skill; dựng canvas kế hoạch để người khác xem và duyệt trước khi triển khai.'
+name_vi: '**Đã áp dụng:** đồ án AgriFusion-IoT, Workflow_Automation_Tool và chính trang CV này (cv.lnit.id.vn).'
 group_job: job-ai-workflow
 order_job: 3
 status: confirmed
