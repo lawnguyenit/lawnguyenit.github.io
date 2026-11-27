@@ -1,0 +1,11 @@
+# Chờ chủ site xác nhận đã qua bài test. visible để trống (ẩn) cho tới lúc đó; schema chặn đặt visible khi status = pending_test.
+# Khi xác nhận: đổi status thành confirmed, thêm job vào visible, xóa note_vi.
+id: excel
+visible: []
+order: 3
+name_en: Excel
+name_vi: Excel
+group_job: job-data
+order_job: 3
+status: pending_test
+note_vi: chờ xác nhận sau bài test

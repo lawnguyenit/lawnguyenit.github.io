@@ -1,0 +1,23 @@
+# Văn bằng: Kỹ sư Công nghệ thông tin, chuyên ngành An toàn và an ninh thông tin (chủ site xác nhận 2026-11-27).
+# degree_title + program ghép lại thành đúng tên văn bằng.
+id: bachelor-it
+visible:
+- academic
+- job
+order: 1
+institution_en: Vinh Long University of Technology and Engineering (VLUTE)
+institution_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+former_name_en: Vinh Long University of Technology Education
+former_name_vi: Trường Đại học Sư phạm Kỹ thuật Vĩnh Long
+degree_title_en: Engineer's degree
+degree_title_vi: Kỹ sư
+program_en: Information Technology, Information Security major
+program_vi: Công nghệ thông tin, chuyên ngành An toàn và an ninh thông tin
+status: graduated
+start: '2022'
+end: '2026'
+cohort: K47
+gpa: 3.19
+gpa_scale: 4.0
+note_en: Graduated 2026. The university was renamed under Decision 2636/QĐ-BGDĐT (7 September 2026).
+note_vi: Tốt nghiệp 2026. Trường đổi tên theo Quyết định 2636/QĐ-BGDĐT (07/9/2026).

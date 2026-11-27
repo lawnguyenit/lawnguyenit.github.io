@@ -1,0 +1,9 @@
+id: ai-wf-claims-ledger
+visible:
+- job
+order: 5
+name_vi: 'Sổ khẳng định: mỗi câu dùng trong CV có nguồn và giới hạn, kèm danh sách điều không được nói (như bài mới nộp không viết là đã được chấp nhận); nội dung AI soạn phải khớp sổ trước khi dùng.'
+group_job: job-ai-workflow
+order_job: 5
+status: confirmed
+note_vi: 'Mỗi câu dùng trong CV và hồ sơ freelance có nguồn và giới hạn, kèm danh sách điều không được nói (ví dụ: bài báo mới nộp không viết là đã được chấp nhận; repo mới đọc README không viết là đã triển khai cho khách). Nội dung do AI soạn phải khớp sổ này trước khi dùng; chính CV này viết theo sổ đó.'

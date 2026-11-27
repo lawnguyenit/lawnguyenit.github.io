@@ -1,0 +1,10 @@
+dist/
+private-out/
+node_modules/
+.astro/
+.env
+.env.*
+*.log
+shots/
+docs/*.json
+docs/**/*.json

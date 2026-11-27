@@ -1,0 +1,14 @@
+id: csharp
+visible:
+- academic
+- job
+order: 3
+name_en: C#
+name_vi: C#
+group_academic: acad-programming
+order_academic: 3
+group_job: job-programming
+order_job: 3
+status: confirmed
+note_en: foundation
+note_vi: nền tảng

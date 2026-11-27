@@ -1,0 +1,17 @@
+id: student-researcher-aicon
+visible:
+- academic
+order: 3
+kind: research
+role_en: Student Researcher — Agricultural IoT Analytics
+role_vi: Nghiên cứu sinh viên — phân tích dữ liệu IoT nông nghiệp
+organization_en: Vinh Long University of Technology and Engineering (VLUTE), research project
+organization_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+start: '2026'
+end: '2026'
+ongoing: false
+advisor: null
+bullets_en:
+- Contributed to data preparation, weak labeling, temporal evaluation protocols, and benchmarking tabular models against gradient boosting for the manuscript submitted to EAI AICON 2026.
+bullets_vi: []
+links: []

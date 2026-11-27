@@ -1,0 +1,11 @@
+# Nguồn: Brain/AGENTS.md, Brain/Skills/*/SKILL.md, Brain/Plans/Plans.md (nhật ký đo), Brain/Me/Blind-Spot-Rule.md, Brain/Projects/Showcase-Claims.md.
+# Không có số đo hiệu quả nào ngoài số trong nhật ký đo; không thêm số mới.
+id: ai-acad-agents
+visible:
+- academic
+order: 11
+name_en: I write requirements and architecture, direct AI coding agents (Claude, Codex) to implement them and validate the results; a separate test agent sees only the acceptance criteria.
+group_academic: acad-ai-workflow
+order_academic: 1
+status: confirmed
+note_en: I write the requirements and architecture, direct AI coding agents (Claude, Codex) to implement them, and validate results; testing is done by a separate agent that sees only the acceptance criteria.

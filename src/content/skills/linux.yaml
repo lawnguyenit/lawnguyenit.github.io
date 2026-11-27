@@ -1,0 +1,12 @@
+id: linux
+visible:
+- academic
+- job
+order: 2
+name_en: Linux
+name_vi: Linux
+group_academic: acad-development
+order_academic: 2
+group_job: job-it-security
+order_job: 3
+status: confirmed

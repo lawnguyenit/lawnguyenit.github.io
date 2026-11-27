@@ -1,0 +1,9 @@
+id: imbalanced-metrics
+visible:
+- academic
+order: 6
+name_en: imbalanced-class metrics
+name_vi: Chỉ số cho phân loại mất cân bằng
+group_academic: acad-ml-data
+order_academic: 6
+status: confirmed

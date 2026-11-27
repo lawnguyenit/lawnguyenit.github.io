@@ -1,0 +1,15 @@
+# Mục tiêu, không phải chứng chỉ đã có. Không hiện điểm như thể đã đạt.
+id: ielts-course
+visible:
+- job
+order: 2
+type: language
+status: in_progress
+name_en: IELTS preparation course
+name_vi: Đang học khóa IELTS
+issuer_en: null
+issuer_vi: null
+level: null
+framework: IELTS
+target_score: 5.5+
+issued: null

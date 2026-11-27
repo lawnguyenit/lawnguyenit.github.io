@@ -1,0 +1,16 @@
+# issued: chưa biết ngày cấp (TODO_NGAY_CAP).
+id: english-b1
+visible:
+- academic
+- job
+order: 1
+type: language
+status: obtained
+name_en: English, CEFR B1 (institutional certificate)
+name_vi: Tiếng Anh, CEFR B1 (chứng chỉ của trường)
+issuer_en: Vinh Long University of Technology and Engineering (VLUTE)
+issuer_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+level: B1
+framework: CEFR
+target_score: null
+issued: TODO_NGAY_CAP

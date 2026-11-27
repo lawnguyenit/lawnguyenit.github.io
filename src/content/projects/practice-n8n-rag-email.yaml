@@ -1,0 +1,38 @@
+# QUYẾT ĐỊNH c4 CÒN MỞ: mặc định chỉ khoe AgriFusion-IoT, nên mục này ẨN (visible: []).
+# Muốn bật: thêm job (và/hoặc academic) vào visible. Luôn hiện nhãn "Dự án thực hành" vì kind = practice.
+# Không viết "đã giao cho khách", "tự code". Xem Showcase-Claims.
+id: practice-n8n-rag-email
+visible: []
+order: 12
+featured: false
+kind: practice
+stage: null
+status: completed
+title: AI Customer Support Email Assistant (n8n + RAG)
+tagline_en: 'Practice project: email support assistant with retrieval and human handover'
+tagline_vi: 'Dự án thực hành: trợ lý hỗ trợ khách qua email có tra cứu tri thức và chuyển người duyệt'
+summary_en: '18-node n8n workflow: classify incoming Gmail, filter spam, retrieve from a knowledge base (RAG), draft a reply in the same Gmail thread, and hand over to a human when knowledge is missing or confidence is low.'
+summary_vi: 'Workflow n8n 18 node: phân loại email, bỏ spam, tra cứu cơ sở tri thức (RAG), soạn trả lời giữ nguyên thread Gmail, chuyển người khi thiếu tri thức hoặc độ khớp thấp.'
+contribution_en: Designed, directed and validated (AI-assisted). Practice project based on a public brief; not client work.
+contribution_vi: Thiết kế, điều phối công cụ AI, kiểm định. Dự án thực hành dựa trên brief công khai, chưa phải việc làm cho khách.
+highlights_en:
+- 'Checked with an offline simulator: 7/7 scenarios pass (2026-10-26).'
+- Not yet confirmed running on a live n8n instance with real credentials.
+highlights_vi:
+- 'Kiểm bằng simulator offline: 7/7 kịch bản đạt (2026-10-26).'
+- Chưa xác nhận chạy trên n8n thật với credential thật.
+tech:
+- n8n
+- Gmail
+- OpenAI
+- Pinecone
+- Gemini
+start: '2026'
+end: null
+advisor: null
+links:
+- label_en: GitHub repository
+  label_vi: Kho mã GitHub
+  url: https://github.com/lawnguyenit/ai-customer-support-email-rag
+figures: []
+internal_note: Chỉ mới đọc README + tài liệu test; không nói chạy trên n8n thật, không nói đã triển khai cho khách. Nhà cung cấp LLM (OpenAI/Gemini) chưa rõ.

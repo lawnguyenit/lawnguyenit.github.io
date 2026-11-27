@@ -1,0 +1,8 @@
+id: ai-wf-blind-spots
+visible: []
+order: 6
+name_vi: Buộc agent phản biện và nêu điều chưa biết
+group_job: job-ai-workflow
+order_job: 6
+status: confirmed
+note_vi: 'Quy tắc yêu cầu agent nêu giả định ẩn và điều người dùng có thể chưa biết (tối đa 3 điểm mỗi lần), phân loại: người dùng biết / người dùng tưởng agent biết / chưa ai biết, ưu tiên chặng triển khai, vận hành, bảo trì. Ví dụ: audit tĩnh ExamHub do 3 agent đọc code, các điểm bảo mật được kiểm tay trước khi đưa vào kế hoạch; báo cáo ghi rõ chưa chạy build, test, UI.'

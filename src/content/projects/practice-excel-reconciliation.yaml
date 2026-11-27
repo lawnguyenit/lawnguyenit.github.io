@@ -1,0 +1,36 @@
+# QUYẾT ĐỊNH c4 CÒN MỞ: mặc định chỉ khoe AgriFusion-IoT, nên mục này ẨN (visible: []).
+# Muốn bật: thêm job (và/hoặc academic) vào visible. Luôn hiện nhãn "Dự án thực hành" vì kind = practice.
+# Không viết "đã giao cho khách", "tự code". Xem Showcase-Claims.
+id: practice-excel-reconciliation
+visible: []
+order: 10
+featured: false
+kind: practice
+stage: null
+status: completed
+title: Excel Reconciliation Tool
+tagline_en: 'Practice project: reconcile two Excel/CSV files by key'
+tagline_vi: 'Dự án thực hành: đối soát hai file Excel/CSV theo khóa'
+summary_en: Local-first tool that compares an old and a target Excel/CSV file by single or composite key, replacing manual VLOOKUP. AI or fuzzy matching only suggests column mappings; row and cell comparison uses deterministic rules.
+summary_vi: Công cụ chạy local so sánh hai file Excel/CSV theo khóa đơn hoặc khóa ghép, thay VLOOKUP thủ công. AI chỉ gợi ý ánh xạ cột; so sánh dòng/ô bằng luật xác định.
+contribution_en: Designed, directed and validated (AI-assisted). Practice project based on a public brief; not client work.
+contribution_vi: Thiết kế, điều phối công cụ AI, kiểm định. Dự án thực hành dựa trên brief công khai, chưa phải việc làm cho khách.
+highlights_en:
+- Duplicate or empty keys block reconciliation and point to the offending rows.
+- Protects Excel export against formula injection; keeps leading-zero IDs.
+- Independent QA on 2026-11-01; accepted for local/demo use only.
+highlights_vi:
+- Khóa trùng hoặc rỗng chặn đối soát và chỉ ra dòng lỗi.
+- Chống formula injection khi xuất Excel; giữ nguyên ID có số 0 đầu.
+- QA độc lập ngày 2026-11-01; chấp nhận cho dùng local/demo.
+tech:
+- Python
+- Streamlit
+- pandas
+- RapidFuzz
+start: '2026'
+end: null
+advisor: null
+links: []
+figures: []
+internal_note: Chưa thấy remote GitHub; chưa public/deploy. Không nói đang chạy public.

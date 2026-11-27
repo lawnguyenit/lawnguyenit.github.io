@@ -1,0 +1,9 @@
+id: ai-acad-claims-ledger
+visible:
+- academic
+order: 13
+name_en: 'Claims ledger: every public statement about my work is traced to a source and a stated limit; for example, the EAI AICON 2026 manuscript is described only as submitted and under review.'
+group_academic: acad-ai-workflow
+order_academic: 3
+status: confirmed
+note_en: Every public statement about my work is traced to a source and a stated limit; for example, the EAI AICON 2026 manuscript is described only as submitted and under review.

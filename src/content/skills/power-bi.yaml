@@ -1,0 +1,11 @@
+# Chờ chủ site xác nhận đã qua bài test. visible để trống (ẩn) cho tới lúc đó; schema chặn đặt visible khi status = pending_test.
+# Khi xác nhận: đổi status thành confirmed, thêm job vào visible, xóa note_vi.
+id: power-bi
+visible: []
+order: 4
+name_en: Power BI
+name_vi: Power BI
+group_job: job-data
+order_job: 4
+status: pending_test
+note_vi: chờ xác nhận sau bài test

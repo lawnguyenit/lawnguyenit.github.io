@@ -1,0 +1,44 @@
+id: agrifusion-iot
+visible:
+- academic
+- job
+order: 1
+featured: true
+kind: system
+stage: 1
+status: ongoing
+title: AgriFusion-IoT
+tagline_en: Traceable IoT telemetry for durian orchards; weak-label ML benchmark
+tagline_vi: Hệ IoT vườn sầu riêng, pipeline truy vết, benchmark ML nhãn yếu
+summary_en: 'An end-to-end cellular telemetry system for a durian orchard (ESP32-S3, SHT30, an ES-SOIL-7-IN-1 Modbus/RS485 soil sensor, SIM A7682S 4G LTE, Firebase Realtime Database). Each record is structured as traceable telemetry: measurements, transmission status, retry metadata and temporal provenance. A downstream pipeline turns raw records into structured benchmark views with temporal features.'
+summary_vi: Hệ thu thập dữ liệu ngoài trời cho vườn sầu riêng (ESP32-S3, 4G, RS485/Modbus, Firebase) và pipeline biến dữ liệu thô thành tập benchmark ML có truy vết. Mỗi bản ghi có trạng thái truyền, số lần thử lại và nguồn thời gian. Dự án tốt nghiệp, đồng thời là nền cho bài báo nghiên cứu.
+contribution_en: 'Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results. Field hardware: designed and deployed.'
+contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
+highlights_en:
+- Telemetry records carry transmission status, retry metadata and time source.
+- Two-layer data pipeline (raw to canonical) with manifest and hash checks, plus a reproducibility bundle (202 files).
+- Evaluated XGBoost, TabPFN, FT-Transformer and TabM under temporal versus random splits on weak labels; manuscript on this data submitted to EAI AICON 2026 (under review, no acceptance decision yet).
+highlights_vi:
+- 'Thiết bị ngoài vườn: thiết kế và triển khai; bản ghi có trạng thái truyền, số lần thử lại, nguồn thời gian.'
+- Pipeline dữ liệu 2 lớp (thô → canonical) có manifest, kiểm tra hash và bộ tái lập kết quả (202 file).
+- Đánh giá XGBoost, TabPFN, FT-Transformer, TabM theo temporal split và random split trên nhãn yếu; đồng tác giả bài nộp EAI AICON 2026 (đang phản biện, chưa có kết quả chấp nhận).
+tech:
+- ESP32-S3
+- RS485/Modbus
+- SIM A7682S (4G LTE)
+- Firebase RTDB
+- Python
+- XGBoost
+- TabPFN
+start: '2025'
+end: null
+advisor: Hoai-Hanh Tran
+links:
+- label_en: GitHub repository
+  label_vi: Kho mã GitHub
+  url: https://github.com/lawnguyenit/AgriFusion-IoT
+figures:
+- src: /assets/img/agrifusion_arch.svg
+  alt_en: AgriFusion-IoT architecture
+  caption_en: End-to-end telemetry acquisition and data traceability pipeline of AgriFusion-IoT.
+internal_note: 'Giới hạn: không phải bằng chứng độc lập về stress cây trồng (nhãn là nhãn yếu); dashboard ở chế độ demo; chưa có chứng nhận triển khai; WADE V9 riêng tư, không nhắc. Cần chủ site xác nhận mô tả đóng góp từng phần. Bài EAI: chỉ viết ''nộp, đang phản biện''; không viết accepted. Câu ''thiết bị do mình thiết kế và triển khai'' theo Showcase-Claims (phần thiết bị giữ ''designed and deployed''); phần phần mềm/pipeline do agent AI viết.'

@@ -1,0 +1,30 @@
+id: research-weak-supervision-benchmark
+visible:
+- academic
+order: 2
+featured: false
+kind: research
+stage: 2
+status: submitted
+title: Benchmarking Tabular Models on Weakly Supervised IoT Data
+tagline_en: Co-authored manuscript submitted to EAI AICON 2026 (under review)
+tagline_vi: Bài đồng tác giả nộp EAI AICON 2026 (đang phản biện)
+summary_en: Benchmarked XGBoost, FT-Transformer, TabM and TabPFN on agricultural telemetry targets constructed via weak rule-based supervision, contrasting random-split and temporal-split protocols and showing how model rankings change under future-oriented evaluation.
+summary_vi: Đánh giá XGBoost, FT-Transformer, TabM, TabPFN trên nhãn yếu theo luật của dữ liệu IoT nông nghiệp; so sánh random split với temporal split.
+contribution_en: 'Contributions (as stated by the author, to be confirmed): data cleaning, weak-label definition, dataset preparation, temporal split pipeline, model benchmarking and empirical analysis; AI-assisted implementation, directed and validated by the author.'
+contribution_vi: Thiết kế, điều phối công cụ AI, kiểm định.
+highlights_en: []
+highlights_vi: []
+tech:
+- XGBoost
+- FT-Transformer
+- TabM
+- TabPFN
+- Weak supervision
+- Temporal generalization
+start: '2026'
+end: null
+advisor: null
+links: []
+figures: []
+internal_note: Phần "contributions" lấy từ trang cũ (research.html), chưa kiểm chứng; chủ site xác nhận.

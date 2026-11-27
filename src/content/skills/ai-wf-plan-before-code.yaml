@@ -1,0 +1,9 @@
+id: ai-wf-plan-before-code
+visible:
+- job
+order: 3
+name_vi: 'Skill tùy biến: plan-canvas đưa kế hoạch lên canvas Obsidian để duyệt từng bước trước khi agent viết mã; review-change phân bậc rủi ro và giao agent khác phiên kiểm tra thay đổi. Đang thử nghiệm.'
+group_job: job-ai-workflow
+order_job: 3
+status: confirmed
+note_vi: 'Bộ skill tùy biến: plan-canvas chuyển kế hoạch nhiều giai đoạn (viết bằng Markdown) thành canvas Obsidian để duyệt và phản biện từng node; các node khai báo quan hệ với nhau, nên khi một node đổi, node liên quan bị gắn cờ "cần xem lại" thay vì bị bỏ sót. plan-module-map chốt phạm vi và bản đồ module, dừng chờ duyệt trước khi viết mã. Cả hai còn ở mức thử nghiệm: nhật ký đo ghi số node, số vấn đề bắt ở bước duyệt và số vấn đề lọt tới lúc code; chưa đủ dữ liệu để kết luận hiệu quả.'
