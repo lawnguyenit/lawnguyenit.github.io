@@ -1,0 +1,8 @@
+id: ai-wf-review-ladder
+visible: []
+order: 4
+name_vi: Review thay đổi theo bậc rủi ro, tách file lớn có test bảo vệ
+group_job: job-ai-workflow
+order_job: 4
+status: confirmed
+note_vi: 'Quy trình review-change: bậc 1 tự chạy test, build, lint và ghi kết quả thật (không chạy được thì ghi "chưa kiểm được", không ghi "ổn"); thay đổi vừa giao reviewer là agent khác phiên; rủi ro cao dùng thêm hai reviewer khác hãng (Codex, Gemini) khi nội dung được phép gửi ra ngoài; vùng nhạy cảm (xác thực, thanh toán, bí mật) do người phụ trách repo quyết. split-large-file chạy test đóng băng hành vi trước khi tách và dừng, hoàn tác khi test đỏ. Tham khảo từ quy trình review của Anthropic; đang thử, chưa có số đo.'

@@ -1,0 +1,12 @@
+id: firebase-rtdb
+visible:
+- academic
+- job
+order: 5
+name_en: Firebase RTDB
+name_vi: Firebase RTDB
+group_academic: acad-iot-embedded
+order_academic: 5
+group_job: job-iot
+order_job: 5
+status: confirmed

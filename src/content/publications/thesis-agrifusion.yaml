@@ -1,0 +1,20 @@
+# status published ở đây nghĩa là luận văn đã hoàn thành/nộp trường, không phải bài báo đã xuất bản. Chủ site xác nhận trạng thái.
+id: thesis-agrifusion
+visible:
+- academic
+order: 3
+type: thesis
+status: published
+year: 2026
+title: Building an IoT-based System for Monitoring Environmental and Nutritional Conditions in Durian Orchards
+authors:
+- name: Lam-Nguyen Nguyen
+  is_owner: true
+venue_en: 'Graduation thesis, VLUTE, 2026 · Advisor: Hoai-Hanh Tran'
+venue_vi: 'Luận văn tốt nghiệp, Trường Đại học Công nghệ Kỹ thuật Vĩnh Long, 2026. Giảng viên hướng dẫn: Trần Hoài Hạnh.'
+summary_en: null
+summary_vi: null
+links:
+- label_en: 'Project: AgriFusion-IoT'
+  label_vi: 'Dự án: AgriFusion-IoT'
+  url: https://github.com/lawnguyenit/AgriFusion-IoT

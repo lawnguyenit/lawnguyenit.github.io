@@ -1,0 +1,35 @@
+id: research-observation-contracts
+visible:
+- academic
+order: 3
+featured: false
+kind: research
+stage: 3
+status: in_preparation
+title: Observation Contracts and Benchmark Validity
+tagline_en: First-author working manuscript, in preparation (2026)
+tagline_vi: Bản thảo tác giả đầu, đang soạn (2026)
+summary_en: 'Treats weak-label benchmarking itself as the object of study: when ground-truth labels are unavailable and targets are derived from temporal rules, standard performance metrics can be misleading. Proposes observation contracts and effective-evidence controls.'
+summary_vi: Coi chính việc benchmark nhãn yếu là đối tượng nghiên cứu; đề xuất observation contracts và kiểm soát bằng chứng hiệu dụng.
+contribution_en: null
+contribution_vi: null
+highlights_en:
+- 'Representation control: evaluate feature views on matched anchors so score changes reflect information gain, not sample differences.'
+- 'Temporal validity: separate instantaneous measurements from 3h and 8h history while guarding against temporal leakage.'
+- 'Rule recoverability: test whether models recover label-generating rules or observable proxies rather than independent physical evidence.'
+- 'Deployment transport: freeze thresholds, preprocessing and model weights before evaluating on an unseen field position.'
+highlights_vi: []
+tech:
+- Benchmark validity
+- Observation contracts
+- Matched anchors
+- Deployment shift
+start: '2026'
+end: null
+advisor: null
+links: []
+figures:
+- src: /assets/img/validity_framework.svg
+  alt_en: Observation contracts and validity framework
+  caption_en: Observation contracts and information regime audit for weakly supervised temporal targets.
+internal_note: null

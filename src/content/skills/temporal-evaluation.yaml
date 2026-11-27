@@ -1,0 +1,12 @@
+id: temporal-evaluation
+visible:
+- academic
+- job
+order: 5
+name_en: temporal evaluation, leakage control
+name_vi: đánh giá theo thời gian, kiểm soát rò rỉ dữ liệu
+group_academic: acad-ml-data
+order_academic: 5
+group_job: job-ml-methods
+order_job: 2
+status: confirmed

@@ -1,0 +1,14 @@
+id: javascript
+visible:
+- academic
+- job
+order: 5
+name_en: JavaScript
+name_vi: JavaScript
+group_academic: acad-programming
+order_academic: 5
+group_job: job-programming
+order_job: 5
+status: confirmed
+note_en: foundation
+note_vi: nền tảng

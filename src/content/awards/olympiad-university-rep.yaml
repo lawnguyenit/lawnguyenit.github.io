@@ -1,0 +1,13 @@
+id: olympiad-university-rep
+visible:
+- academic
+- job
+order: 2
+title_en: University Representative
+title_vi: Đại diện của trường
+issuer_en: National Student Mathematics Olympiad
+issuer_vi: Olympic Toán học Sinh viên toàn quốc
+date_label: 4 editions (2023–2026)
+date_label_vi: 4 kỳ (2023–2026)
+year_start: 2023
+year_end: 2026

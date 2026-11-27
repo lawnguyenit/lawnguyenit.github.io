@@ -1,0 +1,18 @@
+id: first-author-research
+visible:
+- academic
+order: 1
+kind: research
+role_en: First-Author Research — Trustworthy ML for Agricultural IoT
+role_vi: Nghiên cứu (tác giả đầu) — ML đáng tin cậy cho IoT nông nghiệp
+organization_en: Vinh Long University of Technology and Engineering (VLUTE), research project
+organization_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+start: '2026'
+end: null
+ongoing: true
+advisor: null
+bullets_en:
+- Designed controlled experiments to evaluate rule-derived weak targets under different temporal information regimes and deployment conditions.
+- Investigated target leakage, proxy features, temporal history, distribution shift, and the distinction between label recoverability and independent physical validation.
+bullets_vi: []
+links: []

@@ -1,0 +1,23 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getVisiblePages, getProfile } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const pages = await getVisiblePages();
+  return pages.map((page) => ({ params: { slug: page.data.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+await render(page);
+// The layout already renders the page title as the single <h1>: drop a leading "# ..." and demote any other h1.
+const html = (page.rendered?.html ?? '')
+  .replace(/^\s*<h1\b[^>]*>[\s\S]*?<\/h1>/, '')
+  .replace(/<(\/?)h1\b/g, '<$1h2');
+const profile = await getProfile();
+---
+<Base title={`${page.data.title} – ${profile.name_native}`} description={page.data.description ?? undefined} lang={page.data.lang}>
+  <header class="cv-head">
+    <h1 class="name">{page.data.title}</h1>
+  </header>
+  <div class="prose"><Fragment set:html={html} /></div>
+</Base>

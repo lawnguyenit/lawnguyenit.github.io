@@ -1,0 +1,34 @@
+# QUYẾT ĐỊNH c4 CÒN MỞ: mặc định chỉ khoe AgriFusion-IoT, nên mục này ẨN (visible: []).
+# Muốn bật: thêm job (và/hoặc academic) vào visible. Luôn hiện nhãn "Dự án thực hành" vì kind = practice.
+# Không viết "đã giao cho khách", "tự code". Xem Showcase-Claims.
+id: practice-scraping-tool
+visible: []
+order: 11
+featured: false
+kind: practice
+stage: null
+status: ongoing
+title: Product Scraping Tool
+tagline_en: 'Practice project: source-aware product data collection'
+tagline_vi: 'Dự án thực hành: thu thập dữ liệu sản phẩm theo từng nguồn'
+summary_en: Desktop tool (PySide6) with per-source adapters, SQLite history and XLSX export, plus a source-policy gate that pauses sources whose terms forbid copying. Reports coverage honestly (partial when partial).
+summary_vi: 'Công cụ desktop (PySide6) có adapter riêng cho từng nguồn, lưu lịch sử SQLite, xuất XLSX, có cổng chính sách nguồn: nguồn cấm sao chép thì tạm dừng. Báo độ phủ trung thực.'
+contribution_en: Designed, directed and validated (AI-assisted). Practice project; not client work.
+contribution_vi: Thiết kế, điều phối công cụ AI, kiểm định. Dự án thực hành dựa trên brief công khai, chưa phải việc làm cho khách.
+highlights_en:
+- 'Test run on a public catalogue: 378 products to 1,328 variant rows, 0 page errors, 10/10 manual spot checks matched the source.'
+- Request spacing of 2-5 seconds; source-terms review before collection.
+highlights_vi:
+- 'Chạy thử trên danh mục công khai: 378 sản phẩm → 1.328 dòng biến thể, 0 lỗi trang, kiểm tay mẫu 10/10 khớp nguồn.'
+- Giãn cách yêu cầu 2-5 giây; rà điều khoản nguồn trước khi thu thập.
+tech:
+- Python
+- PySide6
+- SQLite
+- XLSX
+start: '2026'
+end: null
+advisor: null
+links: []
+figures: []
+internal_note: 'Repo lawnguyenit/web-scraper: chưa rõ private hay chưa push, nên không gắn link. Điều khoản nguồn Keeler trả 404, ghi là mơ hồ, không coi là cho phép.'

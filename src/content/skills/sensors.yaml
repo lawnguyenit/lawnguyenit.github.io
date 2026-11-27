@@ -1,0 +1,12 @@
+id: sensors
+visible:
+- academic
+- job
+order: 3
+name_en: sensors SHT30, ES-SOIL-7-IN-1
+name_vi: cảm biến SHT30, ES-SOIL-7-IN-1
+group_academic: acad-iot-embedded
+order_academic: 3
+group_job: job-iot
+order_job: 3
+status: confirmed

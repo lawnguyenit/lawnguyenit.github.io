@@ -1,0 +1,14 @@
+id: tabular-models
+visible:
+- academic
+- job
+order: 3
+name_en: TabPFN, FT-Transformer, TabM
+name_vi: TabPFN, FT-Transformer, TabM
+group_academic: acad-ml-data
+order_academic: 3
+group_job: job-ai-ml
+order_job: 3
+status: confirmed
+note_en: null
+note_vi: null

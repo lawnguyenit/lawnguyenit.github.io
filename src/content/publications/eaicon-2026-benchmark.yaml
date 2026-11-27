@@ -1,0 +1,22 @@
+# status phải là submitted. KHÔNG đổi thành accepted/published khi chưa có thư chấp nhận.
+id: eaicon-2026-benchmark
+visible:
+- academic
+- job
+order: 1
+type: conference_manuscript
+status: submitted
+year: 2026
+title: 'Benchmarking Foundation Models and Gradient Boosting for Agricultural IoT Context Analytics: A Weakly Supervised Temporal Evaluation'
+authors:
+- name: Hoai-Hanh Tran
+  is_owner: false
+- name: Thanh-Nghi Doan
+  is_owner: false
+- name: Lam-Nguyen Nguyen
+  is_owner: true
+venue_en: Manuscript submitted to EAI AICON 2026 (under review)
+venue_vi: Bản thảo nộp EAI AICON 2026 (đang phản biện)
+summary_en: Benchmarks tabular models against gradient boosting on weakly supervised agricultural IoT targets and compares model rankings under temporal and random splits.
+summary_vi: 'Đồng tác giả bài nộp EAI AICON 2026 (đang phản biện): đánh giá mô hình dữ liệu bảng so với gradient boosting trên dữ liệu IoT nông nghiệp nhãn yếu.'
+links: []

@@ -1,0 +1,12 @@
+id: rs485-modbus
+visible:
+- academic
+- job
+order: 2
+name_en: RS485/Modbus
+name_vi: RS485/Modbus
+group_academic: acad-iot-embedded
+order_academic: 2
+group_job: job-iot
+order_job: 2
+status: confirmed

@@ -1,0 +1,11 @@
+---
+// One CV entry: title (left) + date (right), optional italic sub-line (left) + place (right), body slot.
+// `extra` is lighter text on the title line (e.g. the former school name).
+interface Props { title: string; when?: string; sub?: string; where?: string; lang?: string; extra?: string }
+const { title, when, sub, where, lang, extra } = Astro.props;
+---
+<div class="entry">
+  <div class="row"><span class="l"><strong class="t" lang={lang}>{title}</strong>{extra && <span class="x"> {extra}</span>}<slot name="extra" /></span>{when && <span class="r">{when}</span>}</div>
+  {(sub || where) && <div class="row s"><em lang={lang}>{sub}</em>{where && <span class="r">{where}</span>}</div>}
+  <slot />
+</div>

@@ -1,0 +1,54 @@
+---
+import '@fontsource/source-serif-4/600.css';
+import '@fontsource/source-serif-4/700.css';
+import '@fontsource/be-vietnam-pro/400.css';
+import '@fontsource/be-vietnam-pro/400-italic.css';
+import '@fontsource/be-vietnam-pro/600.css';
+import '../styles/cv.css';
+import { getNav } from '../lib/nav';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'vi' | 'en';
+  pdf?: string; // public path of the PDF behind the "Tải PDF" button
+  noindex?: boolean;
+}
+const { title, description, lang = 'vi', pdf = '/pdf/ho-so-di-lam.pdf', noindex = false } = Astro.props;
+const nav = await getNav();
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '/';
+const ogImage = new URL('/og.png', Astro.site).href;
+const canonical = new URL(path, Astro.site).href;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'vi' ? 'vi_VN' : 'en_US'} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+  </head>
+  <body>
+    <nav class="topbar" aria-label="Điều hướng">
+      <ul>
+        {nav.map((n) => (<li><a href={n.href} aria-current={n.href === path ? 'page' : undefined}>{n.label}</a></li>))}
+      </ul>
+      <a class="pdf-btn" href={pdf} download>Tải PDF</a>
+    </nav>
+    <main class="paper"><slot /></main>
+  </body>
+</html>

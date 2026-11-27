@@ -1,0 +1,18 @@
+# Tiêu đề giữ nguyên bản gốc (có từ "Undergraduate" là tên bài, không sửa).
+# status published = ghi chú đã hoàn thành, không phải bài báo bình duyệt. Chủ site xác nhận.
+id: math-note-determinants-rank
+visible:
+- academic
+order: 4
+type: technical_note
+status: published
+year: 2025
+title: 'From Determinants to Rank: An Approach to Parameterized Matrix Problems in Undergraduate Algebra Olympiads'
+authors:
+- name: Lam-Nguyen Nguyen
+  is_owner: true
+venue_en: Exposition note for National Student Mathematics Olympiad training, 2025
+venue_vi: null
+summary_en: A structured methodology connecting determinant manipulation, block matrices, recurrence, characteristic equations, and rank arguments for student mathematics olympiads.
+summary_vi: null
+links: []

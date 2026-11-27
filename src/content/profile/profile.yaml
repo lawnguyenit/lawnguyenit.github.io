@@ -1,0 +1,35 @@
+# Hồ sơ chung (1 file duy nhất).
+# phone.public: true = hiện số trên web và PDF (chủ site quyết định 2026-11-27). Số chỉ hiện khi value không phải TODO*; hiện value vẫn là TODO_SO_DIEN_THOAI nên chưa render gì.
+# TODO_* = chưa biết, chủ site điền.
+id: profile
+name: Lam-Nguyen Nguyen
+name_native: Nguyễn Lâm Nguyên
+email: lamnguyen.it04@gmail.com
+github_handle: lawnguyenit
+github_url: https://github.com/lawnguyenit
+phone:
+  value: TODO_SO_DIEN_THOAI
+  public: true
+location_en: Vinh Long, Vietnam
+location_vi: Vĩnh Long (có thể làm việc tại Cần Thơ)
+photo: /assets/img/profile.png
+headline_en: Engineer in IT (Information Security major) · Master's student in IT
+headline_vi: Kỹ sư CNTT 2026 (chuyên ngành An toàn và an ninh thông tin) · Đang học thạc sĩ CNTT
+affiliation_en: Vinh Long University of Technology and Engineering (VLUTE), Vietnam
+affiliation_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+summary_en: Focusing on trustworthy machine learning, weak supervision, and benchmark validity for IoT telemetry systems.
+summary_vi: Kỹ sư Công nghệ thông tin (An toàn và an ninh thông tin), tốt nghiệp 2026, đang học thạc sĩ CNTT buổi tối và cuối tuần. Hướng tới vị trí phân tích dữ liệu và ứng dụng AI kiêm IT nội bộ. Đã làm với dữ liệu IoT nông nghiệp từ khâu thu thập tới đánh giá mô hình; dùng công cụ AI theo quy trình có bước kiểm định.
+about_en: |-
+  I earned an Engineer's degree in Information Technology (Information Security major) in 2026 from Vinh Long University of Technology and Engineering (VLUTE) and am now a Master's student in Information Technology at the same university (evening and weekend classes).
+research_interests_en:
+- Trustworthy Machine Learning for IoT/Edge Systems
+- Weak Supervision
+- Temporal ML Evaluation
+- AI Security
+research_statement_en: 'My work addresses an essential problem in applying machine learning to real-world edge systems: when does a high benchmark score support inference about an underlying physical state, and when does it primarily reflect label construction, temporal information, or deployment conditions?'
+native_language_en: Vietnamese (native)
+native_language_vi: Tiếng Việt (bản ngữ)
+cv_pdf:
+  academic: /pdf/academic-cv.pdf
+  job: /pdf/ho-so-di-lam.pdf
+updated: 2026-11

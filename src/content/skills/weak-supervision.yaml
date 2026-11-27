@@ -1,0 +1,12 @@
+id: weak-supervision
+visible:
+- academic
+- job
+order: 4
+name_en: rule-derived weak labeling
+name_vi: gán nhãn yếu theo luật
+group_academic: acad-ml-data
+order_academic: 4
+group_job: job-ml-methods
+order_job: 1
+status: confirmed

@@ -1,0 +1,17 @@
+id: thesis-researcher-agrifusion
+visible:
+- academic
+order: 2
+kind: research
+role_en: Graduation Thesis Researcher — AgriFusion-IoT
+role_vi: Nghiên cứu luận văn tốt nghiệp — AgriFusion-IoT
+organization_en: Vinh Long University of Technology and Engineering (VLUTE), research project
+organization_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+start: '2025'
+end: '2026'
+ongoing: false
+advisor: Hoai-Hanh Tran
+bullets_en:
+- Designed and deployed an ESP32-S3/4G agricultural IoT system, and designed a traceable pipeline from raw Firebase telemetry to weakly labeled ML benchmarks using temporal splits and leakage controls; software implementation was AI-assisted, directed and validated by the author.
+bullets_vi: []
+links: []

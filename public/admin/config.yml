@@ -1,0 +1,1177 @@
+# Sveltia CMS 5.0.1 · repo lawnguyenit/lawnguyenit.github.io · nhánh main
+# FILE NÀY ĐƯỢC SINH TỰ ĐỘNG bởi tools/gen-config.py. Sửa bằng script rồi sinh lại.
+# Tên trường (name) trùng với schema.ts; kiểm tra bằng: node tools/validate-config.mjs
+$schema: https://unpkg.com/@sveltia/cms@5.0.1/schema/sveltia-cms.json
+backend:
+  name: github
+  repo: lawnguyenit/lawnguyenit.github.io
+  branch: main
+  auth_methods:
+  - token
+  commit_messages:
+    create: 'CMS: thêm {{collection}} "{{slug}}"'
+    update: 'CMS: sửa {{collection}} "{{slug}}"'
+    delete: 'CMS: xóa {{collection}} "{{slug}}"'
+    uploadMedia: 'CMS: tải lên {{path}}'
+    deleteMedia: 'CMS: xóa {{path}}'
+site_url: https://cv.lnit.id.vn
+display_url: https://cv.lnit.id.vn
+app_title: Quản trị CV
+media_folder: public/assets/img
+public_folder: /assets/img
+output:
+  omit_empty_optional_fields: true
+collections:
+- name: profile
+  label: Hồ sơ chung
+  label_singular: hồ sơ
+  description: 'Một file duy nhất: tên, liên hệ, ảnh, giới thiệu.'
+  files:
+  - name: profile
+    label: Hồ sơ chung
+    file: src/content/profile/profile.yaml
+    format: yaml
+    fields:
+    - name: id
+      label: Mã định danh
+      widget: string
+      hint: Luôn là "profile". Đừng sửa.
+      required: true
+      default: profile
+      readonly: true
+    - name: name
+      label: Tên (không dấu)
+      widget: string
+      hint: 'Ví dụ: Lam-Nguyen Nguyen'
+      required: true
+    - name: name_native
+      label: Tên tiếng Việt có dấu
+      widget: string
+      required: true
+    - name: email
+      label: Email
+      widget: string
+      hint: Hiện trên web.
+      required: true
+      type: email
+    - name: github_handle
+      label: Tên tài khoản GitHub
+      widget: string
+      hint: 'Ví dụ: lawnguyenit'
+      required: true
+    - name: github_url
+      label: Địa chỉ trang GitHub
+      widget: string
+      hint: 'Ví dụ: https://github.com/lawnguyenit'
+      required: true
+      type: url
+    - name: phone
+      label: Số điện thoại
+      widget: object
+      hint: 'Số điện thoại: chỉ hiện khi bật "Hiện số" và đã điền số thật.'
+      required: true
+      fields:
+      - name: value
+        label: Số điện thoại
+        widget: string
+        hint: 'Còn giá trị giữ chỗ (chữ in hoa nối bằng dấu gạch dưới) nghĩa là chưa điền: số chưa hiện ở đâu cả. Điền số thật vào đây.'
+        required: true
+      - name: public
+        label: Hiện số trên web và PDF
+        widget: boolean
+        hint: Bật = hiện số trên web và PDF (khi đã điền số thật). Tắt = ẩn số. Đây là quyết định của chủ site.
+        required: false
+        default: true
+    - name: location_en
+      label: Nơi ở (tiếng Anh)
+      widget: string
+      hint: 'Ví dụ: Vinh Long, Vietnam'
+      required: true
+    - name: location_vi
+      label: Nơi ở (tiếng Việt)
+      widget: string
+      hint: 'Ví dụ: Vĩnh Long (có thể làm việc tại Cần Thơ)'
+      required: true
+    - name: photo
+      label: Ảnh đại diện
+      widget: image
+      hint: Chọn ảnh có sẵn hoặc tải ảnh mới lên. Ảnh lưu ở public/assets/img.
+      required: true
+    - name: headline_en
+      label: Dòng tiêu đề dưới tên (tiếng Anh)
+      widget: string
+      hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+      required: true
+    - name: headline_vi
+      label: Dòng tiêu đề dưới tên (tiếng Việt)
+      widget: string
+      hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+      required: true
+    - name: affiliation_en
+      label: Nơi học / đơn vị (tiếng Anh)
+      widget: string
+      hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+      required: true
+    - name: affiliation_vi
+      label: Nơi học / đơn vị (tiếng Việt)
+      widget: string
+      hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+      required: true
+    - name: summary_en
+      label: Giới thiệu ngắn (tiếng Anh)
+      widget: text
+      hint: Đoạn giới thiệu của hồ sơ học thuật.
+      required: true
+    - name: summary_vi
+      label: Giới thiệu ngắn (tiếng Việt)
+      widget: text
+      hint: Đoạn giới thiệu của hồ sơ đi làm.
+      required: true
+    - name: about_en
+      label: Giới thiệu dài (tiếng Anh, Markdown)
+      widget: markdown
+      hint: Chỉ hồ sơ học thuật. Có thể dùng Markdown (in đậm, liên kết, đoạn).
+      required: true
+    - name: research_interests_en
+      label: Hướng nghiên cứu (tiếng Anh)
+      widget: list
+      hint: Mỗi dòng một hướng. Chỉ hồ sơ học thuật.
+      required: true
+    - name: research_statement_en
+      label: Tuyên bố nghiên cứu (tiếng Anh)
+      widget: text
+      hint: Chỉ hồ sơ học thuật.
+      required: true
+    - name: native_language_en
+      label: Tiếng mẹ đẻ (tiếng Anh)
+      widget: string
+      hint: 'Ví dụ: Vietnamese (native)'
+      required: true
+    - name: native_language_vi
+      label: Tiếng mẹ đẻ (tiếng Việt)
+      widget: string
+      hint: 'Ví dụ: Tiếng Việt (bản ngữ)'
+      required: true
+    - name: cv_pdf
+      label: File CV dạng PDF
+      widget: object
+      hint: Đường dẫn PDF cho từng hồ sơ (PDF được sinh tự động khi build).
+      required: true
+      fields:
+      - name: academic
+        label: PDF hồ sơ học thuật
+        widget: string
+        hint: 'Đường dẫn file PDF sinh tự động: /pdf/academic-cv.pdf. Nút "Tải PDF" trên web dùng đường dẫn này.'
+        required: false
+      - name: job
+        label: PDF hồ sơ đi làm
+        widget: string
+        hint: 'Đường dẫn file PDF sinh tự động: /pdf/ho-so-di-lam.pdf. Nút "Tải PDF" trên web dùng đường dẫn này.'
+        required: false
+    - name: updated
+      label: Cập nhật lần cuối
+      widget: string
+      hint: Viết 2026 hoặc 2026-11
+      required: true
+      pattern:
+      - ^\d{4}(-\d{2})?$
+      - Viết 2025 hoặc 2025-11
+- name: skill_groups
+  label: Nhóm kỹ năng
+  label_singular: nhóm kỹ năng
+  folder: src/content/skill-groups
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{title_vi}}{{title_en}}'
+  description: Nhóm acad-* cho hồ sơ học thuật, job-* cho hồ sơ đi làm. Thêm nhóm mới = thêm 1 mục.
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: title_en
+    label: Tên nhóm (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: title_vi
+    label: Tên nhóm (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+- name: skills
+  label: Kỹ năng
+  label_singular: kỹ năng
+  folder: src/content/skills
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{name_vi}}{{name_en}} [{{status}}]'
+  description: 'Mỗi kỹ năng một mục. Thêm kỹ năng: bấm "Tạo kỹ năng" và điền tên, nhóm, trạng thái.'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: name_en
+    label: Tên kỹ năng (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: name_vi
+    label: Tên kỹ năng (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: group_academic
+    label: Nhóm ở hồ sơ học thuật
+    widget: relation
+    hint: Bắt buộc nếu "Hiện ở hồ sơ nào" có học thuật. Chọn nhóm bắt đầu bằng acad-.
+    required: false
+    collection: skill_groups
+    value_field: '{{slug}}'
+    display_fields:
+    - '{{id}} · {{title_en}}{{title_vi}}'
+    search_fields:
+    - id
+    - title_vi
+    - title_en
+  - name: group_job
+    label: Nhóm ở hồ sơ đi làm
+    widget: relation
+    hint: Bắt buộc nếu "Hiện ở hồ sơ nào" có đi làm. Chọn nhóm bắt đầu bằng job-.
+    required: false
+    collection: skill_groups
+    value_field: '{{slug}}'
+    display_fields:
+    - '{{id}} · {{title_vi}}{{title_en}}'
+    search_fields:
+    - id
+    - title_vi
+    - title_en
+  - name: order_academic
+    label: Thứ tự trong nhóm (học thuật)
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: false
+    value_type: int
+  - name: order_job
+    label: Thứ tự trong nhóm (đi làm)
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: false
+    value_type: int
+  - name: status
+    label: Trạng thái xác nhận
+    widget: select
+    hint: CHỈ kỹ năng "Đã xác nhận" mới được hiện. Nếu chọn trạng thái khác thì "Hiện ở hồ sơ nào" PHẢI để trống.
+    required: true
+    options:
+    - label: Đã xác nhận (được khoe)
+      value: confirmed
+    - label: Chờ bài test
+      value: pending_test
+    - label: Chưa có bằng chứng
+      value: unverified
+    default: confirmed
+  - name: note_en
+    label: Ghi chú ngắn (tiếng Anh)
+    widget: string
+    hint: Tùy chọn.
+    required: false
+  - name: note_vi
+    label: Ghi chú ngắn (tiếng Việt)
+    widget: string
+    hint: 'Tùy chọn. Ví dụ: chờ xác nhận sau bài test.'
+    required: false
+- name: projects
+  label: Dự án
+  label_singular: dự án
+  folder: src/content/projects
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{title}} [{{kind}}]'
+  description: Chỉ dự án có "Hiện ở hồ sơ nào" mới lên web.
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: featured
+    label: Dự án nổi bật (trang chủ)
+    widget: boolean
+    required: false
+    default: false
+  - name: kind
+    label: Loại dự án
+    widget: select
+    required: true
+    options:
+    - label: Hệ thống / sản phẩm
+      value: system
+    - label: Một nghiên cứu
+      value: research
+    - label: Dự án thực hành (luôn gắn nhãn)
+      value: practice
+  - name: stage
+    label: Giai đoạn (trang Research)
+    widget: number
+    hint: Số thứ tự giai đoạn trên trang Research. Bỏ trống nếu không áp dụng.
+    required: false
+    value_type: int
+  - name: status
+    label: Tình trạng
+    widget: select
+    required: true
+    options:
+    - label: Đang làm
+      value: ongoing
+    - label: Hoàn thành
+      value: completed
+    - label: Đã nộp
+      value: submitted
+    - label: Đang chuẩn bị
+      value: in_preparation
+    - label: Lưu trữ
+      value: archived
+  - name: title
+    label: Tên dự án
+    widget: string
+    hint: Tên gốc, không dịch.
+    required: true
+  - name: tagline_en
+    label: Mô tả một dòng (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: tagline_vi
+    label: Mô tả một dòng (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: summary_en
+    label: Mô tả (đoạn) (tiếng Anh)
+    widget: text
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: summary_vi
+    label: Mô tả (đoạn) (tiếng Việt)
+    widget: text
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: contribution_en
+    label: Vai trò của bạn (tiếng Anh)
+    widget: text
+    hint: 'Chỉ dùng: "Designed, directed and validated (AI-assisted)". Không viết "wrote code".'
+    required: false
+  - name: contribution_vi
+    label: Vai trò của bạn (tiếng Việt)
+    widget: text
+    hint: 'Chỉ dùng: "Thiết kế, điều phối công cụ AI, kiểm định". Không viết "tự code".'
+    required: false
+  - name: highlights_en
+    label: Điểm nhấn (tiếng Anh)
+    widget: list
+    hint: Mỗi dòng một gạch đầu dòng.
+    required: false
+  - name: highlights_vi
+    label: Điểm nhấn (tiếng Việt)
+    widget: list
+    hint: Mỗi dòng một gạch đầu dòng.
+    required: false
+  - name: tech
+    label: Công nghệ
+    widget: list
+    hint: Mỗi dòng một công nghệ. Không dịch.
+    required: false
+  - name: start
+    label: Bắt đầu
+    widget: string
+    hint: Viết 2025 hoặc 2025-11
+    required: false
+    pattern:
+    - ^\d{4}(-\d{2})?$
+    - Viết 2025 hoặc 2025-11
+  - name: end
+    label: Kết thúc
+    widget: string
+    hint: Viết 2025 hoặc 2025-11. Bỏ trống = chưa kết thúc.
+    required: false
+    pattern:
+    - ^\d{4}(-\d{2})?$
+    - Viết 2025 hoặc 2025-11
+  - name: advisor
+    label: Người hướng dẫn
+    widget: string
+    required: false
+  - name: links
+    label: Liên kết
+    widget: list
+    hint: Thêm từng liên kết (GitHub, bài báo, demo...).
+    required: false
+    fields:
+    - name: label_en
+      label: Tên liên kết (tiếng Anh)
+      widget: string
+      required: false
+    - name: label_vi
+      label: Tên liên kết (tiếng Việt)
+      widget: string
+      required: false
+    - name: url
+      label: Địa chỉ (URL)
+      widget: string
+      hint: Bắt đầu bằng https://
+      required: true
+      type: url
+    label_singular: liên kết
+    summary: '{{label_vi}}{{label_en}} {{url}}'
+  - name: figures
+    label: Hình ảnh / sơ đồ
+    widget: list
+    required: false
+    fields:
+    - name: src
+      label: Ảnh
+      widget: image
+      required: true
+    - name: alt_en
+      label: Mô tả ảnh (tiếng Anh, cho người khiếm thị)
+      widget: string
+      required: true
+    - name: caption_en
+      label: Chú thích (tiếng Anh)
+      widget: string
+      required: false
+    - name: caption_vi
+      label: Chú thích (tiếng Việt)
+      widget: string
+      required: false
+    label_singular: hình
+    summary: '{{alt_en}}'
+  - name: internal_note
+    label: Ghi chú nội bộ (KHÔNG hiện lên web)
+    widget: text
+    hint: 'Ghi chú riêng cho bạn: giới hạn, điều không được nói. Không bao giờ hiển thị.'
+    required: false
+- name: education
+  label: Học vấn
+  label_singular: mục học vấn
+  folder: src/content/education
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{institution_vi}}{{institution_en}}'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: institution_en
+    label: Trường (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: institution_vi
+    label: Trường (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: former_name_en
+    label: Tên cũ của trường (tiếng Anh)
+    widget: string
+    hint: Tùy chọn. Hiện kèm "formerly ...".
+    required: false
+  - name: former_name_vi
+    label: Tên cũ của trường (tiếng Việt)
+    widget: string
+    hint: Tùy chọn. Hiện kèm "trước đây ...".
+    required: false
+  - name: degree_title_en
+    label: Danh hiệu / văn bằng (tiếng Anh)
+    widget: string
+    hint: 'Ví dụ: Engineer / Bachelor. Còn giá trị giữ chỗ (chữ in hoa nối bằng dấu gạch dưới) nghĩa là chưa biết.'
+    required: false
+  - name: degree_title_vi
+    label: Danh hiệu / văn bằng (tiếng Việt)
+    widget: string
+    hint: Kỹ sư hoặc cử nhân. Còn giá trị giữ chỗ (chữ in hoa nối bằng dấu gạch dưới) nghĩa là chưa biết.
+    required: false
+  - name: program_en
+    label: Ngành / chuyên ngành (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: program_vi
+    label: Ngành / chuyên ngành (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: status
+    label: Tình trạng
+    widget: select
+    required: true
+    options:
+    - label: Đã tốt nghiệp
+      value: graduated
+    - label: Đang học
+      value: in_progress
+  - name: start
+    label: Bắt đầu
+    widget: string
+    hint: Viết 2021 hoặc 2021-09
+    required: true
+    pattern:
+    - ^\d{4}(-\d{2})?$
+    - Viết 2025 hoặc 2025-11
+  - name: end
+    label: Kết thúc
+    widget: string
+    hint: Viết 2026 hoặc 2026-06. Bỏ trống = chưa kết thúc (hiện "đang học").
+    required: false
+    pattern:
+    - ^\d{4}(-\d{2})?$
+    - Viết 2025 hoặc 2025-11
+  - name: cohort
+    label: Khóa
+    widget: string
+    hint: 'Ví dụ: K47'
+    required: false
+  - name: gpa
+    label: Điểm trung bình (GPA)
+    widget: number
+    hint: 'Ví dụ: 3.19'
+    required: false
+    value_type: float
+    min: 0
+  - name: gpa_scale
+    label: Thang điểm
+    widget: number
+    hint: 'Ví dụ: 4'
+    required: false
+    value_type: float
+    min: 0
+  - name: note_en
+    label: Ghi chú (tiếng Anh)
+    widget: string
+    hint: Tùy chọn. Hiện bên phải dòng thứ hai khi mục không có khóa/GPA (ví dụ "Evening and weekend classes").
+    required: false
+  - name: note_vi
+    label: Ghi chú (tiếng Việt)
+    widget: string
+    hint: Tùy chọn. Ghi trong dữ liệu; hồ sơ đi làm không hiện (ý này đã nằm trong phần Giới thiệu).
+    required: false
+- name: publications
+  label: Công bố / bài báo
+  label_singular: công bố
+  folder: src/content/publications
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{title}} ({{year}})'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: type
+    label: Loại
+    widget: select
+    required: true
+    options:
+    - label: Bản thảo hội nghị
+      value: conference_manuscript
+    - label: Bài báo tạp chí
+      value: journal_article
+    - label: Luận văn / đồ án
+      value: thesis
+    - label: Ghi chú kỹ thuật
+      value: technical_note
+  - name: status
+    label: Tình trạng
+    widget: select
+    hint: CHỈ chọn "Đã được chấp nhận" hoặc "Đã xuất bản" khi có thư chấp nhận. Bài EAI AICON 2026 phải là "Đã nộp".
+    required: true
+    options:
+    - label: Đang chuẩn bị
+      value: in_preparation
+    - label: Đã nộp / đang phản biện
+      value: submitted
+    - label: Đã được chấp nhận
+      value: accepted
+    - label: Đã xuất bản / hoàn thành
+      value: published
+  - name: year
+    label: Năm
+    widget: number
+    required: true
+    value_type: int
+  - name: title
+    label: Tiêu đề
+    widget: string
+    hint: Tiêu đề gốc, không dịch.
+    required: true
+  - name: authors
+    label: Tác giả
+    widget: list
+    hint: Cần ít nhất một tác giả. Thứ tự như trên bài báo.
+    required: true
+    fields:
+    - name: name
+      label: Tên tác giả
+      widget: string
+      required: true
+    - name: is_owner
+      label: Là tôi
+      widget: boolean
+      hint: Bật để in đậm tên bạn.
+      required: false
+      default: false
+    min: 1
+    label_singular: tác giả
+    summary: '{{name}}'
+  - name: venue_en
+    label: Nơi công bố (hội nghị / tạp chí) (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: venue_vi
+    label: Nơi công bố (hội nghị / tạp chí) (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: summary_en
+    label: Tóm tắt (tiếng Anh)
+    widget: text
+    hint: Tùy chọn.
+    required: false
+  - name: summary_vi
+    label: Tóm tắt (tiếng Việt)
+    widget: text
+    hint: Tùy chọn.
+    required: false
+  - name: links
+    label: Liên kết
+    widget: list
+    hint: Thêm từng liên kết (GitHub, bài báo, demo...).
+    required: false
+    fields:
+    - name: label_en
+      label: Tên liên kết (tiếng Anh)
+      widget: string
+      required: false
+    - name: label_vi
+      label: Tên liên kết (tiếng Việt)
+      widget: string
+      required: false
+    - name: url
+      label: Địa chỉ (URL)
+      widget: string
+      hint: Bắt đầu bằng https://
+      required: true
+      type: url
+    label_singular: liên kết
+    summary: '{{label_vi}}{{label_en}} {{url}}'
+- name: awards
+  label: Giải thưởng
+  label_singular: giải thưởng
+  folder: src/content/awards
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{title_vi}}{{title_en}}'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: title_en
+    label: Tên giải (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: title_vi
+    label: Tên giải (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: issuer_en
+    label: Đơn vị trao (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: issuer_vi
+    label: Đơn vị trao (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: date_label
+    label: Thời gian hiển thị (tiếng Anh)
+    widget: string
+    hint: Chữ hiện ở hồ sơ học thuật, ví dụ "2025" hoặc "4 editions (2023–2026)".
+    required: true
+  - name: date_label_vi
+    label: Thời gian hiển thị (tiếng Việt)
+    widget: string
+    hint: Chữ hiện ở hồ sơ đi làm, ví dụ "2025" hoặc "4 kỳ (2023–2026)". Để trống thì dùng bản tiếng Anh.
+    required: false
+  - name: year_start
+    label: Năm bắt đầu
+    widget: number
+    hint: Dùng để sắp xếp.
+    required: true
+    value_type: int
+  - name: year_end
+    label: Năm kết thúc
+    widget: number
+    hint: Bỏ trống nếu chỉ một năm.
+    required: false
+    value_type: int
+- name: certificates
+  label: Chứng chỉ
+  label_singular: chứng chỉ
+  folder: src/content/certificates
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{name_vi}}{{name_en}}'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: type
+    label: Loại
+    widget: select
+    required: true
+    options:
+    - label: Ngoại ngữ
+      value: language
+    - label: Chuyên môn
+      value: professional
+    - label: Khóa học
+      value: course
+  - name: status
+    label: Tình trạng
+    widget: select
+    required: true
+    options:
+    - label: Đã có
+      value: obtained
+    - label: Đang học
+      value: in_progress
+  - name: name_en
+    label: Tên chứng chỉ (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: name_vi
+    label: Tên chứng chỉ (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: issuer_en
+    label: Đơn vị cấp (tiếng Anh)
+    widget: string
+    hint: Tùy chọn.
+    required: false
+  - name: issuer_vi
+    label: Đơn vị cấp (tiếng Việt)
+    widget: string
+    hint: Tùy chọn.
+    required: false
+  - name: level
+    label: Trình độ
+    widget: string
+    hint: 'Ví dụ: B1'
+    required: false
+  - name: framework
+    label: Khung tham chiếu
+    widget: string
+    hint: 'Ví dụ: CEFR, IELTS'
+    required: false
+  - name: target_score
+    label: Điểm mục tiêu
+    widget: string
+    hint: 'CHỈ cho mục đang học. Ví dụ: 5.5+'
+    required: false
+  - name: issued
+    label: Ngày cấp
+    widget: string
+    hint: Còn giá trị giữ chỗ (chữ in hoa nối bằng dấu gạch dưới) nghĩa là chưa biết.
+    required: false
+- name: experience
+  label: Kinh nghiệm
+  label_singular: kinh nghiệm
+  folder: src/content/experience
+  extension: yaml
+  format: yaml
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{role_vi}}{{role_en}}'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: order
+    label: Thứ tự
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: kind
+    label: Loại
+    widget: select
+    required: true
+    options:
+    - label: Nghiên cứu
+      value: research
+    - label: Đi làm
+      value: work
+    - label: Thực tập
+      value: internship
+    - label: Freelance
+      value: freelance
+    - label: Giảng dạy
+      value: teaching
+  - name: role_en
+    label: Vai trò (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: role_vi
+    label: Vai trò (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: organization_en
+    label: Đơn vị / tổ chức (tiếng Anh)
+    widget: string
+    hint: Hiện ở hồ sơ học thuật. Bắt buộc nếu mục hiện ở hồ sơ học thuật.
+    required: false
+  - name: organization_vi
+    label: Đơn vị / tổ chức (tiếng Việt)
+    widget: string
+    hint: Hiện ở hồ sơ đi làm. Bắt buộc nếu mục hiện ở hồ sơ đi làm.
+    required: false
+  - name: start
+    label: Bắt đầu
+    widget: string
+    hint: Viết 2025 hoặc 2025-11
+    required: true
+    pattern:
+    - ^\d{4}(-\d{2})?$
+    - Viết 2025 hoặc 2025-11
+  - name: end
+    label: Kết thúc
+    widget: string
+    hint: Viết 2025 hoặc 2025-11. Bỏ trống nếu đang diễn ra.
+    required: false
+    pattern:
+    - ^\d{4}(-\d{2})?$
+    - Viết 2025 hoặc 2025-11
+  - name: ongoing
+    label: Đang diễn ra
+    widget: boolean
+    hint: Bật = hiện "ongoing" / "nay" thay cho ngày kết thúc.
+    required: false
+    default: false
+  - name: advisor
+    label: Người hướng dẫn
+    widget: string
+    required: false
+  - name: bullets_en
+    label: Gạch đầu dòng (tiếng Anh)
+    widget: list
+    hint: Mỗi dòng một ý.
+    required: false
+  - name: bullets_vi
+    label: Gạch đầu dòng (tiếng Việt)
+    widget: list
+    hint: Mỗi dòng một ý.
+    required: false
+  - name: links
+    label: Liên kết
+    widget: list
+    hint: Thêm từng liên kết (GitHub, bài báo, demo...).
+    required: false
+    fields:
+    - name: label_en
+      label: Tên liên kết (tiếng Anh)
+      widget: string
+      required: false
+    - name: label_vi
+      label: Tên liên kết (tiếng Việt)
+      widget: string
+      required: false
+    - name: url
+      label: Địa chỉ (URL)
+      widget: string
+      hint: Bắt đầu bằng https://
+      required: true
+      type: url
+    label_singular: liên kết
+    summary: '{{label_vi}}{{label_en}} {{url}}'
+- name: pages
+  label: Trang tự tạo
+  label_singular: trang
+  description: 'Trang viết bằng Markdown. Thêm trang mới: bấm "Tạo trang".'
+  folder: src/content/pages
+  extension: md
+  format: frontmatter
+  identifier_field: id
+  slug: '{{id}}'
+  create: true
+  delete: true
+  summary: '{{id}} · {{title}} (/p/{{slug}})'
+  fields:
+  - name: id
+    label: Mã định danh (id)
+    widget: string
+    hint: Chữ thường không dấu, số, dấu gạch ngang. Trùng tên file. Đặt xong thì ĐỪNG đổi.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: title
+    label: Tiêu đề trang
+    widget: string
+    required: true
+  - name: slug
+    label: Đường dẫn (slug)
+    widget: string
+    hint: Địa chỉ trang, ví dụ "gioi-thieu" -> /p/gioi-thieu. Chữ thường không dấu, số, dấu gạch ngang.
+    required: true
+    pattern:
+    - ^[a-z0-9]+(-[a-z0-9]+)*$
+    - 'Chỉ gồm chữ thường không dấu, số, dấu gạch ngang (ví dụ: python-co-ban)'
+  - name: lang
+    label: Ngôn ngữ của trang
+    widget: select
+    required: false
+    options:
+    - label: Tiếng Anh
+      value: en
+    - label: Tiếng Việt
+      value: vi
+    default: en
+  - name: description
+    label: Mô tả ngắn (cho Google)
+    widget: string
+    hint: Một câu mô tả trang.
+    required: false
+  - name: visible
+    label: Hiện ở hồ sơ nào
+    widget: select
+    hint: Chọn một hoặc cả hai. ĐỂ TRỐNG = ẨN HOÀN TOÀN khỏi web.
+    required: false
+    options:
+    - label: Hồ sơ học thuật (tiếng Anh)
+      value: academic
+    - label: Hồ sơ đi làm (tiếng Việt)
+      value: job
+    multiple: true
+  - name: show_in_nav
+    label: Hiện trong menu
+    widget: boolean
+    required: false
+    default: false
+  - name: nav_order
+    label: Thứ tự trong menu
+    widget: number
+    hint: Số nhỏ hiện trước.
+    required: true
+    value_type: int
+  - name: body
+    label: Nội dung trang
+    widget: markdown
+    hint: Viết bằng Markdown hoặc dùng nút định dạng phía trên.
+    required: true

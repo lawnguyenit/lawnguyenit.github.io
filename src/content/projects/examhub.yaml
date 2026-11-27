@@ -1,0 +1,35 @@
+# Dự án do chủ site chỉ đạo toàn bộ bằng agent AI. Đọc Showcase-Claims trước khi sửa: không viết 'tự code'.
+id: examhub
+visible:
+- job
+order: 2
+featured: false
+kind: system
+stage: null
+status: ongoing
+title: ExamHub
+tagline_en: Online exam web application (Go, React, PostgreSQL); production plan in progress
+tagline_vi: Web thi trực tuyến; đang lập kế hoạch đưa lên production
+summary_en: 'Online exam web application with three roles: students take exams and review results; teachers manage classes, question banks, question import, exam creation and results; admins. Backend in Go, frontend in React, PostgreSQL database, optional Python worker. Not yet in production.'
+summary_vi: 'Web thi trực tuyến có ba vai trò: sinh viên (làm bài, xem lại), giáo viên (quản lý lớp, bộ câu hỏi, nhập câu hỏi, tạo đề, xem kết quả) và admin. Backend Go, giao diện React, cơ sở dữ liệu PostgreSQL, worker Python tùy chọn. Chưa đưa vào production.'
+contribution_en: Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results.
+contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
+highlights_en:
+- Question import from Moodle XML through a Go parser.
+- 'Production plan in six stages: risk containment, agent documentation, import contract, UI foundations, teacher workflow, operations (CI, health checks, migrations, backup, end-to-end tests).'
+- Plan was based on a static audit by three AI agents reading the code, with the security findings checked by hand; build, tests and UI had not been run at the time of the audit.
+highlights_vi:
+- Web thi trực tuyến ba vai trò (sinh viên, giáo viên, admin); nhập câu hỏi từ Moodle XML bằng parser Go.
+- 'Kế hoạch production 6 giai đoạn: từ chặn rủi ro tới vận hành (CI, sao lưu, kiểm thử end-to-end).'
+- Dựa trên audit tĩnh do 3 agent AI đọc code, điểm bảo mật được kiểm tay; chưa chạy build, test, giao diện.
+tech:
+- Go
+- React
+- PostgreSQL
+- Python
+start: null
+end: null
+advisor: null
+links: []
+figures: []
+internal_note: 'Repo lawnguyenit/v-exam-hub là PRIVATE: không đặt link. KHÔNG nói đã ở production hoặc có người dùng thật (chưa biết). Nguồn: Brain/Projects/v-exam-hub.md (audit 2026-11-21) và Plans/v-exam-hub/v-exam-hub.md. Đường nhập docx/pdf/tex qua Gemini mới đổi 2026-11-04 và chưa commit: không nêu. Giai đoạn 1 của kế hoạch là chặn lộ mật khẩu: không nêu cụ thể trên web. Ngày bắt đầu chưa biết (commit cuối 2026-10-10). Plan trạng thái ''chờ duyệt''.'

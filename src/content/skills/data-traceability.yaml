@@ -1,0 +1,12 @@
+id: data-traceability
+visible:
+- academic
+- job
+order: 7
+name_en: traceable data pipelines, hash checks
+name_vi: pipeline dữ liệu có truy vết, kiểm tra hash
+group_academic: acad-ml-data
+order_academic: 7
+group_job: job-data
+order_job: 2
+status: confirmed

@@ -1,0 +1,130 @@
+---
+// Homepage = Vietnamese job CV (Hồ sơ đi làm).
+import Base from '../layouts/Base.astro';
+import CvHeader from '../components/CvHeader.astro';
+import Section from '../components/Section.astro';
+import Entry from '../components/Entry.astro';
+import Authors from '../components/Authors.astro';
+import { f, clean, range, skillLine, getVisiblePages, getProfile, getEducation, getExperience, getProjects, getPublications, getAwards, getCertificates, getSkillGroups, advisorName } from '../lib/content';
+
+const aud = 'job';
+const lang = 'vi';
+const profile = await getProfile();
+const [edu, exp, projects, pubs, awards, certs, groups] = await Promise.all([
+  getEducation(aud), getExperience(aud), getProjects(aud), getPublications(aud),
+  getAwards(aud), getCertificates(aud), getSkillGroups(aud),
+]);
+const name = profile.name_native;
+const desc = clean(profile.summary_vi);
+
+// "Ứng dụng AI trong công việc" is its own section (group job-ai-workflow); the other groups form "Kỹ năng".
+const AI_GROUP = 'job-ai-workflow';
+const aiGroup = groups.find((g) => g.id === AI_GROUP);
+const skillGroups = groups.filter((g) => g.id !== AI_GROUP);
+const aiPage = (await getVisiblePages()).find((p) => p.data.slug === 'ung-dung-ai' && p.data.visible.includes('job'));
+const aiLink = aiPage ? new URL(`/p/${aiPage.data.slug}`, Astro.site) : null;
+
+// Project role: said once under the heading (the sentence shared by most projects); a project that says something else keeps its own.
+const firstSentence = (s: string) => s.split(/(?<=\.)\s+/)[0];
+const roles = projects.map((p) => firstSentence(f(p, 'contribution', lang))).filter(Boolean);
+const role = [...new Set(roles)].sort((a, b) => roles.filter((r) => r === b).length - roles.filter((r) => r === a).length)[0] ?? '';
+const sameRole = (p: any) => !f(p, 'contribution', lang) || f(p, 'contribution', lang) === role;
+const shortSchool = (s: string) => s.replace(/^Trường Đại học /, 'ĐH ');
+---
+<Base title={`${name} – Hồ sơ đi làm`} description={desc} lang="vi" pdf={profile.cv_pdf.job ?? undefined}>
+  <CvHeader profile={profile} audience={aud} />
+
+  <Section title="Giới thiệu"><p>{desc}</p></Section>
+
+  {exp.length > 0 && (
+    <Section title="Kinh nghiệm làm việc">
+      {exp.map((e) => (
+        <Entry title={f(e, 'role', lang)} when={range(e.start, e.end, lang, e.ongoing ? 'nay' : undefined)} sub={f(e, 'organization', lang)}>
+          {e.bullets_vi.length > 0 && <ul>{e.bullets_vi.map((b) => <li>{b}</li>)}</ul>}
+        </Entry>
+      ))}
+    </Section>
+  )}
+
+  <Section title="Học vấn">
+    {edu.map((e) => {
+      const degree = [f(e, 'degree_title', lang), f(e, 'program', lang)].filter(Boolean).join(' ');
+      const former = f(e, 'former_name', lang);
+      const gpa = e.gpa != null ? `GPA ${String(e.gpa).replace('.', ',')}/${e.gpa_scale ?? 4}` : '';
+      const detail = [e.cohort ? `Khóa ${e.cohort}` : '', gpa].filter(Boolean).join(' · ');
+      const when = range(e.start, e.end, lang, 'đang học');
+      // One line when there is nothing but degree + school; otherwise school line + degree line.
+      return former || detail ? (
+        <Entry title={f(e, 'institution', lang)} extra={former ? `(trước đây là ${shortSchool(former)})` : undefined} when={when}
+          sub={degree} where={detail} />
+      ) : (
+        <Entry title={degree} extra={`· ${f(e, 'institution', lang)}`} when={when} />
+      );
+    })}
+  </Section>
+
+  <Section title="Kỹ năng">
+    <ul class="skills">
+      {skillGroups.map((g) => (
+        <li><strong>{f(g, 'title', lang)}:</strong> {skillLine(g.skills, lang)}</li>
+      ))}
+    </ul>
+  </Section>
+
+  {aiGroup && (
+    <Section title={f(aiGroup, 'title', lang)}>
+      <ul>{aiGroup.skills.map((s) => <li>{f(s, 'name', lang)}</li>)}</ul>
+      {aiLink && <p class="meta">Chi tiết: <a href={aiLink.href}>{aiLink.host + aiLink.pathname}</a></p>}
+    </Section>
+  )}
+
+  {projects.length > 0 && (
+    <Section title="Dự án" class="pb">
+      {role && <p class="meta role">Vai trò: {role.charAt(0).toLowerCase() + role.slice(1)}</p>}
+      {projects.map((p) => {
+        const tag = p.kind === 'practice' ? 'Dự án thực hành' : '';
+        const contrib = f(p, 'contribution', lang);
+        const link = p.links[0];
+        return (
+          <Entry title={p.title} when={range(p.start ?? '', p.end, lang)} sub={[tag, f(p, 'tagline', lang)].filter(Boolean).join(' · ')}
+            where={p.advisor ? `GVHD: ${advisorName(p.advisor, 'vi')}` : undefined}>
+            {link && <span class="x" slot="extra"> <a href={link.url}>{link.url.replace(/^https?:\/\//, '')}</a></span>}
+            {p.highlights_vi.length > 0 && <ul>{p.highlights_vi.map((h) => <li>{h}</li>)}</ul>}
+            {!sameRole(p) && <p class="meta">Vai trò: {contrib}</p>}
+            <p class="meta tech">
+              {p.tech.length > 0 && <span><em>Công nghệ: {p.tech.join(', ')}</em></span>}
+            </p>
+          </Entry>
+        );
+      })}
+    </Section>
+  )}
+
+  {pubs.length > 0 && (
+    <Section title="Công bố khoa học">
+      {pubs.map((p) => (
+        <Entry title={p.title} when={String(p.year)} lang="en">
+          <p class="pub"><Authors authors={p.authors} /></p>
+          <p class="pub"><em>{f(p, 'venue', lang)}</em></p>
+        </Entry>
+      ))}
+    </Section>
+  )}
+
+  {awards.length > 0 && (
+    <Section title="Thành tích">
+      {awards.map((a) => (
+        <Entry title={f(a, 'title', lang)} extra={`· ${f(a, 'issuer', lang)}`} when={a.date_label_vi || a.date_label} />
+      ))}
+    </Section>
+  )}
+
+  <Section title="Ngoại ngữ">
+    <ul class="inline-list">
+      {certs.map((c) => (
+        <li>{f(c, 'name', lang)}{c.status === 'in_progress' && c.target_score ? ` (mục tiêu ${[c.framework && !f(c, 'name', lang).includes(c.framework) ? c.framework : '', c.target_score].filter(Boolean).join(' ')})` : ''}</li>
+      ))}
+      <li>{clean(profile.native_language_vi)}</li>
+    </ul>
+  </Section>
+</Base>

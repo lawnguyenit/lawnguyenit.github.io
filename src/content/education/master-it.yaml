@@ -1,0 +1,21 @@
+id: master-it
+visible:
+- academic
+- job
+order: 0
+institution_en: Vinh Long University of Technology and Engineering (VLUTE)
+institution_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
+former_name_en: null
+former_name_vi: null
+degree_title_en: Master's degree
+degree_title_vi: Thạc sĩ
+program_en: Information Technology
+program_vi: Công nghệ thông tin
+status: in_progress
+start: 2026-11
+end: null
+cohort: null
+gpa: null
+gpa_scale: null
+note_en: Evening and weekend classes.
+note_vi: Học buổi tối và cuối tuần.

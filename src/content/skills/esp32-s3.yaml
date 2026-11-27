@@ -1,0 +1,12 @@
+id: esp32-s3
+visible:
+- academic
+- job
+order: 1
+name_en: ESP32-S3
+name_vi: ESP32-S3
+group_academic: acad-iot-embedded
+order_academic: 1
+group_job: job-iot
+order_job: 1
+status: confirmed

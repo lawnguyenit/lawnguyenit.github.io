@@ -1,0 +1,9 @@
+id: infosec
+visible:
+- job
+order: 1
+name_en: Information security (degree specialization)
+name_vi: chuyên ngành An toàn và an ninh thông tin
+group_job: job-it-security
+order_job: 1
+status: confirmed
