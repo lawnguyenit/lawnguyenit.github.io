@@ -5,7 +5,9 @@ import CvHeader from '../components/CvHeader.astro';
 import Section from '../components/Section.astro';
 import Entry from '../components/Entry.astro';
 import Authors from '../components/Authors.astro';
-import { f, clean, range, skillLine, getProfile, getEducation, getExperience, getProjects, getPublications, getAwards, getCertificates, getSkillGroups } from '../lib/content';
+import Skills from '../components/Skills.astro';
+import Tags from '../components/Tags.astro';
+import { f, clean, rich, range, tagsOf, getProfile, getEducation, getExperience, getProjects, getPublications, getAwards, getCertificates, getSkillGroups } from '../lib/content';
 
 const aud = 'academic';
 const lang = 'en';
@@ -75,26 +77,23 @@ const sharedOrg = orgs.length === 1 ? orgs[0] : '';
   )}
 
   <Section title="Publications">
-    {pubs.map((p) => (
-      <Entry title={p.title} when={String(p.year)}>
-        <p class="pub"><Authors authors={p.authors} /> · <em>{f(p, 'venue', lang)}</em>{p.links.map((l) => <> · <a href={l.url}>{f(l, 'label', lang)}</a></>)}</p>
+    {pubs.map((p, i) => (
+      <Entry id={`pub-${p.id}`} title={`${i + 1}. ${p.title}`} when={String(p.year)}>
+        <p class="pub"><Authors authors={p.authors} /> · <em>{f(p, 'venue', lang)}</em>{p.authors.some((a) => a.is_corresponding) && <span class="x"> (* corresponding author)</span>}{p.links.map((l) => <> · <a href={l.url}>{f(l, 'label', lang)}</a></>)}</p>
       </Entry>
     ))}
   </Section>
 
   <Section title="Projects">
     {projects.map((p) => {
-      const advisor = p.advisor ? `Advisor: ${p.advisor}` : '';
       const link = p.links[0];
       // A research project that is also a manuscript is listed in Publications and detailed on /nghien-cuu: title + status line only here.
       const brief = p.kind === 'research';
+      const when = range(p.start ?? '', p.end, lang) || f(p, 'status_note', lang);
       return (
-        <Entry title={p.title} when={range(p.start ?? '', p.end, lang)} sub={f(p, 'tagline', lang)} where={advisor}>
-          {link && <span class="x" slot="extra"> <a href={link.url}>{link.url.replace(/^https?:\/\//, '')}</a></span>}
-          {!brief && p.highlights_en.length > 0 && <ul>{p.highlights_en.map((h) => <li>{h}</li>)}</ul>}
-          {!brief && <p class="meta tech">
-            {p.tech.length > 0 && <span><em>Tech: {p.tech.join(', ')}</em></span>}
-          </p>}
+        <Entry title={p.title} when={when} sub={f(p, 'tagline', lang)} where={p.advisor ? `Advisor: ${p.advisor}` : undefined} href={link?.url}>
+          {!brief && <Tags tags={tagsOf(p, lang)} />}
+          {!brief && p.highlights_en.length > 0 && <ul>{p.highlights_en.map((h) => <li set:html={rich(h)} />)}</ul>}
         </Entry>
       );
     })}
@@ -109,16 +108,12 @@ const sharedOrg = orgs.length === 1 ? orgs[0] : '';
   )}
 
   <Section title="Technical skills">
-    <ul class="skills">
-      {skillGroups.map((g) => (
-        <li><strong>{f(g, 'title', lang)}:</strong> {skillLine(g.skills, lang)}</li>
-      ))}
-    </ul>
+    <Skills groups={skillGroups} lang={lang} />
   </Section>
 
   {aiGroup && (
     <Section title={f(aiGroup, 'title', lang)}>
-      <ul>{aiGroup.skills.map((s) => <li>{f(s, 'name', lang)}</li>)}</ul>
+      <ul>{aiGroup.skills.map((s) => <li set:html={rich(f(s, 'name', lang))} />)}</ul>
     </Section>
   )}
 

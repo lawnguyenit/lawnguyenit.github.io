@@ -1,0 +1,9 @@
+id: network-protocols
+visible:
+- job
+order: 1
+name_en: 'computer networking, network administration'
+name_vi: 'Mạng máy tính, quản trị mạng'
+group_job: job-network
+order_job: 1
+status: confirmed

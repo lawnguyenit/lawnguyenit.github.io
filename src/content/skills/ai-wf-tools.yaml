@@ -1,0 +1,10 @@
+# Nguồn: Brain/AGENTS.md, Brain/Skills/*/SKILL.md, Brain/Plans/Plans.md (nhật ký đo). Không có số đo hiệu quả nào ngoài số trong nhật ký đo; không thêm số mới.
+id: ai-wf-tools
+visible:
+- job
+order: 1
+name_vi: '**Công cụ:** Claude Code, Codex.'
+group_job: job-ai-workflow
+order_job: 1
+status: confirmed
+note_vi: Giao việc cho Claude (Haiku, Sonnet, Opus) và Codex, chọn model và mức effort theo độ khó.

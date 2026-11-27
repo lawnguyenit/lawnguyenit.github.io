@@ -1,5 +1,5 @@
 # Hồ sơ chung (1 file duy nhất).
-# phone.public: true = hiện số trên web và PDF (chủ site quyết định 2026-11-27). Số chỉ hiện khi value không phải TODO*; hiện value vẫn là TODO_SO_DIEN_THOAI nên chưa render gì.
+# phone.public: true = hiện số trên web và PDF (chủ site quyết định 2026-11-27). Số chỉ hiện khi value không phải TODO*.
 # TODO_* = chưa biết, chủ site điền.
 id: profile
 name: Lam-Nguyen Nguyen
@@ -8,19 +8,20 @@ email: lamnguyen.it04@gmail.com
 github_handle: lawnguyenit
 github_url: https://github.com/lawnguyenit
 phone:
-  value: TODO_SO_DIEN_THOAI
+  value: 0916 203 547
   public: true
 location_en: Vinh Long, Vietnam
-location_vi: Vĩnh Long (có thể làm việc tại Cần Thơ)
+location_vi: Vĩnh Long
 photo: /assets/img/profile.png
-headline_en: Engineer in IT (Information Security major) · Master's student in IT
-headline_vi: Kỹ sư CNTT 2026 (chuyên ngành An toàn và an ninh thông tin) · Đang học thạc sĩ CNTT
+# headline_*: chức danh mục tiêu, ngắn một dòng; đổi theo từng job ở admin.
+headline_en: Information Security Engineer · Applied ML for IoT
+headline_vi: Phân tích dữ liệu & Ứng dụng AI
 affiliation_en: Vinh Long University of Technology and Engineering (VLUTE), Vietnam
 affiliation_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
 summary_en: Focusing on trustworthy machine learning, weak supervision, and benchmark validity for IoT telemetry systems.
-summary_vi: Kỹ sư Công nghệ thông tin (An toàn và an ninh thông tin), tốt nghiệp 2026, đang học thạc sĩ CNTT buổi tối và cuối tuần. Hướng tới vị trí phân tích dữ liệu và ứng dụng AI kiêm IT nội bộ. Đã làm với dữ liệu IoT nông nghiệp từ khâu thu thập tới đánh giá mô hình; dùng công cụ AI theo quy trình có bước kiểm định.
+summary_vi: Kỹ sư CNTT chuyên ngành An toàn và an ninh thông tin, có nền tảng toán học, định hướng phát triển ở giao điểm AI, bảo mật và điện toán đám mây. Đã xây dựng hệ thống dữ liệu IoT từ thiết bị đến mô hình học máy; ứng dụng agent AI có kiểm định để rút ngắn thời gian triển khai mà vẫn bảo đảm độ chính xác.
 about_en: |-
-  I earned an Engineer's degree in Information Technology (Information Security major) in 2026 from Vinh Long University of Technology and Engineering (VLUTE) and am now a Master's student in Information Technology at the same university (evening and weekend classes).
+  Engineer's degree in Information Technology (Information Security major), VLUTE, 2026.
 research_interests_en:
 - Trustworthy Machine Learning for IoT/Edge Systems
 - Weak Supervision

@@ -8,13 +8,16 @@ const phone = phoneOf(profile);
 const name = audience === 'job' ? profile.name_native : profile.name;
 const ghText = profile.github_url.replace(/^https?:\/\//, '');
 ---
-<header class="cv-head">
-  <h1 class="name">{name}</h1>
-  <p class="role">{f(profile, 'headline', lang)}</p>
-  <p class="contact">
-    {phone && <span><Icon name="phone" /><a href={`tel:${phone.replace(/[^\d+]/g, '')}`}>{phone}</a></span>}
-    <span><Icon name="mail" /><a href={`mailto:${profile.email}`}>{profile.email}</a></span>
-    <span><Icon name="github" /><a href={profile.github_url}>{ghText}</a></span>
-    <span><Icon name="pin" />{f(profile, 'location', lang)}</span>
-  </p>
+<header class:list={['cv-head', profile.photo && 'has-photo']}>
+  {profile.photo && <img class="photo" src={profile.photo} alt="" width="360" height="360" />}
+  <div class="head-text">
+    <h1 class="name">{name}</h1>
+    <p class="role">{f(profile, 'headline', lang)}</p>
+    <p class="contact">
+      {phone && <span><Icon name="phone" /><a href={`tel:${phone.replace(/[^\d+]/g, '')}`}>{phone}</a></span>}
+      <span><Icon name="mail" /><a href={`mailto:${profile.email}`}>{profile.email}</a></span>
+      <span><Icon name="github" /><a href={profile.github_url}>{ghText}</a></span>
+      <span><Icon name="pin" />{f(profile, 'location', lang)}</span>
+    </p>
+  </div>
 </header>

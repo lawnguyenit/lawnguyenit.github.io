@@ -17,6 +17,13 @@ export function clean(s: string | null | undefined): string {
   return /TODO/.test(r) ? '' : r;
 }
 
+/** Minimal inline markup for content strings: **bold** only. Everything else is HTML-escaped. */
+export function rich(s: string | null | undefined): string {
+  return clean(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+}
+
 /** Localised field `${key}_${lang}`; falls back to the other language when `fallback` is true. */
 export function f(obj: any, key: string, lang: Lang, fallback = false): string {
   const own = clean(obj?.[`${key}_${lang}`]);
@@ -33,7 +40,7 @@ export function fmtDate(s: string, lang: Lang): string {
   const m = /^(\d{4})(?:-(\d{2}))?$/.exec(s);
   if (!m) return s;
   if (!m[2]) return m[1];
-  return lang === 'vi' ? `${Number(m[2])}/${m[1]}` : `${MONTHS_EN[Number(m[2]) - 1]} ${m[1]}`;
+  return lang === 'vi' ? `${m[2]}/${m[1]}` : `${MONTHS_EN[Number(m[2]) - 1]} ${m[1]}`;
 }
 export function range(
   start: string,
@@ -144,7 +151,28 @@ export function skillLine(skills: any[], lang: Lang): string {
     if (note === FOUNDATION[lang]) base.push(name);
     else main.push(note === PRIMARY[lang] ? `${name} (${note})` : name);
   }
-  return [main.join(', '), base.length ? `${FOUNDATION[lang]} ${base.join(', ')}` : ''].filter(Boolean).join('; ');
+  const basic = base.length ? `${base.join(', ')} (${lang === 'vi' ? 'cơ bản' : 'basic'})` : '';
+  return [main.join(', '), basic].filter(Boolean).join(' · ');
+}
+
+/** Tiered group: nested list. Skills noted "primary" form the first line, "foundation" the second; unmarked skills join the first. */
+const TIER_LABEL: Record<Lang, { main: string; base: string }> = {
+  vi: { main: 'Sử dụng chính', base: 'Nền tảng (đã học)' },
+  en: { main: 'Primary', base: 'Foundation (coursework)' },
+};
+export function skillTiers(skills: any[], lang: Lang): { label: string; items: string }[] {
+  const main: string[] = [];
+  const base: string[] = [];
+  for (const s of skills) (f(s, 'note', lang) === FOUNDATION[lang] ? base : main).push(f(s, 'name', lang));
+  return [
+    { label: TIER_LABEL[lang].main, items: main.join(', ') },
+    { label: TIER_LABEL[lang].base, items: base.join(', ') },
+  ].filter((t) => t.items);
+}
+
+/** Small tags next to a project: only those that have a label in this language. */
+export function tagsOf(p: any, lang: Lang): { label: string; url: string }[] {
+  return (p.tags ?? []).map((t: any) => ({ label: f(t, 'label', lang), url: clean(t.url) })).filter((t: any) => t.label);
 }
 
 // Advisor name: one canonical (English) value in data, shown in Vietnamese form on Vietnamese pages.

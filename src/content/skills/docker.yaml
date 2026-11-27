@@ -1,0 +1,12 @@
+id: docker
+visible:
+- academic
+- job
+order: 3
+name_en: Docker
+name_vi: Docker
+group_academic: acad-development
+order_academic: 3
+group_job: job-network
+order_job: 4
+status: confirmed

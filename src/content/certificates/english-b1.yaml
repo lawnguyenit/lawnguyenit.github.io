@@ -6,8 +6,8 @@ visible:
 order: 1
 type: language
 status: obtained
-name_en: English, CEFR B1 (institutional certificate)
-name_vi: Tiếng Anh, CEFR B1 (chứng chỉ của trường)
+name_en: 'English: CEFR B1 (institutional certificate)'
+name_vi: 'Tiếng Anh: B1 (chứng chỉ của trường)'
 issuer_en: Vinh Long University of Technology and Engineering (VLUTE)
 issuer_vi: Trường Đại học Công nghệ Kỹ thuật Vĩnh Long
 level: B1

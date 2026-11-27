@@ -2,8 +2,8 @@ id: infosec
 visible:
 - job
 order: 1
-name_en: Information security (degree specialization)
-name_vi: chuyên ngành An toàn và an ninh thông tin
+name_en: 'OWASP Top 10, access control, race-condition handling'
+name_vi: 'OWASP Top 10, kiểm soát truy cập, xử lý tranh chấp đồng thời (race condition)'
 group_job: job-it-security
 order_job: 1
 status: confirmed

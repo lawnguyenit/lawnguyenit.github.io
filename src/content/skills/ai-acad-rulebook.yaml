@@ -1,9 +1,0 @@
-id: ai-acad-rulebook
-visible:
-- academic
-order: 12
-name_en: 'One rulebook for several agents: a single AGENTS.md is the rule source for Claude, Codex and Gemini; agents mark unknowns instead of guessing and cite the source of any inference.'
-group_academic: acad-ai-workflow
-order_academic: 2
-status: confirmed
-note_en: A single AGENTS.md is the rule source for Claude, Codex and Gemini. Agents must mark unknowns instead of guessing and cite the source of any inference.

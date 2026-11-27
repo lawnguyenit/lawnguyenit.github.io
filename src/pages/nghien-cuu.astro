@@ -4,7 +4,8 @@ import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import Entry from '../components/Entry.astro';
 import Authors from '../components/Authors.astro';
-import { clean, f, range, viOrEn, PROJECT_STATUS_VI, getProfile, getResearchProjects, getResearchPublications, advisorName } from '../lib/content';
+import Tags from '../components/Tags.astro';
+import { clean, rich, f, range, tagsOf, viOrEn, PROJECT_STATUS_VI, getProfile, getResearchProjects, getResearchPublications, advisorName } from '../lib/content';
 
 const profile = await getProfile();
 const projects = await getResearchProjects();
@@ -31,9 +32,10 @@ const interests = profile.research_interests_en;
       const hl = p.highlights_vi.length > 0 ? { items: p.highlights_vi, lang: 'vi' } : { items: p.highlights_en, lang: 'en' };
       return (
         <Entry title={p.title} when={range(p.start ?? '', p.end, 'vi')} sub={PROJECT_STATUS_VI[p.status]} where={p.advisor ? `Hướng dẫn: ${advisorName(p.advisor, 'vi')}` : undefined} lang="en">
+          <Tags tags={tagsOf(p, 'vi')} />
           {tag.text && <p lang={tag.lang}><em>{tag.text}</em></p>}
           {summary.text && <p lang={summary.lang}>{summary.text}</p>}
-          {hl.items.length > 0 && <ul lang={hl.lang}>{hl.items.map((h) => <li>{h}</li>)}</ul>}
+          {hl.items.length > 0 && <ul lang={hl.lang}>{hl.items.map((h) => <li set:html={rich(h)} />)}</ul>}
           {contrib.text && <p class="meta"><span lang={contrib.lang}>Vai trò: {contrib.text}</span></p>}
           {p.figures.map((fig) => (
             <figure>
@@ -55,8 +57,8 @@ const interests = profile.research_interests_en;
       const venue = viOrEn(p, 'venue');
       const summary = viOrEn(p, 'summary');
       return (
-        <Entry title={p.title} when={String(p.year)} lang="en">
-          <p class="pub"><Authors authors={p.authors} /></p>
+        <Entry id={`pub-${p.id}`} title={p.title} when={String(p.year)} lang="en">
+          <p class="pub"><Authors authors={p.authors} />{p.authors.some((a) => a.is_corresponding) && <span class="x"> (* tác giả liên hệ)</span>}</p>
           {venue.text && <p class="pub" lang={venue.lang}><em>{venue.text}</em></p>}
           {summary.text && <p lang={summary.lang}>{summary.text}</p>}
           {p.links.map((l) => <p class="pub"><a href={l.url}>{f(l, 'label', 'vi', true)}</a></p>)}

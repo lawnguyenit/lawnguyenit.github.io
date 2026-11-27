@@ -1,7 +1,5 @@
 id: java
-visible:
-- academic
-- job
+visible: []
 order: 4
 name_en: Java
 name_vi: Java

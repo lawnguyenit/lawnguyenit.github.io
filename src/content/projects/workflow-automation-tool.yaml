@@ -2,26 +2,27 @@
 id: workflow-automation-tool
 visible:
 - job
-order: 5
+order: 3
 featured: false
 kind: practice
 stage: null
 status: ongoing
 title: Workflow_Automation_Tool
-tagline_en: 'Practice project: library of reusable workflow module contracts (n8n as the main target)'
-tagline_vi: Thư viện hợp đồng module workflow dùng lại được (n8n là mục tiêu chính)
+status_note_en: 'connecting to real services'
+status_note_vi: 'đang kết nối dịch vụ thật'
+tags: []
+tagline_en: 'Practice project: automating a document-processing workflow (built with Claude Code/Codex)'
+tagline_vi: 'Dự án thực hành: tự động hóa quy trình xử lý tài liệu (phát triển cùng Claude Code/Codex)'
 summary_en: 'A repository of reusable workflow module contracts, with concrete implementations added per job; n8n is the main target. Includes an API (Python, uvicorn, PostgreSQL via Docker Compose), four run modes (DRY_RUN, REPLAY, MOCK, REAL) and two reference systems: an intelligent document intake pipeline and a lead-management flow. Portfolio work, not a client deployment.'
 summary_vi: 'Thư viện hợp đồng module workflow dùng lại được, thêm triển khai cụ thể khi có việc; n8n là mục tiêu chính. Có API (Python, uvicorn, PostgreSQL qua Docker Compose), bốn chế độ chạy (DRY_RUN, REPLAY, MOCK, REAL) và hai hệ thống tham chiếu: nhận tài liệu thông minh và quản lý lead. Là dự án portfolio, không phải triển khai cho khách.'
 contribution_en: Designed requirements and architecture, directed AI coding agents (Claude, Codex) to write and test the code, and validated the results.
 contribution_vi: Thiết kế yêu cầu và kiến trúc, điều phối agent AI (Claude, Codex) viết mã, kiểm thử và kiểm định kết quả.
 highlights_en:
-- 'Run modes separate previewing and replaying from real side effects: DRY_RUN and REPLAY write nothing, MOCK writes to the database without contacting any provider, REAL is only for configured, authorized setups.'
-- Lead-management reference handles duplicate events with PostgreSQL idempotency and routes incomplete records to manual review; exercised by hand in MOCK mode with synthetic payloads (first write, duplicate, changed-payload conflict, missing field, response redaction).
-- Two releases (0.1.0, 0.2.0). Provider connections (Gmail, OpenAI, Slack) are not verified against real credentials.
+- '**Workflow:** receive an email with a PDF invoice → read and extract the data → check it → store it in a database → prepare a notification; runs on n8n.'
+- '**Failure safeguards:** never processes the same document twice, caps the number of AI calls per day to avoid unexpected cost, and has a test mode that sends nothing outside.'
 highlights_vi:
-- Bốn chế độ chạy (DRY_RUN, REPLAY, MOCK, REAL) tách xem trước và phát lại khỏi tác động thật; REAL chỉ dùng khi đã cấu hình và được phép.
-- Hệ quản lý lead chống trùng sự kiện (idempotency trên PostgreSQL), chuyển bản ghi thiếu thông tin sang duyệt tay; mới chạy thử thủ công ở chế độ MOCK với dữ liệu giả lập.
-- Hai bản phát hành (0.1.0, 0.2.0); kết nối Gmail, OpenAI, Slack chưa kiểm chứng với thông tin đăng nhập thật.
+- '**Quy trình:** nhận email có hóa đơn PDF → đọc và trích xuất thông tin → kiểm tra → lưu cơ sở dữ liệu → tạo thông báo; chạy trên n8n.'
+- '**Độ tin cậy:** chống xử lý trùng lặp, giới hạn lượt gọi AI theo ngày để kiểm soát chi phí, chế độ chạy thử không tác động ra hệ thống bên ngoài.'
 tech:
 - Python
 - n8n
@@ -36,4 +37,4 @@ links:
   label_vi: Kho mã GitHub
   url: https://github.com/lawnguyenit/Workflow_Automation_Tool
 figures: []
-internal_note: 'Nguồn: Brain/Projects/Workflow_Automation_Tool.md và README đọc lại 2026-11-27. Mới đọc README, chưa đọc code. README tự ghi ''portfolio systems, not client deployments''. Không nói: triển khai cho khách, kết nối nhà cung cấp chạy thật, kiểm thử tự động đầy đủ (README không nêu lệnh test). Ngày bắt đầu chưa biết (37 commit, push cuối 2026-10-03). Phần ''chạy thử thủ công MOCK'' là tự khai trong README.'
+internal_note: 'Nguồn: README và docs/project-state (release 0.14.0, 198 test pass theo verification.md ngày 2026-10-03), đọc lại 2026-11-27. Chưa đọc code. README tự ghi ''portfolio systems, not client deployments''. Không nói: triển khai cho khách, kết nối nhà cung cấp chạy thật (Gmail, OpenAI, Slack, GHL chưa kiểm với tài khoản thật), hệ lead chạy end-to-end (đồ thị lead hiện dừng ở PostgreSQL). Ngày bắt đầu chưa biết (push cuối 2026-10-03). Bản cũ ghi 0.1.0/0.2.0 là lỗi thời.'

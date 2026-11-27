@@ -1,0 +1,6 @@
+id: job-database
+visible:
+- job
+order: 2
+title_en: Databases
+title_vi: Cơ sở dữ liệu

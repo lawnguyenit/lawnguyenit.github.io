@@ -1,0 +1,10 @@
+# Nguồn: Brain/AGENTS.md, Brain/Skills/*/SKILL.md, Brain/Plans/Plans.md (nhật ký đo). Không có số đo hiệu quả nào ngoài số trong nhật ký đo; không thêm số mới.
+id: ai-wf-context
+visible:
+- job
+order: 2
+name_vi: '**Cách làm:** viết yêu cầu và kế hoạch, giao agent AI viết mã, agent khác kiểm thử, tự duyệt kết quả.'
+group_job: job-ai-workflow
+order_job: 2
+status: confirmed
+note_vi: 'Tri thức và quy tắc lưu trong vault Obsidian quản lý bằng Git, một file AGENTS.md chung cho Claude, Codex và Gemini. Kiểm thử do agent khác phiên đảm nhiệm, chỉ nhận tiêu chí nghiệm thu, không xem lời giải. Kết quả đã ghi nhận: ở một kế hoạch 43 node, 3 lỗi lớn được kiểm thử độc lập bắt ở giai đoạn code.'

@@ -1,15 +1,12 @@
-# Chủ site xác nhận 2026-11-27: SQL (MySQL, SQL Server). Mức thành thạo chưa ghi; không kèm cấp độ.
 id: sql
 visible:
 - academic
 - job
 order: 5
-name_en: SQL, MySQL, SQL Server
-name_vi: SQL, MySQL, SQL Server
-group_academic: acad-programming
-order_academic: 6
-group_job: job-data
-order_job: 5
+name_en: 'SQL — MySQL, SQL Server, PostgreSQL'
+name_vi: 'SQL — MySQL, SQL Server, PostgreSQL'
+group_academic: acad-databases
+order_academic: 1
+group_job: job-database
+order_job: 1
 status: confirmed
-note_en: null
-note_vi: null

@@ -1,0 +1,9 @@
+# Nguồn: như bản tiếng Việt (job-ai-workflow); không thêm số đo mới.
+id: ai-acad-skills
+visible:
+- academic
+order: 13
+name_en: '**Applied to:** the AgriFusion-IoT thesis project, Workflow_Automation_Tool, and this CV site (cv.lnit.id.vn).'
+group_academic: acad-ai-workflow
+order_academic: 3
+status: confirmed

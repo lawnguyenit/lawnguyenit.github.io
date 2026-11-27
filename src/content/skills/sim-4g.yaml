@@ -4,9 +4,9 @@ visible:
 - job
 order: 4
 name_en: SIM A7682S 4G LTE
-name_vi: SIM A7682S 4G LTE
+name_vi: '4G LTE (SIM A7682S)'
 group_academic: acad-iot-embedded
 order_academic: 4
 group_job: job-iot
-order_job: 4
+order_job: 3
 status: confirmed

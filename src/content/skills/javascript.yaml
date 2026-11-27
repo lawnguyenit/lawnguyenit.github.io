@@ -1,7 +1,5 @@
 id: javascript
-visible:
-- academic
-- job
+visible: []
 order: 5
 name_en: JavaScript
 name_vi: JavaScript

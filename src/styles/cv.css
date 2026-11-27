@@ -11,7 +11,7 @@
   --sans: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --fs: 9.5pt;
 }
-@page { size: A4; margin: 12mm 15mm; }
+@page { size: A4; margin: 9mm 13mm; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
@@ -63,6 +63,10 @@ a:focus-visible, .pdf-btn:focus-visible { outline: 2px solid var(--link); outlin
   margin: 0; font-family: var(--serif); font-weight: 700;
   font-size: 25pt; line-height: 1.15; letter-spacing: .005em;
 }
+/* photo: ~28mm, left of the centred text block; no frame */
+.cv-head.has-photo { position: relative; min-height: 26mm; display: flex; flex-direction: column; justify-content: center; }
+.cv-head .photo { position: absolute; left: 0; top: 0; width: 26mm; height: 26mm; object-fit: cover; border-radius: 1.5mm; }
+.cv-head.has-photo .head-text { padding: 0 0 0 28mm; }
 .role { margin: 4pt 0 0; font-size: 11pt; color: var(--muted); }
 .contact {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 2pt 14pt;
@@ -80,7 +84,9 @@ a:focus-visible, .pdf-btn:focus-visible { outline: 2px solid var(--link); outlin
   font-family: var(--serif); font-weight: 700; font-size: 11pt;
   letter-spacing: .06em; text-transform: uppercase; line-height: 1.3;
   break-after: avoid;
+  display: flex; justify-content: space-between; align-items: baseline; column-gap: 12pt;
 }
+.sec h2 .aside { font-family: var(--sans); font-weight: 400; font-size: 9pt; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .sec p { margin: 0 0 3pt; }
 
 .entry { margin-bottom: 5pt; break-inside: avoid; }
@@ -98,11 +104,19 @@ a:focus-visible, .pdf-btn:focus-visible { outline: 2px solid var(--link); outlin
 .sec > ul.inline-list { display: flex; flex-wrap: wrap; gap: 0 14pt; list-style: none; padding-left: 0; }
 .sec > ul.inline-list li { margin: 0; }
 .skills li { margin: 2.5pt 0; }
+.skills li ul { margin: 1pt 0 0; padding-left: 13pt; list-style: circle; }
+.skills li li { margin: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 2pt 4pt; margin: 3pt 0 0; }
+.tag { display: inline-block; padding: 0 5pt; border: .6pt solid #b9bbc0; border-radius: 8pt; color: var(--muted); font-size: 8.5pt; line-height: 1.5; white-space: nowrap; }
+a.tag:hover { border-color: var(--link); color: var(--link); text-decoration: none; }
 .meta { margin: 3pt 0 0; color: var(--muted); font-size: 9pt; }
 .meta span + span::before { content: ' · '; }
 .meta.role { margin: 0 0 5pt; }
 .meta.tech { margin-top: 2pt; }
-.pub { margin: 0 0 1pt; }
+.pub { margin: 1pt 0 0; padding-left: 13pt; font-size: 9pt; color: var(--muted); }
+.pub strong { color: var(--ink); font-weight: 600; }
+.entry[id^="pub-"] { margin-bottom: 6pt; }
+.entry[id^="pub-"]:last-child { margin-bottom: 0; }
 .statement { margin-top: 5pt; }
 .entry > p { margin-top: 3pt; }
 
@@ -138,6 +152,9 @@ figcaption { margin-top: 2pt; font-size: 8.5pt; color: var(--muted); font-style:
   .pdf-btn { padding: 0 10px; margin-left: auto; }
   .paper { margin: 0; padding: 22px 18px 32px; box-shadow: none; min-height: 100vh; }
   .name { font-size: 22pt; }
+  .cv-head.has-photo { display: block; text-align: center; }
+  .cv-head .photo { position: static; display: block; margin: 0 auto 10px; }
+  .cv-head.has-photo .head-text { padding: 0; }
   .role { font-size: 10.5pt; }
   .row > :first-child { flex-basis: 100%; }
   .row .r { white-space: normal; margin-left: 0; text-align: left; }
@@ -147,15 +164,15 @@ figcaption { margin-top: 2pt; font-size: 8.5pt; color: var(--muted); font-style:
 /* ---------- print / PDF ---------- */
 @media print {
   :root { --fs: 9.5pt; }
-  body { background: #fff; line-height: 1.42; }
+  body { background: #fff; line-height: 1.36; }
   .topbar { display: none; }
   .paper { width: auto; max-width: none; margin: 0; padding: 0; box-shadow: none; min-height: 0; }
   a { color: inherit; }
   .row .r { white-space: nowrap; text-align: right; margin-left: auto; }
   .row.s .r { font-size: 9pt; }
   figure { break-inside: avoid; }
-  .sec { margin-top: 9pt; }
-  .sec h2 { margin-bottom: 4pt; }
-  .entry { margin-bottom: 4pt; }
-  .sec.pb { break-before: page; margin-top: 0; }
+  .sec { margin-top: 7pt; }
+  .sec h2 { margin-bottom: 3pt; }
+  .entry { margin-bottom: 3pt; }
+  .tag { font-size: 8.5pt; }
 }

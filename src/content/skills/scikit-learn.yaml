@@ -1,12 +1,6 @@
 id: scikit-learn
-visible:
-- academic
-- job
+visible: []
 order: 2
 name_en: scikit-learn
 name_vi: scikit-learn
-group_academic: acad-ml-data
-order_academic: 2
-group_job: job-ai-ml
-order_job: 2
 status: confirmed

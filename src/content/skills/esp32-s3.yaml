@@ -3,8 +3,8 @@ visible:
 - academic
 - job
 order: 1
-name_en: ESP32-S3
-name_vi: ESP32-S3
+name_en: 'ESP32 programming (C/C++)'
+name_vi: 'lập trình ESP32 (C/C++)'
 group_academic: acad-iot-embedded
 order_academic: 1
 group_job: job-iot

@@ -1,7 +1,6 @@
 id: research-observation-contracts
-visible:
-- academic
-order: 3
+visible: []
+order: 6
 featured: false
 kind: research
 stage: 3
@@ -32,4 +31,4 @@ figures:
 - src: /assets/img/validity_framework.svg
   alt_en: Observation contracts and validity framework
   caption_en: Observation contracts and information regime audit for weakly supervised temporal targets.
-internal_note: null
+internal_note: 'Ẩn 2026-11-27: có thể đã đổi tên thành bài SNCS (Auditing temporal sensor classifiers...), chờ chủ site xác nhận. Nếu đúng là cùng bài thì cập nhật hoặc xóa mục này; các điểm nhấn bên trên là của bản thảo cũ.'

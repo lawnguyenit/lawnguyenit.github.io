@@ -1,0 +1,9 @@
+# Nguồn: như bản tiếng Việt (job-ai-workflow); không thêm số đo mới.
+id: ai-acad-context
+visible:
+- academic
+order: 12
+name_en: '**Method:** write requirements and a plan first, have an AI agent write the code, have a second agent test it, and review the results myself before using them.'
+group_academic: acad-ai-workflow
+order_academic: 2
+status: confirmed

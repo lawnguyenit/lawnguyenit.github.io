@@ -1,7 +1,5 @@
 id: csharp
-visible:
-- academic
-- job
+visible: []
 order: 3
 name_en: C#
 name_vi: C#

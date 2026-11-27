@@ -1,7 +1,7 @@
+# Ẩn 2026-11-27: có thể đã đổi tên thành bài SNCS (sncs-auditing-temporal-sensor-classifiers), chờ chủ site xác nhận.
 id: observation-contracts
-visible:
-- academic
-order: 2
+visible: []
+order: 5
 type: conference_manuscript
 status: in_preparation
 year: 2026
@@ -18,3 +18,4 @@ venue_vi: Bản thảo tác giả đầu, đang soạn, 2026
 summary_en: null
 summary_vi: null
 links: []
+internal_note: 'Có thể đã đổi tên thành bài SNCS-D-26-10794; chờ xác nhận.'

@@ -1,0 +1,6 @@
+id: postgresql
+visible: []
+order: 6
+name_en: 'PostgreSQL (via projects)'
+name_vi: 'PostgreSQL (qua dự án)'
+status: confirmed

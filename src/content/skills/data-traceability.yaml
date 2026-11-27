@@ -1,7 +1,6 @@
 id: data-traceability
 visible:
 - academic
-- job
 order: 7
 name_en: traceable data pipelines, hash checks
 name_vi: pipeline dữ liệu có truy vết, kiểm tra hash

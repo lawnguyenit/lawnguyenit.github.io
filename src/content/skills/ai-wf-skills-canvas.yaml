@@ -1,0 +1,10 @@
+# Nguồn: Brain/AGENTS.md, Brain/Skills/*/SKILL.md, Brain/Plans/Plans.md (nhật ký đo). Không có số đo hiệu quả nào ngoài số trong nhật ký đo; không thêm số mới.
+id: ai-wf-skills-canvas
+visible:
+- job
+order: 3
+name_vi: '**Đã áp dụng:** đồ án AgriFusion-IoT, Workflow_Automation_Tool và chính trang CV này (cv.lnit.id.vn).'
+group_job: job-ai-workflow
+order_job: 3
+status: confirmed
+note_vi: 'Bộ skill tùy biến: plan-canvas chuyển kế hoạch Markdown thành canvas Obsidian để duyệt từng node; review-change phân bậc rủi ro khi duyệt thay đổi. Mức thử nghiệm, chưa đủ dữ liệu để kết luận hiệu quả.'

@@ -1,0 +1,15 @@
+---
+// "Kỹ năng" list: one line per group; a group with layout "tiered" becomes a nested list.
+import { f, skillLine, skillTiers, type Lang } from '../lib/content';
+interface Props { groups: any[]; lang: Lang }
+const { groups, lang } = Astro.props;
+---
+<ul class="skills">
+  {groups.map((g) => g.layout === 'tiered' ? (
+    <li><strong>{f(g, 'title', lang)}:</strong>
+      <ul>{skillTiers(g.skills, lang).map((t) => <li>{t.label}: {t.items}</li>)}</ul>
+    </li>
+  ) : (
+    <li><strong>{f(g, 'title', lang)}:</strong> {skillLine(g.skills, lang)}</li>
+  ))}
+</ul>
